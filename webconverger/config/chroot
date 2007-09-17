@@ -1,0 +1,33 @@
+# config/chroot: configuration for lh_chroot_*
+
+# $LH_KERNEL: set the kernel flavour to use
+# (Default: autodetected)
+#LH_LINUX_FLAVOURS="486"
+
+# $LH_LANGUAGE: set the language to use
+# (Default: empty)
+#LH_LANGUAGE=""
+
+# $LH_PACKAGES: set the packages to install
+# (Default: empty)
+#LH_PACKAGES=""
+
+# $LH_PACKAGES_LIST: set the package list to install
+# (Default: xorg)
+#LH_PACKAGES_LIST="xorg"
+
+# $LH_TASKS: set the tasks to install
+# (Default: empty)
+#LH_TASKS=""
+
+# $LH_SECURITY: enable security updates
+# (Default: enabled)
+#LH_SECURITY="enabled"
+
+# $LH_SYMLINKS: enable symlink convertion
+# (Default: disabled)
+#LH_SYMLINKS="disabled"
+
+# $LH_SYSVINIT: enable sysvinit
+# (Default: disabled)
+#LH_SYSVINIT="disabled"

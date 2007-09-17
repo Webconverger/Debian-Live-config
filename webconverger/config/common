@@ -1,0 +1,57 @@
+# config/common: configuration for live-helper(7)
+#
+LH_INITRAMFS="live-initramfs"
+
+# $LH_APT: set package manager
+# (Default: aptitude)
+#LH_APT="apt-get"
+
+# $LH_APT_FTPPROXY: set apt/aptitude ftp proxy
+# (Default: autodetected or empty)
+#LH_APT_FTPPROXY=""
+
+# $LH_APT_HTTPPROXY: set apt/aptitude http proxy
+# (Default: autodetected or empty)
+#LH_APT_HTTPPROXY=""
+
+# $LH_APT_GENERIC: set apt/aptitude generic indices
+# (Default: enabled)
+#LH_APT_GENERIC="enabled"
+
+# $LH_APT_PDIFFS: set apt/aptitude pdiff indices
+# (Default: enabled)
+#LH_APT_PDIFFS="enabled"
+
+# $LH_APT_RECOMMENDS: enable recommends
+# (Default: enabled)
+LH_APT_RECOMMENDS="disabled"
+
+# $LH_BOOTSTRAP: select the bootstrap program
+# (Default: cdebootstrap)
+#LH_BOOTSTRAP="cdebootstrap"
+
+# $LH_CACHE: enable cache
+# (Default: enabled)
+#LH_CACHE="enabled"
+
+# $LH_DEBCONF_FRONTEND: set the debconf(1) frontend to use
+# (Default: noninteractive)
+#LH_DEBCONF_FRONTEND="noninteractive"
+
+# $LH_DEBCONF_PRIORITY: set the debconf(1) priority to use
+# (Default: critical)
+#LH_DEBCONF_PRIORITY="critical"
+
+# $LH_GENISOIMAGE: set the genisoimage program
+# (Default: autodetected)
+#LH_GENISOIMAGE="genisoimage"
+
+# $LH_ROOT: set the root directory
+# (Default: `pwd`/debian-live)
+#LH_ROOT="/tmp/wc/debian-live"
+
+# $LH_CHROOT: set the chroot directory
+# (Default: ${LH_ROOT}/chroot)
+#LH_CHROOT="/tmp/wc/debian-live/chroot"
+#
+#LH_BREAKPOINTS="enabled"

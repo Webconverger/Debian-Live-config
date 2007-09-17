@@ -1,0 +1,8 @@
+#!/bin/bash
+# deploys net setup by overwriting existing one
+# http://wiki.debian.org/DebianLive/Howto/Creating_a_Test_environment#preview
+
+rm -rf /srv/debian-live.old && true
+mv /srv/debian-live /srv/debian-live.old
+mv binary /srv/debian-live
+cp -r tftpboot/* /var/lib/tftpboot/

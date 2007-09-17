@@ -1,0 +1,44 @@
+# Webconverger's main configuration hendry@webconverger.com
+# Minimal
+eject file sudo vim-tiny
+
+# Standard
+console-common kbd locales
+
+#debugging
+openssh-client
+
+# X11
+xorg xresprobe discover menu
+alsa-base alsa-oss alsa-utils
+
+# For upgrade, firewall et al. features
+live-initscripts
+
+usplash
+webconverger-base
+webconverger-archive-keyring
+
+# window manager
+dwm
+# For the background
+xloadimage
+
+# browser
+iceweasel
+
+# For reseting the kiosk
+xautolock
+
+# For locking down the browser
+iceweasel-webconverger
+
+# fonts
+ttf-dejavu
+ttf-gentium
+
+# pdf
+xpdf mozplugger
+
+########## non-free software
+flashplugin-nonfree

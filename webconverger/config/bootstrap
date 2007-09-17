@@ -1,0 +1,24 @@
+# config/bootstrap: configuration for lh_bootstrap_*
+
+# $LH_ARCHITECTURE: select the chroot architecture
+# (Default: autodetected)
+#LH_ARCHITECTURE="i386"
+
+# $LH_DISTRIBUTION: select the distribution to use
+# (Default: sid)
+LH_DISTRIBUTION="etch"
+
+# $LH_FLAVOUR: select the flavour to use
+# (Default: standard)
+# LH_FLAVOUR="standard"
+
+#LH_MIRROR_BOOTSTRAP="http://mirror/debian/"
+#LH_MIRROR_BINARY="http://mirror/debian/"
+#LH_MIRROR_BOOTSTRAP_SECURITY="http://mirror/debian-security/"
+#LH_MIRROR_BOOTSTRAP="http://mirror/debian/"
+#LH_MIRROR_BINARY="http://mirror/debian/"
+#LH_MIRROR_BOOTSTRAP_SECURITY="http://mirror/debian-security/"
+
+# $LH_SECTIONS: select the section to use
+# (Default: main)
+LH_SECTIONS="main contrib"

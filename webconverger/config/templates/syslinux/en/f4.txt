@@ -1,0 +1,23 @@
+0fLIVE AND RESCUE MODES07                                                         09F407
+
+
+0fUse one of these boot methods to start the live system07
+
+0flive07
+  Start the live system in standard mode -- this is the default.
+0flive-failsafe07
+  Start the live system in failsafe mode.
+
+0fUse one of these boot methods to rescue an existing install07
+
+0frescue07
+  Boot into rescue mode.
+0frescuegui07
+  Boot into rescue mode using the graphical installer.
+
+0fmemtest07
+  Run memtest86+ (memory tester).
+0ffloppy07, 0fdisk107 or 0fdisk207
+  Boot from the floppy, first or second hard disk.
+
+Press F1control and F then 1 for the help index, or ENTER to 

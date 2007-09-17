@@ -1,0 +1,47 @@
+# config/chroot: configuration for lh_image_*
+
+# Uncomment for final version
+LH_BOOTAPPEND_LIVE="quiet splash vga=773 upgrade homepage=http://portal.webconverger.com/"
+
+# $LH_ENCRYPTION: set encrytion
+# (Default: empty)
+#LH_ENCRYPTION=""
+
+# $LH_FILESYSTEM: set filesystem
+# (Default: squashfs)
+#LH_CHROOT_FILESYSTEM="plain"
+
+# $LH_MEMTEST86: set memtest86+
+# (Default: enabled)
+LH_MEMTEST86="enabled"
+
+# $LH_ISO_VOLUME: set iso volume
+# (Default: Debian Live ${DATE})
+LH_ISO_VOLUME="Webconverger ${DATE}"
+
+# $LH_SERVER_ADDRESS: set the netboot server address
+# (Default: 192.168.1.1)
+LH_NET_SERVER="192.168.2.1"
+
+# $LH_SERVER_PATH: set the netboot server directory
+# (Default: /srv/debian-live)
+LH_NET_PATH="/srv/debian-live"
+
+# $LH_SYSLINUX: set syslinux option
+# (Default: enabled)
+#LH_SYSLINUX="enabled"
+#LH_BOOTLOADER="grub"
+#LH_GRUB_SPLASH="/home/hendry/projects/live/daisy.xpm.gz"
+
+# $LH_SYSLINUX_SPLASH: set custom syslinux splash
+# (Default: empty)
+#LH_SYSLINUX_SPLASH="/home/hendry/projects/livecd/splash.rle"
+
+# $LH_BINARY_IMAGE: set image type
+# (Default: iso)
+#LH_BINARY_IMAGES="usb-hdd"
+
+# $LH_TEMPLATES: set templates
+# (Default: /usr/share/live-helper/templates)
+# LH_TEMPLATES="/home/hendry/projects/live/templates/"
+#LH_DEBIAN_INSTALLER="enabled"
