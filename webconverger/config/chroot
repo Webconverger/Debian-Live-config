@@ -1,22 +1,46 @@
-# config/chroot: configuration for lh_chroot_*
+# config/chroot - options for live-helper(7), chroot stage
 
-# $LH_KERNEL: set the kernel flavour to use
+# $LH_CHROOT_FILESYSTEM: set chroot filesystem
+# (Default: squashfs)
+#LH_CHROOT_FILESYSTEM="squashfs"
+
+# $LH_UNION_FILESYSTEM: set union filesystem
+# (Default: unionfs
+#LH_UNION_FILESYSTEM="unionfs"
+
+# $LH_HOOKS: set hook commands
+# (Default: empty)
+#LH_HOOKS=""
+
+# $LH_INTERACTIVE: set interactive build
+# (Default: disabled)
+#LH_INTERACTIVE="disabled"
+
+# $LH_KEYRING_PACKAGES: set keyring packages
+# (Default: empty)
+#LH_KEYRING_PACKAGES=""
+
+# $LH_LANGUAGE: set language to use
+# (Default: empty)
+#LH_LANGUAGE="en"
+
+# $LH_LINUX_FLAVOURS: set kernel flavour to use
 # (Default: autodetected)
 #LH_LINUX_FLAVOURS="486"
 
-# $LH_LANGUAGE: set the language to use
-# (Default: empty)
-#LH_LANGUAGE=""
+# $LH_LINUX_PACKAGES: set kernel packages to use
+# (Default: autodetected)
+#LH_LINUX_PACKAGES="linux-image-2.6 unionfs-modules-2.6 squashfs-modules-2.6"
 
-# $LH_PACKAGES: set the packages to install
+# $LH_PACKAGES: set packages to install
 # (Default: empty)
 #LH_PACKAGES=""
 
-# $LH_PACKAGES_LIST: set the package list to install
-# (Default: xorg)
-#LH_PACKAGES_LIST="xorg"
+# $LH_PACKAGES_LISTS: set package list to install
+# (Default: standard)
+#LH_PACKAGES_LISTS="standard"
 
-# $LH_TASKS: set the tasks to install
+# $LH_TASKS: set tasks to install
 # (Default: empty)
 #LH_TASKS=""
 

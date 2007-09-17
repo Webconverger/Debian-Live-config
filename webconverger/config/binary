@@ -1,47 +1,94 @@
-# config/chroot: configuration for lh_image_*
+# config/binary - options for live-helper(7), binary stage
 
-# Uncomment for final version
+# $LH_BINARY_IMAGES: set image type
+# (Default: iso)
+#LH_BINARY_IMAGES="iso"
+
+# $LH_BINARY_INDICES: set apt/aptitude generic indices
+# (Default: enabled)
+#LH_BINARY_INDICES="enabled"
+
+# $LH_BOOTAPPEND_LIVE: set boot parameters
+# (Default: empty)
 LH_BOOTAPPEND_LIVE="quiet splash vga=773 upgrade homepage=http://portal.webconverger.com/"
+
+# $LH_BOOTAPPEND_INSTALL: set boot parameters
+# (Default: empty)
+LH_BOOTAPPEND_INSTALL="preseed/file=/cdrom/install/preseed.cfg d-i:debian-installer/locale=en_US d-i:console-keymaps-at/keymap=us -- ${LH_BOOTAPPEND_LIVE}"
+
+# $LH_BOOTLOADER: set bootloader
+# (Default: syslinux)
+#LH_BOOTLOADER="syslinux"
+
+# ${LH_CHROOT_BUILD: control if we build binary images chrooted
+# (Default: enabled)
+# DO NEVER, *NEVER*, *N*E*V*E*R* SET THIS OPTION to disabled.
+#LH_CHROOT_BUILD="enabled"
+
+# $LH_DEBIAN_INSTALLER: set debian-installer
+# (Default: disabled)
+#LH_DEBIAN_INSTALLER="disabled"
+
+# $LH_DEBIAN_INSTALLER_DAILY: set daily images
+# (Default: disabled)
+#LH_DEBIAN_INSTALLER_DAILY="disabled"
 
 # $LH_ENCRYPTION: set encrytion
 # (Default: empty)
 #LH_ENCRYPTION=""
 
-# $LH_FILESYSTEM: set filesystem
-# (Default: squashfs)
-#LH_CHROOT_FILESYSTEM="plain"
+# $LH_GRUB_SPLASH: set custom grub splash
+# (Default: empty)
+#LH_GRUB_SPLASH=""
 
-# $LH_MEMTEST86: set memtest86+
-# (Default: enabled)
-LH_MEMTEST86="enabled"
+# $LH_HOSTNAME: set hostname
+# (Default: debian)
+LH_HOSTNAME="webconverger"
 
-# $LH_ISO_VOLUME: set iso volume
-# (Default: Debian Live ${DATE})
-LH_ISO_VOLUME="Webconverger ${DATE}"
+# $LH_ISO_APPLICATION: set iso author
+# (Default: Debian Live)
+LH_ISO_APPLICATION="Webconverger"
 
-# $LH_SERVER_ADDRESS: set the netboot server address
-# (Default: 192.168.1.1)
-LH_NET_SERVER="192.168.2.1"
+# $LH_ISO_PREPARER: set iso preparer
+# (Default: live-helper 1.0~a29; http://packages.qa.debian.org/live-helper)
+LH_ISO_PREPARER="live-helper 1.0~a29; http://packages.qa.debian.org/live-helper"
 
-# $LH_SERVER_PATH: set the netboot server directory
+# $LH_ISO_PUBLISHER: set iso preparer
+# (Default: Debian Live project; http://debian-live.alioth.debian.org/; debian-live-devel@lists.alioth.debian.org)
+LH_ISO_PUBLISHER="Debian Live project; http://debian-live.alioth.debian.org/; debian-live-devel@lists.alioth.debian.org"
+
+# $LH_ISO_VOLUME: set iso volume (max 32 chars)
+# (Default: Debian Live `date +%Y%m%d-%H:%M`)
+LH_ISO_VOLUME="Webconverger `date +%Y%m%d-%H:%M`"
+
+# $LH_MEMTEST: set memtest
+# (Default: memtest86+)
+LH_MEMTEST="none"
+
+# $LH_NET_FILESYSTEM: set netboot filesystem
+# (Default: nfs)
+#LH_NET_FILESYSTEM="nfs"
+
+# $LH_NET_MOUNTOPTIONS: set nfsopts
+# (Default: empty)
+#LH_NET_MOUNTOPTIONS=""
+
+# $LH_NET_PATH: set netboot server directory
 # (Default: /srv/debian-live)
-LH_NET_PATH="/srv/debian-live"
+#LH_NET_PATH="/srv/debian-live"
 
-# $LH_SYSLINUX: set syslinux option
-# (Default: enabled)
-#LH_SYSLINUX="enabled"
-#LH_BOOTLOADER="grub"
-#LH_GRUB_SPLASH="/home/hendry/projects/live/daisy.xpm.gz"
+# $LH_NET_SERVER: set netboot server address
+# (Default: 192.168.1.1)
+#LH_NET_SERVER="192.168.1.1"
 
 # $LH_SYSLINUX_SPLASH: set custom syslinux splash
 # (Default: empty)
-#LH_SYSLINUX_SPLASH="/home/hendry/projects/livecd/splash.rle"
+#LH_SYSLINUX_SPLASH=""
 
-# $LH_BINARY_IMAGE: set image type
-# (Default: iso)
-#LH_BINARY_IMAGES="usb-hdd"
+# $LH_SYSLINUX_TIMEOUT: set custom syslinux timeout
+# (Default: 0)
+LH_SYSLINUX_TIMEOUT="10"
 
-# $LH_TEMPLATES: set templates
-# (Default: /usr/share/live-helper/templates)
-# LH_TEMPLATES="/home/hendry/projects/live/templates/"
-#LH_DEBIAN_INSTALLER="enabled"
+# $LH_USERNAME: set username
+# (Default: user)
+#LH_USERNAME="user"
