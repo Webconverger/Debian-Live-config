@@ -63,7 +63,7 @@ LH_ISO_VOLUME="Webconverger `date +%Y%m%d-%H:%M`"
 
 # $LH_MEMTEST: set memtest
 # (Default: memtest86+)
-LH_MEMTEST="none"
+#LH_MEMTEST="memtest86+"
 
 # $LH_NET_FILESYSTEM: set netboot filesystem
 # (Default: nfs)

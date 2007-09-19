@@ -86,11 +86,11 @@ LH_INITRAMFS="live-initramfs"
 
 # $LH_INCLUDES: set includes
 # (Default: /usr/share/live-helper/includes)
-LH_INCLUDES="none"
+#LH_INCLUDES="/usr/share/live-helper/includes"
 
 # $LH_TEMPLATES: set templates
 # (Default: /usr/share/live-helper/templates)
-LH_TEMPLATES="none"
+#LH_TEMPLATES="/usr/share/live-helper/templates"
 
 # Live-helper options
 
