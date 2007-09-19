@@ -1,0 +1,32 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+Format: 1.7
+Date: Wed, 19 Sep 2007 07:58:00 +0200
+Source: live-installer
+Binary: live-installer
+Architecture: source i386
+Version: 2+webconverger.1
+Distribution: etch
+Urgency: low
+Maintainer: Debian Install System Team <debian-boot@lists.debian.org>
+Changed-By: Daniel Baumann <daniel@debian.org>
+Description: 
+ live-installer - Install the system (udeb)
+Changes: 
+ live-installer (2+webconverger.1) etch; urgency=low
+ .
+   * Added install-to-disk support.
+Files: 
+ 5578ae9db992c319939f3d61fa8c7e91 707 debian-installer optional live-installer_2+webconverger.1.dsc
+ 61b9fa64c106fcf4f31dcdd4a4a434fb 86014 debian-installer optional live-installer_2+webconverger.1.tar.gz
+ 3f2740dd700e418af88f46a5213512ca 7426 debian-installer optional live-installer_2+webconverger.1_i386.udeb
+Package-Type: udeb
+
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.6 (GNU/Linux)
+
+iD8DBQFG8Lqj+C5cwEsrK54RAtNSAKCiuTXsi/EgeE5Ref3TLfTBKKw+BQCfd9u6
+dbzvIjBUz7RhjHy+PZdQuYU=
+=r9Vr
+-----END PGP SIGNATURE-----
