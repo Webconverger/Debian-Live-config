@@ -10,15 +10,15 @@
 
 # $LH_BOOTAPPEND_LIVE: set boot parameters
 # (Default: empty)
-LH_BOOTAPPEND_LIVE="quiet splash vga=773 upgrade homepage=http://portal.webconverger.com/"
+LH_BOOTAPPEND_LIVE="quiet splash vga=773 upgrade homepage=http://test.webconverger.com/"
 
 # $LH_BOOTAPPEND_INSTALL: set boot parameters
 # (Default: empty)
-LH_BOOTAPPEND_INSTALL="preseed/file=/cdrom/install/preseed.cfg d-i:debian-installer/locale=en_US d-i:console-keymaps-at/keymap=us -- ${LH_BOOTAPPEND_LIVE}"
+#LH_BOOTAPPEND_INSTALL="preseed/file=/cdrom/install/preseed.cfg d-i:debian-installer/locale=en_US d-i:console-keymaps-at/keymap=us -- ${LH_BOOTAPPEND_LIVE}"
 
 # $LH_BOOTLOADER: set bootloader
 # (Default: syslinux)
-#LH_BOOTLOADER="syslinux"
+LH_BOOTLOADER="grub"
 
 # ${LH_CHROOT_BUILD: control if we build binary images chrooted
 # (Default: enabled)

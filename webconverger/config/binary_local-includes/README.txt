@@ -8,4 +8,4 @@ Please reboot your machine and enable CDROM boot to enjoy Webconverger!
 ***********************************************************************
 ***********************************************************************
 
-Please email webmaster@webconverger.com or call +44 20 8123 3380 to enquire.
+Please email support@webconverger.com or call +44 20 8123 3380 to enquire.

@@ -14,7 +14,7 @@ LH_BOOTAPPEND_LIVE="quiet splash vga=773 upgrade homepage=http://portal.webconve
 
 # $LH_BOOTAPPEND_INSTALL: set boot parameters
 # (Default: empty)
-LH_BOOTAPPEND_INSTALL="preseed/file=/cdrom/install/preseed.cfg d-i:debian-installer/locale=en_US d-i:console-keymaps-at/keymap=us -- ${LH_BOOTAPPEND_LIVE}"
+#LH_BOOTAPPEND_INSTALL="preseed/file=/cdrom/install/preseed.cfg d-i:debian-installer/locale=en_US d-i:console-keymaps-at/keymap=us -- ${LH_BOOTAPPEND_LIVE}"
 
 # $LH_BOOTLOADER: set bootloader
 # (Default: syslinux)
@@ -51,11 +51,11 @@ LH_ISO_APPLICATION="Webconverger"
 
 # $LH_ISO_PREPARER: set iso preparer
 # (Default: live-helper 1.0~a29; http://packages.qa.debian.org/live-helper)
-LH_ISO_PREPARER="live-helper 1.0~a29; http://packages.qa.debian.org/live-helper"
+#LH_ISO_PREPARER="live-helper 1.0~a29; http://packages.qa.debian.org/live-helper"
 
 # $LH_ISO_PUBLISHER: set iso preparer
 # (Default: Debian Live project; http://debian-live.alioth.debian.org/; debian-live-devel@lists.alioth.debian.org)
-LH_ISO_PUBLISHER="Debian Live project; http://debian-live.alioth.debian.org/; debian-live-devel@lists.alioth.debian.org"
+LH_ISO_PUBLISHER="Webconverger; http://webconverger.com/; support@webconverger.com"
 
 # $LH_ISO_VOLUME: set iso volume (max 32 chars)
 # (Default: Debian Live `date +%Y%m%d-%H:%M`)

@@ -1,6 +1,6 @@
 # Debian Live Etch backports
-deb http://live.debian.net/debian etch main
-deb-src http://live.debian.net/debian etch main
+#deb http://live.debian.net/debian etch main
+#deb-src http://live.debian.net/debian etch main
 
-# bleeding edge live-initramfs
-#deb http://live.debian.net/debian-snapshots/ ./
+#bleeding edge live-initramfs
+deb http://live.debian.net/debian-snapshots/ ./
