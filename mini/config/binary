@@ -10,7 +10,7 @@
 
 # $LH_BOOTAPPEND_LIVE: set boot parameters
 # (Default: empty)
-LH_BOOTAPPEND_LIVE="quiet splash vga=773 upgrade homepage=http://test.webconverger.com/"
+LH_BOOTAPPEND_LIVE="quiet splash vga=773 upgrade homepage=http://portal.webconverger.com/"
 
 # $LH_BOOTAPPEND_INSTALL: set boot parameters
 # (Default: empty)
@@ -51,11 +51,11 @@ LH_ISO_APPLICATION="Webconverger"
 
 # $LH_ISO_PREPARER: set iso preparer
 # (Default: live-helper 1.0~a29; http://packages.qa.debian.org/live-helper)
-LH_ISO_PREPARER="live-helper 1.0~a29; http://packages.qa.debian.org/live-helper"
+#LH_ISO_PREPARER="live-helper 1.0~a29; http://packages.qa.debian.org/live-helper"
 
 # $LH_ISO_PUBLISHER: set iso preparer
 # (Default: Debian Live project; http://debian-live.alioth.debian.org/; debian-live-devel@lists.alioth.debian.org)
-LH_ISO_PUBLISHER="Debian Live project; http://debian-live.alioth.debian.org/; debian-live-devel@lists.alioth.debian.org"
+#LH_ISO_PUBLISHER="Debian Live project; http://debian-live.alioth.debian.org/; debian-live-devel@lists.alioth.debian.org"
 
 # $LH_ISO_VOLUME: set iso volume (max 32 chars)
 # (Default: Debian Live `date +%Y%m%d-%H:%M`)
@@ -63,7 +63,7 @@ LH_ISO_VOLUME="Webconverger `date +%Y%m%d-%H:%M`"
 
 # $LH_MEMTEST: set memtest
 # (Default: memtest86+)
-LH_MEMTEST="none"
+LH_MEMTEST="memtest86+"
 
 # $LH_NET_FILESYSTEM: set netboot filesystem
 # (Default: nfs)

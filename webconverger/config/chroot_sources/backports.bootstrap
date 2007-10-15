@@ -3,4 +3,4 @@
 #deb-src http://live.debian.net/debian etch main
 
 #bleeding edge live-initramfs
-deb http://live.debian.net/debian-snapshots/ ./
+#deb http://live.debian.net/debian-snapshots/ ./
