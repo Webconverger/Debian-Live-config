@@ -18,7 +18,7 @@ LH_BOOTAPPEND_LIVE="quiet splash vga=773 upgrade homepage=http://portal.webconve
 
 # $LH_BOOTLOADER: set bootloader
 # (Default: syslinux)
-LH_BOOTLOADER="grub"
+#LH_BOOTLOADER="grub"
 
 # ${LH_CHROOT_BUILD: control if we build binary images chrooted
 # (Default: enabled)

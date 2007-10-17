@@ -10,7 +10,7 @@
 
 # $LH_APT_HTTP_PROXY: set apt/aptitude http proxy
 # (Default: autodetected or empty)
-LH_APT_HTTP_PROXY="http://localhost:3128/"
+#LH_APT_HTTP_PROXY="http://localhost:3128/"
 
 # $LH_APT_PDIFFS: set apt/aptitude pdiff indices
 # (Default: enabled)
