@@ -2,7 +2,7 @@
 
 # $LH_ARCHITECTURE: select chroot architecture
 # (Default: autodetected)
-#LH_ARCHITECTURE="i386"
+LH_ARCHITECTURE="i386"
 
 # $LH_BOOTSTRAP_CONFIG: set distribution config directory
 # (Default: empty)
