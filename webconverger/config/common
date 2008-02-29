@@ -10,7 +10,7 @@
 
 # $LH_APT_HTTP_PROXY: set apt/aptitude http proxy
 # (Default: autodetected or empty)
-#LH_APT_HTTP_PROXY="http://localhost:3128/"
+#LH_APT_HTTP_PROXY=""
 
 # $LH_APT_PDIFFS: set apt/aptitude pdiff indices
 # (Default: enabled)
@@ -60,13 +60,13 @@ LH_APT_RECOMMENDS="disabled"
 # (Default: critical)
 #LH_DEBCONF_PRIORITY="critical"
 
-# $LH_GENISOIMAGE: set genisoimage program
-# (Default: genisoimage)
-#LH_GENISOIMAGE="genisoimage"
-
 # $LH_INITRAMFS: set initramfs hook
 # (Default: auto)
-LH_INITRAMFS="live-initramfs"
+#LH_INITRAMFS="auto"
+
+# $LH_FDISK: set fdisk program
+# (Default: autodetected)
+#LH_FDISK="fdisk"
 
 # $LH_LOSETUP: set losetup program
 # (Default: autodetected)
@@ -79,6 +79,10 @@ LH_INITRAMFS="live-initramfs"
 # $LH_ROOT_COMMAND: use sudo or equivalent
 # (Default: empty)
 #LH_ROOT_COMMAND="sudo"
+
+# $LH_USE_FAKEROOT: use fakeroot/fakechroot
+# (Default: disabled)
+#LH_USE_FAKEROOT="disabled"
 
 # $LH_TASKSEL: set tasksel program
 # (Default: aptitude)
@@ -113,3 +117,7 @@ LH_INITRAMFS="live-initramfs"
 # $LH_VERBOSE: enable verbose
 # (Default: disabled)
 #LH_VERBOSE="disabled"
+
+# Internal stuff (FIXME)
+#APT_OPTIONS="--yes"
+#APTITUDE_OPTIONS="--assume-yes"

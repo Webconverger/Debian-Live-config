@@ -1,8 +1,12 @@
 # config/binary - options for live-helper(7), binary stage
 
+# $LH_BINARY_FILESYSTEM: set image filesystem
+# (Default: fat16)
+#LH_BINARY_FILESYSTEM="fat16"
+
 # $LH_BINARY_IMAGES: set image type
 # (Default: iso)
-LH_BINARY_IMAGES="usb-hdd"
+#LH_BINARY_IMAGES="iso"
 
 # $LH_BINARY_INDICES: set apt/aptitude generic indices
 # (Default: enabled)
@@ -14,11 +18,15 @@ LH_BOOTAPPEND_LIVE="quiet splash vga=773 upgrade homepage=http://portal.webconve
 
 # $LH_BOOTAPPEND_INSTALL: set boot parameters
 # (Default: empty)
-#LH_BOOTAPPEND_INSTALL="preseed/file=/cdrom/install/preseed.cfg d-i:debian-installer/locale=en_US d-i:console-keymaps-at/keymap=us -- ${LH_BOOTAPPEND_LIVE}"
+LH_BOOTAPPEND_INSTALL="auto locale=en_US languagechooser/language-name=English DEBCONF_PRIORITY=critical file=/cdrom/install/preseed.cfg interface=auto -- ${LH_BOOTAPPEND_LIVE}"
 
 # $LH_BOOTLOADER: set bootloader
 # (Default: syslinux)
-#LH_BOOTLOADER="grub"
+#LH_BOOTLOADER="syslinux"
+
+# $LH_CHECKSUMS: set checksums
+# (Default: enabled)
+#LH_CHECKSUMS="enabled"
 
 # ${LH_CHROOT_BUILD: control if we build binary images chrooted
 # (Default: enabled)
@@ -27,11 +35,11 @@ LH_BOOTAPPEND_LIVE="quiet splash vga=773 upgrade homepage=http://portal.webconve
 
 # $LH_DEBIAN_INSTALLER: set debian-installer
 # (Default: disabled)
-#LH_DEBIAN_INSTALLER="disabled"
+LH_DEBIAN_INSTALLER="live"
 
 # $LH_DEBIAN_INSTALLER_DAILY: set daily images
 # (Default: disabled)
-#LH_DEBIAN_INSTALLER_DAILY="disabled"
+LH_DEBIAN_INSTALLER_DAILY="enabled"
 
 # $LH_ENCRYPTION: set encrytion
 # (Default: empty)
@@ -50,44 +58,84 @@ LH_HOSTNAME="webconverger"
 LH_ISO_APPLICATION="Webconverger"
 
 # $LH_ISO_PREPARER: set iso preparer
-# (Default: live-helper 1.0~a29; http://packages.qa.debian.org/live-helper)
-#LH_ISO_PREPARER="live-helper 1.0~a29; http://packages.qa.debian.org/live-helper"
+# (Default: live-helper 1.0~a38; http://packages.qa.debian.org/live-helper)
+#LH_ISO_PREPARER="live-helper 1.0~a38; http://packages.qa.debian.org/live-helper"
 
-# $LH_ISO_PUBLISHER: set iso preparer
+# $LH_ISO_PUBLISHER: set iso publisher
 # (Default: Debian Live project; http://debian-live.alioth.debian.org/; debian-live-devel@lists.alioth.debian.org)
 LH_ISO_PUBLISHER="Webconverger; http://webconverger.com/; support@webconverger.com"
 
 # $LH_ISO_VOLUME: set iso volume (max 32 chars)
-# (Default: Debian Live `date +%Y%m%d-%H:%M`)
-LH_ISO_VOLUME="Webconverger `date +%Y%m%d-%H:%M`"
+# (Default: Debian Live $(date +%Y%m%d-%H:%M))
+LH_ISO_VOLUME="Webconverger $(date +%Y%m%d-%H:%M)"
 
 # $LH_MEMTEST: set memtest
 # (Default: memtest86+)
-#LH_MEMTEST="none"
+#LH_MEMTEST="memtest86+"
 
-# $LH_NET_FILESYSTEM: set netboot filesystem
+# $LH_NET_ROOT_FILESYSTEM: set netboot filesystem
 # (Default: nfs)
-#LH_NET_FILESYSTEM="nfs"
+#LH_NET_ROOT_FILESYSTEM="nfs"
 
-# $LH_NET_MOUNTOPTIONS: set nfsopts
+# $LH_NET_ROOT_MOUNTOPTIONS: set nfsopts
 # (Default: empty)
-#LH_NET_MOUNTOPTIONS=""
+#LH_NET_ROOT_MOUNTOPTIONS=""
 
-# $LH_NET_PATH: set netboot server directory
+# $LH_NET_ROOT_PATH: set netboot server directory
 # (Default: /srv/debian-live)
-#LH_NET_PATH="/srv/debian-live"
+#LH_NET_ROOT_PATH="/srv/debian-live"
 
-# $LH_NET_SERVER: set netboot server address
+# $LH_NET_ROOT_SERVER: set netboot server address
 # (Default: 192.168.1.1)
-#LH_NET_SERVER="192.168.1.1"
+#LH_NET_ROOT_SERVER="192.168.1.1"
+
+# $LH_NET_COW_FILESYSTEM: set net client cow filesystem
+# (Default: nfs)
+#LH_NET_COW_FILESYSTEM="nfs"
+
+# $LH_NET_COW_MOUNTOPTIONS: set cow mount options
+# (Default: empty)
+#LH_NET_COW_MOUNTOPTIONS=""
+
+# $LH_NET_COW_PATH: set cow directory
+# (Default: )
+#LH_NET_COW_PATH=""
+
+# $LH_NET_COW_SERVER: set cow server
+# (Default: )
+#LH_NET_COW_SERVER=""
+
+# $LH_NET_TARBALL: set net tarball
+# (Default: gzip)
+#LH_NET_TARBALL="gzip"
 
 # $LH_SYSLINUX_SPLASH: set custom syslinux splash
 # (Default: empty)
 #LH_SYSLINUX_SPLASH=""
 
-# $LH_SYSLINUX_TIMEOUT: set custom syslinux timeout
+# $LH_SYSLINUX_TIMEOUT: set custom syslinux timeout in seconds
 # (Default: 0)
 LH_SYSLINUX_TIMEOUT="10"
+
+# $LH_SYSLINUX_CFG: set custom syslinux configuration file
+# (Default: empty)
+#LH_SYSLINUX_CFG=""
+
+# $LH_SYSLINUX_MENU: set syslinux menu
+# (Default: disabled)
+#LH_SYSLINUX_MENU="disabled"
+
+# $LH_SYSLINUX_MENU_LIVE_ENTRY: set text to be used on the menu for live entries
+# (Default: Start Debian Live)
+#LH_SYSLINUX_MENU_LIVE_ENTRY="Start Debian Live"
+
+# $LH_SYSLINUX_MENU_LIVE_FAILSAFE_ENTRY: set text to be used on the menu for live entries (failsafe ones)
+# (Default: )
+#LH_SYSLINUX_MENU_LIVE_FAILSAFE_ENTRY=""
+
+# $LH_SYSLINUX_MENU_MEMTEST_ENTRY: set text to be used on the menu for memtest entry
+# (Default: Memory test)
+#LH_SYSLINUX_MENU_MEMTEST_ENTRY="Memory test"
 
 # $LH_USERNAME: set username
 # (Default: user)

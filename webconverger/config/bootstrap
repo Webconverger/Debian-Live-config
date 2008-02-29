@@ -2,15 +2,23 @@
 
 # $LH_ARCHITECTURE: select chroot architecture
 # (Default: autodetected)
-LH_ARCHITECTURE="i386"
+#LH_ARCHITECTURE="i386"
 
 # $LH_BOOTSTRAP_CONFIG: set distribution config directory
 # (Default: empty)
 #LH_BOOTSTRAP_CONFIG=""
 
+# $LH_BOOTSTRAP_INCLUDE: include packages on base
+# (Default: empty)
+#LH_BOOTSTRAP_INCLUDE=""
+
+# $LH_BOOTSTRAP_EXCLUDE: exclude packages on base
+# (Default: empty)
+#LH_BOOTSTRAP_EXCLUDE=""
+
 # $LH_BOOTSTRAP_FLAVOUR: select flavour to use
-# (Default: standard)
-#LH_BOOTSTRAP_FLAVOUR="standard"
+# (Default: )
+#LH_BOOTSTRAP_FLAVOUR=""
 
 # $LH_BOOTSTRAP_KEYRING: set distribution keyring
 # (Default: empty)
@@ -20,21 +28,25 @@ LH_ARCHITECTURE="i386"
 # (Default: lenny)
 LH_DISTRIBUTION="lenny"
 
-# $LH_MIRROR_BOOTSTRAP: set mirror to fetch packages from
-# (Default: http://ftp.debian.org/debian/)
-#LH_MIRROR_BOOTSTRAP="http://ftp.debian.org/debian/"
+# $LH_MIRROR_BOOTSTRAP: set mirror to boostrap from
+# (Default: http://ftp.us.debian.org/debian/)
+LH_MIRROR_BOOTSTRAP="http://ftp.de.debian.org/debian/"
 
-# $LH_MIRROR_BOOTSTRAP_SECURITY: set security mirror to fetch packages from
+# $LH_MIRROR_CHROOT: set mirror to fetch packages from
+# (Default: http://ftp.us.debian.org/debian/)
+LH_MIRROR_CHROOT="http://ftp.de.debian.org/debian/"
+
+# $LH_MIRROR_CHROOT_SECURITY: set security mirror to fetch packages from
 # (Default: http://security.debian.org/)
-#LH_MIRROR_BOOTSTRAP_SECURITY="http://security.debian.org/"
+LH_MIRROR_CHROOT_SECURITY="http://ftp.de.debian.org/debian-security/"
 
 # $LH_MIRROR_BINARY: set mirror which ends up in the image
-# (Default: http://ftp.debian.org/debian/)
-#LH_MIRROR_BINARY="http://ftp.debian.org/debian/"
+# (Default: http://ftp.us.debian.org/debian/)
+LH_MIRROR_BINARY="http://ftp.de.debian.org/debian/"
 
 # $LH_MIRROR_BINARY_SECURITY: set security mirror which ends up in the image
 # (Default: http://security.debian.org/)
-#LH_MIRROR_BINARY_SECURITY="http://security.debian.org/"
+LH_MIRROR_BINARY_SECURITY="http://ftp.de.debian.org/debian-security/"
 
 # $LH_SECTIONS: select section(s) to use
 # (Default: main)
