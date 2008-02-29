@@ -1,0 +1,2 @@
+deb http://live.debian.net/squashfs-antifuckup/lenny/ ./
+deb-src http://live.debian.net/squashfs-antifuckup/lenny/ ./
