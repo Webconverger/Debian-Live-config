@@ -5,7 +5,7 @@
 #LH_CHROOT_FILESYSTEM="squashfs"
 
 # $LH_UNION_FILESYSTEM: set union filesystem
-LH_UNION_FILESYSTEM="unionfs"
+LH_UNION_FILESYSTEM="aufs"
 
 # $LH_HOOKS: set hook commands
 # (Default: empty)

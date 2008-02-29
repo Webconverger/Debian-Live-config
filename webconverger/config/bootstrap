@@ -18,7 +18,7 @@ LH_ARCHITECTURE="i386"
 
 # $LH_DISTRIBUTION: select distribution to use
 # (Default: lenny)
-LH_DISTRIBUTION="etch"
+LH_DISTRIBUTION="lenny"
 
 # $LH_MIRROR_BOOTSTRAP: set mirror to fetch packages from
 # (Default: http://ftp.debian.org/debian/)
