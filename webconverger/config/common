@@ -62,7 +62,7 @@ LH_APT_RECOMMENDS="disabled"
 
 # $LH_INITRAMFS: set initramfs hook
 # (Default: auto)
-#LH_INITRAMFS="auto"
+LH_INITRAMFS="live-initramfs"
 
 # $LH_FDISK: set fdisk program
 # (Default: autodetected)
