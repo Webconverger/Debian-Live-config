@@ -1,0 +1,47 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+Format: 1.7
+Date: Fri, 29 Feb 2008 15:28:00 +0100
+Source: live-installer
+Binary: live-installer
+Architecture: source i386
+Version: 4
+Distribution: UNRELEASED
+Urgency: low
+Maintainer: Debian Install System Team <debian-boot@lists.debian.org>
+Changed-By: Daniel Baumann <daniel@debian.org>
+Description: 
+ live-installer - Install the system (udeb)
+Changes: 
+ live-installer (4) UNRELEASED; urgency=low
+ .
+   [ Daniel Baumann ]
+   * Manually loading loop kernel module when using squashfs images. For some
+     reason, this doesn't get done automatically anymore.
+   * Passing --yes to apt-get in remove-packages, otherwise the removal is not
+     non-interactive anymore.
+   * Unconditionally bind-mount /dev on /target after unpacking of the image,
+     this needs to be done always and independently of udev anyway.
+ .
+   [ Otavio Salvador ]
+   * Clean up postinst to remove unused variables.
+   * Add the required templates to provide translated progress info during
+     live-installer.d hooks progress.
+   * Add support to live image installing mode selection. Currently it
+     support two modes: normal that unpacks the image and do the need
+     changes to make it look just as a installed system system; live:
+     unpacks the image but keep it running as live.
+Files: 
+ fb7a1f68b8d322138c48576b951e7483 678 debian-installer optional live-installer_4.dsc
+ ba69133a970ac988ee960e4eceb9bb51 111030 debian-installer optional live-installer_4.tar.gz
+ e39e8f97cbb313382b68f94c17b36d36 9060 debian-installer optional live-installer_4_i386.udeb
+Package-Type: udeb
+
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.6 (GNU/Linux)
+
+iD8DBQFHyl84+C5cwEsrK54RApuqAKDD5l3yq6/HhybBbkBpjkFuNpQELgCfZnwI
+DhuAK/OH48iNQICHU6+Ng1U=
+=LZKy
+-----END PGP SIGNATURE-----
