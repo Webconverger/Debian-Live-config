@@ -18,7 +18,7 @@ LH_BOOTAPPEND_LIVE="quiet splash vga=773 upgrade homepage=http://portal.webconve
 
 # $LH_BOOTAPPEND_INSTALL: set boot parameters
 # (Default: empty)
-LH_BOOTAPPEND_INSTALL="auto locale=en_US languagechooser/language-name=English DEBCONF_PRIORITY=critical file=/cdrom/install/preseed.cfg interface=auto -- ${LH_BOOTAPPEND_LIVE}"
+LH_BOOTAPPEND_INSTALL="auto locale=en_US languagechooser/language-name=English DEBCONF_PRIORITY=critical file=/cdrom/install/preseed.cfg interface=auto -- quiet"
 
 # $LH_BOOTLOADER: set bootloader
 # (Default: syslinux)
