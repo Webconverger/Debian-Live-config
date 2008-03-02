@@ -33,15 +33,15 @@ Changes:
      changes to make it look just as a installed system system; live:
      unpacks the image but keep it running as live.
 Files: 
- fb7a1f68b8d322138c48576b951e7483 678 debian-installer optional live-installer_4.dsc
- ba69133a970ac988ee960e4eceb9bb51 111030 debian-installer optional live-installer_4.tar.gz
- e39e8f97cbb313382b68f94c17b36d36 9060 debian-installer optional live-installer_4_i386.udeb
+ 78a9d0b1c340378ef20cfd97ef9b9631 678 debian-installer optional live-installer_4.dsc
+ 4697ed9ca1a35653ab70224bcce603a0 111028 debian-installer optional live-installer_4.tar.gz
+ 7291e4c2961f13e6dfd9939012e0c9e8 9064 debian-installer optional live-installer_4_i386.udeb
 Package-Type: udeb
 
 -----BEGIN PGP SIGNATURE-----
 Version: GnuPG v1.4.6 (GNU/Linux)
 
-iD8DBQFHyl84+C5cwEsrK54RApuqAKDD5l3yq6/HhybBbkBpjkFuNpQELgCfZnwI
-DhuAK/OH48iNQICHU6+Ng1U=
-=LZKy
+iD8DBQFHymSM+C5cwEsrK54RAmM4AJ9HhU6ADgkTUEdfmAe78Z1bqYBT1QCfRg+q
+17PAgxK54iiLHPCKQQXnsjM=
+=XmIK
 -----END PGP SIGNATURE-----

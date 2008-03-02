@@ -11,12 +11,12 @@ Uploaders: Otavio Salvador <otavio@debian.org>, Daniel Baumann <daniel@debian.or
 Vcs-Svn: svn://svn.debian.org/d-i/trunk/packages/live-installer
 Build-Depends: cdbs (>= 0.4.35), debhelper (>= 5.0), po-debconf
 Files: 
- ba69133a970ac988ee960e4eceb9bb51 111030 live-installer_4.tar.gz
+ 4697ed9ca1a35653ab70224bcce603a0 111028 live-installer_4.tar.gz
 
 -----BEGIN PGP SIGNATURE-----
 Version: GnuPG v1.4.6 (GNU/Linux)
 
-iD8DBQFHyl83+C5cwEsrK54RAohuAJ4rSX89o6Y4j2hdzj61WOsecPIoUwCfdAG9
-PBUFgouBf678sAUNC5jA8lQ=
-=slSK
+iD8DBQFHymSL+C5cwEsrK54RAjrpAKC0y8NJtszV+TJMIrx7vxD4wGptswCfTfzr
+IVokApqPg3DH++3PP9IBXZA=
+=VUKp
 -----END PGP SIGNATURE-----
