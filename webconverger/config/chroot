@@ -2,11 +2,11 @@
 
 # $LH_CHROOT_FILESYSTEM: set chroot filesystem
 # (Default: squashfs)
-#LH_CHROOT_FILESYSTEM="squashfs"
+LH_CHROOT_FILESYSTEM="squashfs"
 
 # $LH_UNION_FILESYSTEM: set union filesystem
 # (Default: aufs)
-#LH_UNION_FILESYSTEM="aufs"
+LH_UNION_FILESYSTEM="aufs"
 
 # $LH_EXPOSED_ROOT: expose root as read only
 # (Default: disabled)
@@ -34,7 +34,7 @@
 
 # $LH_LINUX_PACKAGES: set kernel packages to use
 # (Default: autodetected)
-#LH_LINUX_PACKAGES="linux-image-2.6 ${LH_UNION_FILESYSTEM}-modules-2.6 squashfs-modules-2.6"
+LH_LINUX_PACKAGES="linux-image-2.6 ${LH_UNION_FILESYSTEM}-modules-2.6 squashfs-modules-2.6"
 
 # $LH_PACKAGES: set packages to install
 # (Default: empty)
