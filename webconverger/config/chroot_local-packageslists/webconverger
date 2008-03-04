@@ -6,7 +6,7 @@ eject file sudo vim-tiny
 console-common kbd locales
 
 #debugging
-openssh-client
+#openssh-client
 
 # X11
 xorg xresprobe discover menu
