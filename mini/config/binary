@@ -14,7 +14,7 @@
 
 # $LH_BOOTAPPEND_LIVE: set boot parameters
 # (Default: empty)
-LH_BOOTAPPEND_LIVE="quiet homepage=https://callcentre.sportrelief.com/donation/callcentre.do nosudo http_proxy=http://proxy.eu.novartis.net:2010"
+LH_BOOTAPPEND_LIVE="quiet upgrade homepage=https://portal.webconverger.com nosudo"
 
 # $LH_BOOTAPPEND_INSTALL: set boot parameters
 # (Default: empty)

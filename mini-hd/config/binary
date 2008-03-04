@@ -14,7 +14,7 @@
 
 # $LH_BOOTAPPEND_LIVE: set boot parameters
 # (Default: empty)
-LH_BOOTAPPEND_LIVE="quiet splash vga=773 upgrade homepage=http://portal.webconverger.com/ nosudo"
+LH_BOOTAPPEND_LIVE="quiet upgrade homepage=http://portal.webconverger.com/ nosudo"
 
 # $LH_BOOTAPPEND_INSTALL: set boot parameters
 # (Default: empty)
@@ -22,7 +22,7 @@ LH_BOOTAPPEND_INSTALL="auto locale=en_US languagechooser/language-name=English D
 
 # $LH_BOOTLOADER: set bootloader
 # (Default: syslinux)
-#LH_BOOTLOADER="syslinux"
+#LH_BOOTLOADER="grub"
 
 # $LH_CHECKSUMS: set checksums
 # (Default: enabled)
