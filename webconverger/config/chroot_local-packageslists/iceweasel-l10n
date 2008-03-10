@@ -1,50 +1,50 @@
-iceweasel-l10n-af - Afrikaans language package for Iceweasel
-iceweasel-l10n-ar - Arabic language package for Iceweasel
-iceweasel-l10n-be - Belarusian language package for Iceweasel
-iceweasel-l10n-bg - Bulgarian language package for Iceweasel
-iceweasel-l10n-ca - Catalan language package for Iceweasel
-iceweasel-l10n-cs - Czech language package for Iceweasel
-iceweasel-l10n-cy-gb - Welsh language package for Iceweasel
-iceweasel-l10n-da - Danish language package for Iceweasel
-iceweasel-l10n-de - German language package for Iceweasel
-iceweasel-l10n-dz-bt - Dzongkha language package for Iceweasel
-iceweasel-l10n-el - Greek language package for Iceweasel
-iceweasel-l10n-en-gb - English (Great Britain) language package for Iceweasel
-iceweasel-l10n-es-ar - Spanish (Argentina) language package for Iceweasel
-iceweasel-l10n-es-es - Spanish (Spain) language package for Iceweasel
-iceweasel-l10n-et-ee - Estonian language package for Iceweasel
-iceweasel-l10n-eu - Basque language package for Iceweasel
-iceweasel-l10n-fa-ir - Persian language package for Iceweasel
-iceweasel-l10n-fi - Finnish language package for Iceweasel
-iceweasel-l10n-fr - French language package for Iceweasel
-iceweasel-l10n-fur-it - Furlan language package for Iceweasel
-iceweasel-l10n-fy-nl - Frisian language package for Iceweasel
-iceweasel-l10n-ga-ie - Irish (Ireland) language package for Iceweasel
-iceweasel-l10n-gu-in - Gujarati (India) language package for Iceweasel
-iceweasel-l10n-he - Hebrew language package for Iceweasel
-iceweasel-l10n-hu - Hungarian language package for Iceweasel
-iceweasel-l10n-it - Italian language package for Iceweasel
-iceweasel-l10n-ja - Japanese language package for Iceweasel
-iceweasel-l10n-ka - Georgian language package for Iceweasel
-iceweasel-l10n-ko - Korean language package for Iceweasel
-iceweasel-l10n-ku - Kurdish language package for Iceweasel
-iceweasel-l10n-lt - Lithuanian language package for Iceweasel
-iceweasel-l10n-mk - Macedonian language package for Iceweasel
-iceweasel-l10n-mn - Mongolian language package for Iceweasel
-iceweasel-l10n-nb-no - Bokmaal (Norway) language package for Iceweasel
-iceweasel-l10n-nl - Dutch language package for Iceweasel
-iceweasel-l10n-nn-no - Nynorsk (Norway) language package for Iceweasel
-iceweasel-l10n-pa-in - Punjabi (India) language package for Iceweasel
-iceweasel-l10n-pl - Polish language package for Iceweasel
-iceweasel-l10n-pt-br - Portuguese (Brazil) language package for Iceweasel
-iceweasel-l10n-pt-pt - Portuguese (Portugal) language package for Iceweasel
-iceweasel-l10n-ro - Romanian language package for Iceweasel
-iceweasel-l10n-roa-es-val - Valencian (Spain) language package for Iceweasel
-iceweasel-l10n-ru - Russian language package for Iceweasel
-iceweasel-l10n-sk - Slovak language package for Iceweasel
-iceweasel-l10n-sl - Slovenian language package for Iceweasel
-iceweasel-l10n-sv-se - Swedish (Sweden) language package for Iceweasel
-iceweasel-l10n-tr - Turkish language package for Iceweasel
-iceweasel-l10n-uk-ua - Ukrainian language package for Iceweasel
-iceweasel-l10n-zh-cn - Chinese (China) language package for Iceweasel
-iceweasel-l10n-zh-tw - Chinese (Taiwan) language package for Iceweasel
+#iceweasel-l10n-af - Afrikaans language package for Iceweasel
+#iceweasel-l10n-ar - Arabic language package for Iceweasel
+#iceweasel-l10n-be - Belarusian language package for Iceweasel
+#iceweasel-l10n-bg - Bulgarian language package for Iceweasel
+#iceweasel-l10n-ca - Catalan language package for Iceweasel
+#iceweasel-l10n-cs - Czech language package for Iceweasel
+#iceweasel-l10n-cy-gb - Welsh language package for Iceweasel
+#iceweasel-l10n-da - Danish language package for Iceweasel
+#iceweasel-l10n-de - German language package for Iceweasel
+#iceweasel-l10n-dz-bt - Dzongkha language package for Iceweasel
+#iceweasel-l10n-el - Greek language package for Iceweasel
+#iceweasel-l10n-en-gb - English (Great Britain) language package for Iceweasel
+#iceweasel-l10n-es-ar - Spanish (Argentina) language package for Iceweasel
+#iceweasel-l10n-es-es - Spanish (Spain) language package for Iceweasel
+#iceweasel-l10n-et-ee - Estonian language package for Iceweasel
+#iceweasel-l10n-eu - Basque language package for Iceweasel
+#iceweasel-l10n-fa-ir - Persian language package for Iceweasel
+#iceweasel-l10n-fi - Finnish language package for Iceweasel
+#iceweasel-l10n-fr - French language package for Iceweasel
+#iceweasel-l10n-fur-it - Furlan language package for Iceweasel
+#iceweasel-l10n-fy-nl - Frisian language package for Iceweasel
+#iceweasel-l10n-ga-ie - Irish (Ireland) language package for Iceweasel
+#iceweasel-l10n-gu-in - Gujarati (India) language package for Iceweasel
+#iceweasel-l10n-he - Hebrew language package for Iceweasel
+#iceweasel-l10n-hu - Hungarian language package for Iceweasel
+#iceweasel-l10n-it - Italian language package for Iceweasel
+#iceweasel-l10n-ja - Japanese language package for Iceweasel
+#iceweasel-l10n-ka - Georgian language package for Iceweasel
+#iceweasel-l10n-ko - Korean language package for Iceweasel
+#iceweasel-l10n-ku - Kurdish language package for Iceweasel
+#iceweasel-l10n-lt - Lithuanian language package for Iceweasel
+#iceweasel-l10n-mk - Macedonian language package for Iceweasel
+#iceweasel-l10n-mn - Mongolian language package for Iceweasel
+#iceweasel-l10n-nb-no - Bokmaal (Norway) language package for Iceweasel
+#iceweasel-l10n-nl - Dutch language package for Iceweasel
+#iceweasel-l10n-nn-no - Nynorsk (Norway) language package for Iceweasel
+#iceweasel-l10n-pa-in - Punjabi (India) language package for Iceweasel
+#iceweasel-l10n-pl - Polish language package for Iceweasel
+#iceweasel-l10n-pt-br - Portuguese (Brazil) language package for Iceweasel
+#iceweasel-l10n-pt-pt - Portuguese (Portugal) language package for Iceweasel
+#iceweasel-l10n-ro - Romanian language package for Iceweasel
+#iceweasel-l10n-roa-es-val - Valencian (Spain) language package for Iceweasel
+#iceweasel-l10n-ru - Russian language package for Iceweasel
+#iceweasel-l10n-sk - Slovak language package for Iceweasel
+#iceweasel-l10n-sl - Slovenian language package for Iceweasel
+#iceweasel-l10n-sv-se - Swedish (Sweden) language package for Iceweasel
+#iceweasel-l10n-tr - Turkish language package for Iceweasel
+#iceweasel-l10n-uk-ua - Ukrainian language package for Iceweasel
+#iceweasel-l10n-zh-cn - Chinese (China) language package for Iceweasel
+#iceweasel-l10n-zh-tw - Chinese (Taiwan) language package for Iceweasel

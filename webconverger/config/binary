@@ -6,7 +6,7 @@
 
 # $LH_BINARY_IMAGES: set image type
 # (Default: iso)
-#LH_BINARY_IMAGES="iso"
+LH_BINARY_IMAGES="usb-hdd"
 
 # $LH_BINARY_INDICES: set apt/aptitude generic indices
 # (Default: enabled)
@@ -14,15 +14,15 @@
 
 # $LH_BOOTAPPEND_LIVE: set boot parameters
 # (Default: empty)
-LH_BOOTAPPEND_LIVE="quiet splash vga=773 upgrade homepage=http://portal.webconverger.com/ nosudo"
+LH_BOOTAPPEND_LIVE="quiet iceweaselupgrade homepage=http://portal.webconverger.com/ nosudo"
 
 # $LH_BOOTAPPEND_INSTALL: set boot parameters
 # (Default: empty)
-LH_BOOTAPPEND_INSTALL="auto locale=en_US languagechooser/language-name=English DEBCONF_PRIORITY=critical file=/cdrom/install/preseed.cfg interface=auto -- quiet"
+#LH_BOOTAPPEND_INSTALL="auto locale=en_US languagechooser/language-name=English DEBCONF_PRIORITY=critical file=/cdrom/install/preseed.cfg interface=auto -- quiet"
 
 # $LH_BOOTLOADER: set bootloader
 # (Default: syslinux)
-#LH_BOOTLOADER="syslinux"
+#LH_BOOTLOADER="grub"
 
 # $LH_CHECKSUMS: set checksums
 # (Default: enabled)
@@ -35,11 +35,11 @@ LH_BOOTAPPEND_INSTALL="auto locale=en_US languagechooser/language-name=English D
 
 # $LH_DEBIAN_INSTALLER: set debian-installer
 # (Default: disabled)
-LH_DEBIAN_INSTALLER="live"
+#LH_DEBIAN_INSTALLER="live"
 
 # $LH_DEBIAN_INSTALLER_DAILY: set daily images
 # (Default: disabled)
-LH_DEBIAN_INSTALLER_DAILY="enabled"
+#LH_DEBIAN_INSTALLER_DAILY="enabled"
 
 # $LH_ENCRYPTION: set encrytion
 # (Default: empty)
