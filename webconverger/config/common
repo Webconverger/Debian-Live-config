@@ -26,7 +26,7 @@ LH_APT_RECOMMENDS="disabled"
 
 # $LH_APT_SECURE: set apt/aptitude security
 # (Default: enabled)
-#LH_APT_SECURE="enabled"
+LH_APT_SECURE="disabled"
 
 # $LH_BOOTSTRAP: set bootstrap program
 # (Default: debootstrap)
