@@ -6,7 +6,7 @@
 
 # $LH_BINARY_IMAGES: set image type
 # (Default: iso)
-LH_BINARY_IMAGES="usb-hdd"
+#LH_BINARY_IMAGES="usb-hdd"
 
 # $LH_BINARY_INDICES: set apt/aptitude generic indices
 # (Default: enabled)
@@ -22,7 +22,7 @@ LH_BOOTAPPEND_LIVE="quiet iceweaselupgrade homepage=http://portal.webconverger.c
 
 # $LH_BOOTLOADER: set bootloader
 # (Default: syslinux)
-#LH_BOOTLOADER="grub"
+LH_BOOTLOADER="grub"
 
 # $LH_CHECKSUMS: set checksums
 # (Default: enabled)
@@ -111,7 +111,7 @@ LH_ISO_VOLUME="Webconverger $(date +%Y%m%d-%H:%M)"
 
 # $LH_SYSLINUX_SPLASH: set custom syslinux splash
 # (Default: empty)
-#LH_SYSLINUX_SPLASH=""
+LH_SYSLINUX_SPLASH="config/binary_syslinux/splash.rle"
 
 # $LH_SYSLINUX_TIMEOUT: set custom syslinux timeout in seconds
 # (Default: 0)

@@ -50,4 +50,4 @@ LH_MIRROR_BINARY_SECURITY="http://ftp.de.debian.org/debian-security/"
 
 # $LH_SECTIONS: select section(s) to use
 # (Default: main)
-LH_SECTIONS="main contrib"
+LH_SECTIONS="main contrib non-free"

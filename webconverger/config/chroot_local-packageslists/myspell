@@ -1,4 +1,4 @@
-myspell-bg
+#myspell-bg
 myspell-ca
 myspell-cs-cz
 myspell-da
@@ -13,15 +13,15 @@ myspell-es
 myspell-es
 myspell-fi
 myspell-fr
-myspell-fr-gut
+#myspell-fr-gut
 myspell-he
 myspell-hu
 myspell-it
 myspell-ku
 myspell-lt
-myspell-nb
+#myspell-nb
 myspell-nl
-myspell-nn
+#myspell-nn
 myspell-pl
 myspell-pt
 myspell-pt-br
