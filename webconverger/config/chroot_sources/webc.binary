@@ -1,2 +1,2 @@
-deb http://webconverger.com/debian/ lenny/
-deb-src http://webconverger.com/debian/ lenny/
+deb http://debian.webconverger.com/ lenny/
+deb-src http://debian.webconverger.com/ lenny/
