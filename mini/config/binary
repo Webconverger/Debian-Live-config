@@ -18,7 +18,7 @@ LH_BOOTAPPEND_LIVE="quiet homepage=http://portal.webconverger.com/ nosudo acpi=o
 
 # $LH_BOOTAPPEND_INSTALL: set boot parameters
 # (Default: empty)
-#LH_BOOTAPPEND_INSTALL="auto locale=en_US languagechooser/language-name=English DEBCONF_PRIORITY=critical file=/cdrom/install/preseed.cfg interface=auto -- ${LH_BOOTAPPEND_LIVE}"
+LH_BOOTAPPEND_INSTALL="auto locale=en_US languagechooser/language-name=English DEBCONF_PRIORITY=critical file=/cdrom/install/preseed.cfg interface=auto -- ${LH_BOOTAPPEND_LIVE}"
 
 # $LH_BOOTLOADER: set bootloader
 # (Default: syslinux)
@@ -35,11 +35,11 @@ LH_BOOTAPPEND_LIVE="quiet homepage=http://portal.webconverger.com/ nosudo acpi=o
 
 # $LH_DEBIAN_INSTALLER: set debian-installer
 # (Default: disabled)
-#LH_DEBIAN_INSTALLER="live"
+LH_DEBIAN_INSTALLER="live"
 
 # $LH_DEBIAN_INSTALLER_DAILY: set daily images
 # (Default: disabled)
-#LH_DEBIAN_INSTALLER_DAILY="enabled"
+LH_DEBIAN_INSTALLER_DAILY="enabled"
 
 # $LH_ENCRYPTION: set encrytion
 # (Default: empty)
