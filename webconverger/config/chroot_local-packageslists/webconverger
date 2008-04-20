@@ -25,13 +25,13 @@ dwm
 xloadimage
 
 # browser
-iceweasel
+#iceweasel
 
 # For reseting the kiosk
 xautolock
 
 # For locking down the browser
-iceweasel-webconverger
+#iceweasel-webconverger
 
 # fonts
 ttf-dejavu
