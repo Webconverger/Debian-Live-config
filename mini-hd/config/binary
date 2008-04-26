@@ -39,7 +39,7 @@ LH_DEBIAN_INSTALLER="live"
 
 # $LH_DEBIAN_INSTALLER_DAILY: set daily images
 # (Default: disabled)
-LH_DEBIAN_INSTALLER_DAILY="enabled"
+LH_DEBIAN_INSTALLER_DAILY="disabled"
 
 # $LH_ENCRYPTION: set encrytion
 # (Default: empty)
