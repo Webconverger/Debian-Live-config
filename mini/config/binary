@@ -6,7 +6,7 @@
 
 # $LH_BINARY_IMAGES: set image type
 # (Default: iso)
-#LH_BINARY_IMAGES="usb-hdd"
+LH_BINARY_IMAGES="usb-hdd"
 
 # $LH_BINARY_INDICES: set apt/aptitude generic indices
 # (Default: enabled)
@@ -22,7 +22,7 @@ LH_BOOTAPPEND_LIVE="quiet homepage=http://portal.webconverger.com/ nosudo"
 
 # $LH_CHECKSUMS: set checksums
 # (Default: enabled)
-#LH_CHECKSUMS="enabled"
+LH_CHECKSUMS="enabled"
 
 # ${LH_CHROOT_BUILD: control if we build binary images chrooted
 # (Default: enabled)
@@ -35,11 +35,11 @@ LH_BOOTAPPEND_LIVE="quiet homepage=http://portal.webconverger.com/ nosudo"
 #
 # $LH_DEBIAN_INSTALLER: set debian-installer
 # (Default: disabled)
-LH_DEBIAN_INSTALLER="live"
+# LH_DEBIAN_INSTALLER="live"
 
 # $LH_BOOTAPPEND_INSTALL: set boot parameters
 # (Default: empty)
-LH_BOOTAPPEND_INSTALL="auto locale=en_US languagechooser/language-name=English DEBCONF_PRIORITY=critical file=/cdrom/install/preseed.cfg interface=auto -- ${LH_BOOTAPPEND_LIVE}"
+# LH_BOOTAPPEND_INSTALL="auto locale=en_US languagechooser/language-name=English DEBCONF_PRIORITY=critical file=/cdrom/install/preseed.cfg interface=auto -- ${LH_BOOTAPPEND_LIVE}"
 
 # $LH_DEBIAN_INSTALLER_DAILY: set daily images
 # (Default: disabled)
