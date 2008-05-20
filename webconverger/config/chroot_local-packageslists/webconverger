@@ -5,11 +5,10 @@ eject file sudo vim-tiny
 # Standard
 console-common kbd locales
 
-#debugging
-#openssh-client
-
 # X11
 xorg xresprobe discover menu
+
+# Sound
 alsa-base alsa-oss alsa-utils
 
 # For upgrade, firewall et al. features
@@ -19,8 +18,9 @@ rsync
 webconverger-base
 webconverger-archive-keyring
 
-# window manager
+# Window manager
 dwm
+
 # For the background
 xloadimage
 
@@ -39,6 +39,9 @@ ttf-gentium
 
 # pdf
 xpdf mozplugger
+
+# bootscreen
+splashy
 
 ########## non-free software
 flashplugin-nonfree
