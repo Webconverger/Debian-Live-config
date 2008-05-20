@@ -14,7 +14,7 @@ LH_BINARY_IMAGES="usb-hdd"
 
 # $LH_BOOTAPPEND_LIVE: set boot parameters
 # (Default: empty)
-LH_BOOTAPPEND_LIVE="quiet homepage=http://portal.webconverger.com/ splash vga=791"
+LH_BOOTAPPEND_LIVE="quiet homepage=http://portal.webconverger.com/ nosudo splash vga=791"
 
 # $LH_BOOTLOADER: set bootloader
 # (Default: syslinux)
