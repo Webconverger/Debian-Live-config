@@ -6,7 +6,7 @@
 
 # $LH_BINARY_IMAGES: set image type
 # (Default: iso)
-LH_BINARY_IMAGES="usb-hdd"
+#LH_BINARY_IMAGES="usb-hdd"
 
 # $LH_BINARY_INDICES: set apt/aptitude generic indices
 # (Default: enabled)
@@ -14,7 +14,7 @@ LH_BINARY_IMAGES="usb-hdd"
 
 # $LH_BOOTAPPEND_LIVE: set boot parameters
 # (Default: empty)
-LH_BOOTAPPEND_LIVE="quiet homepage=http://portal.webconverger.com/ nosudo"
+LH_BOOTAPPEND_LIVE="quiet homepage=http://portal.webconverger.com/ nosudo splash vga=791"
 
 # $LH_BOOTAPPEND_INSTALL: set boot parameters
 # (Default: empty)
@@ -22,7 +22,7 @@ LH_BOOTAPPEND_LIVE="quiet homepage=http://portal.webconverger.com/ nosudo"
 
 # $LH_BOOTLOADER: set bootloader
 # (Default: syslinux)
-#LH_BOOTLOADER="grub"
+LH_BOOTLOADER="grub"
 
 # $LH_CHECKSUMS: set checksums
 # (Default: enabled)
@@ -71,7 +71,7 @@ LH_ISO_VOLUME="Webconverger $(date +%Y%m%d-%H:%M)"
 
 # $LH_MEMTEST: set memtest
 # (Default: memtest86+)
-#LH_MEMTEST="memtest86+"
+LH_MEMTEST="disabled"
 
 # $LH_NET_ROOT_FILESYSTEM: set netboot filesystem
 # (Default: nfs)
@@ -139,4 +139,4 @@ LH_SYSLINUX_TIMEOUT="10"
 
 # $LH_USERNAME: set username
 # (Default: user)
-#LH_USERNAME="user"
+LH_USERNAME="webc"

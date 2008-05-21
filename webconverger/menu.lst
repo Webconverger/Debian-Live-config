@@ -1,0 +1,21 @@
+default 0
+timeout     10
+color cyan/blue white/blue
+splashimage /boot/grub/splash.xpm.gz
+## sudo cp menu.lst binary/boot/grub/menu.lst && sudo rm .stage/binary_iso && sudo lh_binary_iso
+
+
+title		Webconverger China
+kernel		/live/vmlinuz-2.6.24-1-486 boot=live quiet homepage=http://portal.webconverger.com/ nosudo splash vga=791 username=webc hostname=webconverger union=aufs locale=zh_CN.UTF-8 keyb=zh
+s
+initrd		/live/initrd.img-2.6.24-1-486
+
+title		Webconverger Japan
+kernel		/live/vmlinuz-2.6.24-1-486 boot=live quiet homepage=http://portal.webconverger.com/ nosudo splash vga=791 username=webc hostname=webconverger union=aufs locale=ja_JP.UTF-8
+s
+initrd		/live/initrd.img-2.6.24-1-486
+
+title		Webconverger Korea
+kernel		/live/vmlinuz-2.6.24-1-486 boot=live quiet homepage=http://portal.webconverger.com/ nosudo splash vga=791 username=webc hostname=webconverger union=aufs locale=ko_KR.UTF-8
+s
+initrd		/live/initrd.img-2.6.24-1-486

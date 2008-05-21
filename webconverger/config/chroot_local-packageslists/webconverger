@@ -13,7 +13,7 @@ alsa-base alsa-oss alsa-utils
 
 # For upgrade, firewall et al. features
 live-initscripts
-rsync
+#rsync
 
 webconverger-base
 webconverger-archive-keyring
