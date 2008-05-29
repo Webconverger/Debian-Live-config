@@ -1,0 +1,2 @@
+rm /etc/X11/xorg.conf
+ln -s rm /etc/X11/xorg.webc.conf /etc/X11/xorg.conf

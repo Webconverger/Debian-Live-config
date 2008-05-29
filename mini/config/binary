@@ -4,10 +4,6 @@
 # (Default: fat16)
 #LH_BINARY_FILESYSTEM="fat16"
 
-# $LH_BINARY_IMAGES: set image type
-# (Default: iso)
-#LH_BINARY_IMAGES="usb-hdd"
-
 # $LH_BINARY_INDICES: set apt/aptitude generic indices
 # (Default: enabled)
 #LH_BINARY_INDICES="enabled"
@@ -16,8 +12,12 @@
 # (Default: empty)
 LH_BOOTAPPEND_LIVE="quiet homepage=http://portal.webconverger.com/ nosudo splash vga=791"
 
+# $LH_BINARY_IMAGES: set image type
+# (Default: iso)
+#LH_BINARY_IMAGES="usb-hdd"
+
 # $LH_BOOTLOADER: set bootloader
-# (Default: syslinux)
+# (Default: syslinux) for LH_BINARY_IMAGES="usb-hdd"
 LH_BOOTLOADER="grub"
 
 # $LH_CHECKSUMS: set checksums
@@ -80,6 +80,7 @@ LH_ISO_VOLUME="Webconverger $(date +%Y%m%d-%H:%M)"
 # $LH_MEMTEST: set memtest
 # (Default: memtest86+)
 #LH_MEMTEST="memtest86+"
+LH_MEMTEST="disabled"
 
 # $LH_NET_ROOT_FILESYSTEM: set netboot filesystem
 # (Default: nfs)

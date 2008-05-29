@@ -1,4 +1,4 @@
 deb http://debian.webconverger.com/ lenny/
 deb-src http://debian.webconverger.com/ lenny/
 
-deb ftp://ftp.debian.org/debian experimental main
+#deb ftp://ftp.debian.org/debian experimental main

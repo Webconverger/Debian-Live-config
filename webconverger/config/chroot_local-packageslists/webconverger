@@ -1,6 +1,6 @@
 # Webconverger's main configuration hendry@webconverger.com
 # Minimal
-eject file sudo vim-tiny
+eject file sudo
 
 # Standard
 console-common kbd locales
@@ -13,7 +13,6 @@ alsa-base alsa-oss alsa-utils
 
 # For upgrade, firewall et al. features
 live-initscripts
-#rsync
 
 webconverger-base
 webconverger-archive-keyring
@@ -25,13 +24,13 @@ dwm
 xloadimage
 
 # browser
-#iceweasel
+iceweasel
 
 # For reseting the kiosk
 xautolock
 
 # For locking down the browser
-#iceweasel-webconverger
+iceweasel-webconverger
 
 # fonts
 ttf-dejavu
