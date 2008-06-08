@@ -29,9 +29,6 @@ iceweasel
 # For reseting the kiosk
 xautolock
 
-# For locking down the browser
-iceweasel-webconverger
-
 # fonts
 ttf-dejavu
 ttf-gentium
