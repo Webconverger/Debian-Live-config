@@ -1,7 +1,0 @@
-echo DEBUG Chowning webc
-chown -R 1000:1000 /home/webc
-chown 1000 /etc/iceweasel/profile/prefs.js
-ls -lah /home/webc
-chgrp -R webc /home/webc
-ls -lah /home/webc
-cat /etc/passwd

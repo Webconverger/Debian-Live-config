@@ -13,6 +13,8 @@ set -e
 # python-2.5
 # Rip out X extensions
 for PACKAGE in aptitude man-db manpages info dselect bsdmainutils manpages gcc-4.1 traceroute \
+gcc-4.2-base \
+gcc-4.3-base \
 xserver-xorg-input-synaptics \
 xserver-xorg-video-apm \
 xserver-xorg-video-chips \
@@ -21,7 +23,6 @@ xserver-xorg-video-mga \
 xserver-xorg-video-neomagic \
 xserver-xorg-video-newport \
 xserver-xorg-video-nsc \
-xserver-xorg-video-nv \
 xserver-xorg-video-rendition \
 xserver-xorg-video-s3 \
 xserver-xorg-video-s3virge \

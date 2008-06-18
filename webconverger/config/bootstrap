@@ -26,7 +26,7 @@
 
 # $LH_DISTRIBUTION: select distribution to use
 # (Default: lenny)
-LH_DISTRIBUTION="lenny"
+LH_DISTRIBUTION="sid"
 
 # $LH_MIRROR_BOOTSTRAP: set mirror to boostrap from
 # (Default: http://ftp.us.debian.org/debian/)

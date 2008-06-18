@@ -100,11 +100,11 @@ LH_INITRAMFS="live-initramfs"
 
 # $LH_BREAKPOINTS: enable breakpoints
 # (Default: disabled)
-#LH_BREAKPOINTS="disabled"
+#LH_BREAKPOINTS="enabled"
 
 # $LH_DEBUG: enable debug
 # (Default: disabled)
-#LH_DEBUG="disabled"
+#LH_DEBUG="enabled"
 
 # $LH_FORCE: enable force
 # (Default: disabled)
