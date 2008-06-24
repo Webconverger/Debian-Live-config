@@ -23,9 +23,6 @@ dwm
 # For the background
 xloadimage
 
-# browser
-iceweasel
-
 # For reseting the kiosk
 xautolock
 
@@ -34,7 +31,7 @@ ttf-dejavu
 ttf-gentium
 
 # pdf
-xpdf mozplugger
+# xpdf mozplugger
 
 # bootscreen
 splashy

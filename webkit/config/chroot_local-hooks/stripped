@@ -13,6 +13,9 @@ set -e
 # python-2.5
 # Rip out X extensions
 for PACKAGE in aptitude man-db manpages info dselect bsdmainutils manpages gcc-4.1 traceroute \
+vim-tiny vim-common \
+netcat-traditional \
+dbus \
 perl-doc \
 gcc-4.2-base \
 gcc-4.3-base \

@@ -1,0 +1,2 @@
+rm /etc/splashy/themes/default/background.png
+ln -s /etc/webconverger/background.jpg /etc/splashy/themes/default/background.png
