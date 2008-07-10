@@ -1,3 +1,8 @@
 Package: *
 Pin: release o=webconverger
 Pin-Priority: 1001
+
+Explanation: Sid
+Package: iceweasel
+Pin: release a=unstable
+Pin-Priority:1001

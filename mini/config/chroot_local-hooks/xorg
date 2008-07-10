@@ -1,3 +1,0 @@
-echo Setting up Webconverger Xorg config
-rm /etc/X11/xorg.conf
-ln -s /etc/X11/xorg.webc.conf /etc/X11/xorg.conf

@@ -10,15 +10,15 @@
 
 # $LH_BOOTAPPEND_LIVE: set boot parameters
 # (Default: empty)
-LH_BOOTAPPEND_LIVE="quiet homepage=http://portal.webconverger.com nosudo splash vga=791 kioskresetstation=2"
+LH_BOOTAPPEND_LIVE="quiet homepage=http://portal.webconverger.com nosudo splash vga=791"
 
 # $LH_BINARY_IMAGES: set image type
 # (Default: iso)
-#LH_BINARY_IMAGES="usb-hdd"
+LH_BINARY_IMAGES="usb-hdd"
 
 # $LH_BOOTLOADER: set bootloader
 # (Default: syslinux) for LH_BINARY_IMAGES="usb-hdd"
-LH_BOOTLOADER="grub"
+#LH_BOOTLOADER="grub"
 
 # $LH_CHECKSUMS: set checksums
 # (Default: enabled)
