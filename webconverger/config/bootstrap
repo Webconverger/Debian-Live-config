@@ -2,7 +2,7 @@
 
 # $LH_ARCHITECTURE: select chroot architecture
 # (Default: autodetected)
-#LH_ARCHITECTURE="i386"
+LH_ARCHITECTURE="i386"
 
 # $LH_BOOTSTRAP_CONFIG: set distribution config directory
 # (Default: empty)
@@ -26,27 +26,27 @@
 
 # $LH_DISTRIBUTION: select distribution to use
 # (Default: lenny)
-#LH_DISTRIBUTION="sid"
+LH_DISTRIBUTION="lenny"
 
 # $LH_MIRROR_BOOTSTRAP: set mirror to boostrap from
 # (Default: http://ftp.us.debian.org/debian/)
-LH_MIRROR_BOOTSTRAP="http://debian.virginmedia.com/"
+#LH_MIRROR_BOOTSTRAP="http://debian.virginmedia.com/"
 
 # $LH_MIRROR_CHROOT: set mirror to fetch packages from
 # (Default: http://ftp.us.debian.org/debian/)
-LH_MIRROR_CHROOT="http://debian.virginmedia.com/"
+#LH_MIRROR_CHROOT="http://debian.virginmedia.com/"
 
 # $LH_MIRROR_CHROOT_SECURITY: set security mirror to fetch packages from
 # (Default: http://security.debian.org/)
-LH_MIRROR_CHROOT_SECURITY="http://ftp.de.debian.org/debian-security/"
+#LH_MIRROR_CHROOT_SECURITY="http://ftp.de.debian.org/debian-security/"
 
 # $LH_MIRROR_BINARY: set mirror which ends up in the image
 # (Default: http://ftp.us.debian.org/debian/)
-LH_MIRROR_BINARY="http://debian.virginmedia.com/"
+#LH_MIRROR_BINARY="http://debian.virginmedia.com/"
 
 # $LH_MIRROR_BINARY_SECURITY: set security mirror which ends up in the image
 # (Default: http://security.debian.org/)
-LH_MIRROR_BINARY_SECURITY="http://ftp.de.debian.org/debian-security/"
+#LH_MIRROR_BINARY_SECURITY="http://ftp.de.debian.org/debian-security/"
 
 # $LH_SECTIONS: select section(s) to use
 # (Default: main)
