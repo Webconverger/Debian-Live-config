@@ -23,18 +23,15 @@ dwm
 # For the background
 xloadimage
 
-# For reseting the kiosk
-xautolock
-
 # fonts
 ttf-dejavu
 ttf-gentium
 
 # pdf
-xpdf mozplugger
+#xpdf mozplugger
 
 # bootscreen
 splashy
 
 ########## non-free software
-flashplugin-nonfree
+#flashplugin-nonfree
