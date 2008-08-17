@@ -5,4 +5,6 @@ splashimage /boot/grub/splash.xpm.gz
 
 LINUX_LIVE
 
+LINUX_INSTALL
+
 MEMTEST
