@@ -42,7 +42,7 @@ LH_LINUX_PACKAGES="linux-image-2.6 ${LH_UNION_FILESYSTEM}-modules-2.6 squashfs-m
 
 # $LH_PACKAGES_LISTS: set package list to install
 # (Default: standard)
-#LH_PACKAGES_LISTS="standard"
+LH_PACKAGES_LISTS="standard chinese iceweasel-l10n japanese korean myspell printing webconverger wireless"
 
 # $LH_TASKS: set tasks to install
 # (Default: empty)
