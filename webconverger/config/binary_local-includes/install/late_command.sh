@@ -15,7 +15,7 @@ log "Removing empty xorg.conf files"
 rm -f /target/etc/X11/xorg.conf*
 
 log "Setting Grub splash"
-cp -f /cdrom/boot/grub/splash.xpm.gz /target/boot/grub/splash.xpm.gz
+cp /cdrom/boot/grub/splash.xpm.gz /target/boot/grub/splash.xpm.gz
 in-target update-grub
 # Generated path is wrong
 sed -i -e 's|//grub/splash.xpm.gz|/boot/grub/splash.xpm.gz|' /target/boot/grub/menu.lst
