@@ -5,6 +5,11 @@ splashimage /boot/grub/splash.xpm.gz
 
 LINUX_LIVE
 
-LINUX_INSTALL
+title		Install:
+root
+
+title		Install Webconverger
+kernel		/install/vmlinuz auto=true priority=critical video=vesa:ywrap,mtrr vga=788 quiet auto locale=en_US languagechooser/language-name=English DEBCONF_PRIORITY=critical file=/cdrom/install/preseed.cfg interface=auto -- quiet
+initrd		/install/initrd.gz
 
 MEMTEST
