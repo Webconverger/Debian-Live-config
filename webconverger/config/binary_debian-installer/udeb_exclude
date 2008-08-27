@@ -1,0 +1,12 @@
+lilo
+elilo*
+efibootmgr
+libcrypto*
+strace-udeb
+openssh-*
+
+# Assume everyone wants ext
+xfs-modules-*
+reiserfs-modules-*
+mkreiserfs-udeb
+jfsutils-udeb

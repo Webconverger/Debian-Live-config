@@ -18,7 +18,7 @@ LH_BOOTAPPEND_LIVE="quiet homepage=http://portal.webconverger.com/ nosudo splash
 
 # $LH_BOOTAPPEND_INSTALL: set boot parameters
 # (Default: empty)
-#LH_BOOTAPPEND_INSTALL="auto locale=en_US languagechooser/language-name=English DEBCONF_PRIORITY=critical file=/cdrom/install/preseed.cfg interface=auto -- quiet"
+LH_BOOTAPPEND_INSTALL="auto locale=en_US languagechooser/language-name=English DEBCONF_PRIORITY=critical file=/cdrom/install/preseed.cfg interface=auto -- quiet"
 
 # $LH_BOOTLOADER: set bootloader
 # (Default: syslinux)
@@ -35,7 +35,8 @@ LH_BOOTLOADER="grub"
 
 # $LH_DEBIAN_INSTALLER: set debian-installer
 # (Default: disabled)
-#LH_DEBIAN_INSTALLER="live"
+LH_DEBIAN_INSTALLER="live"
+LH_DEBIAN_INSTALLER_PRESEEDFILE="preseed.cfg"
 
 # $LH_DEBIAN_INSTALLER_DAILY: set daily images
 # (Default: disabled)
