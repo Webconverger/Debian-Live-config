@@ -2,7 +2,7 @@
 
 set -e
 
-TARGET_INITRD="binary/install/initrd.gz"
+TARGET_INITRD="binary/install/gtk/initrd.gz"
 REPACK_TMPDIR="unpacked-initrd"
 
 # cpio does not have a "extract to directory", so we must change directory
