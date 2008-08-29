@@ -17,6 +17,8 @@ live-initscripts
 webconverger-base
 webconverger-archive-keyring
 
+iceweasel
+
 # Window manager
 dwm
 
@@ -28,10 +30,10 @@ ttf-dejavu
 ttf-gentium
 
 # pdf
-#xpdf mozplugger
+xpdf mozplugger
 
 # bootscreen
 splashy
 
 ########## non-free software
-#flashplugin-nonfree
+flashplugin-nonfree

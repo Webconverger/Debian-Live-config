@@ -1,1 +1,49 @@
-../../../webconverger/config/chroot_local-packageslists/webconverger
+# Webconverger's main configuration hendry@webconverger.com
+# Minimal
+eject file sudo
+
+# Standard
+console-common kbd locales
+
+# X11
+xorg xresprobe discover menu
+
+# Sound
+alsa-base alsa-oss alsa-utils
+
+# For upgrade, firewall et al. features
+live-initscripts
+
+webconverger-base
+webconverger-archive-keyring
+
+iceweasel
+
+# Window manager
+dwm
+
+# For the background
+xloadimage
+
+# fonts
+ttf-dejavu
+ttf-gentium
+
+# pdf
+xpdf mozplugger
+
+# bootscreen
+splashy
+
+########## non-free software
+flashplugin-nonfree
+
+#myspell-en-us
+myspell-en-gb
+
+# For locking down the browser
+#iceweasel-webcnoaddressbar
+
+#Usually just
+iceweasel-webconverger
+#libwebkit-1.0-1
