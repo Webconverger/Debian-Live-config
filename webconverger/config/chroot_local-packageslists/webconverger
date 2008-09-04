@@ -18,6 +18,7 @@ webconverger-base
 webconverger-archive-keyring
 
 iceweasel
+iceweasel-webconverger
 
 # Window manager
 dwm
