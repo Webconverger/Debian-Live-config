@@ -30,11 +30,11 @@ LH_DISTRIBUTION="lenny"
 
 # $LH_MIRROR_BOOTSTRAP: set mirror to boostrap from
 # (Default: http://ftp.us.debian.org/debian/)
-LH_MIRROR_BOOTSTRAP="http://debian.virginmedia.com/"
+#LH_MIRROR_BOOTSTRAP="http://debian.virginmedia.com/"
 
 # $LH_MIRROR_CHROOT: set mirror to fetch packages from
 # (Default: http://ftp.us.debian.org/debian/)
-LH_MIRROR_CHROOT="http://debian.virginmedia.com/"
+#LH_MIRROR_CHROOT="http://debian.virginmedia.com/"
 
 # $LH_MIRROR_CHROOT_SECURITY: set security mirror to fetch packages from
 # (Default: http://security.debian.org/)
