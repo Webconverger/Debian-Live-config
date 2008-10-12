@@ -34,11 +34,11 @@ LH_DISTRIBUTION="lenny"
 
 # $LH_MIRROR_CHROOT: set mirror to fetch packages from
 # (Default: http://ftp.us.debian.org/debian/)
-#LH_MIRROR_CHROOT="http://debian.virginmedia.com/"
+LH_MIRROR_CHROOT="http://ftp.uni-bayreuth.de/linux/Debian/debian/"
 
 # $LH_MIRROR_CHROOT_SECURITY: set security mirror to fetch packages from
 # (Default: http://security.debian.org/)
-#LH_MIRROR_CHROOT_SECURITY="http://ftp.de.debian.org/debian-security/"
+LH_MIRROR_CHROOT_SECURITY="ftp://mirror.hetzner.de/debian/security"
 
 # $LH_MIRROR_BINARY: set mirror which ends up in the image
 # (Default: http://ftp.us.debian.org/debian/)
