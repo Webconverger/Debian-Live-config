@@ -112,7 +112,7 @@ LH_BREAKPOINTS="enabled"
 
 # $LH_QUIET: enable quiet
 # (Default: disabled)
-#LH_QUIET="disabled"
+LH_QUIET="enabled"
 
 # $LH_VERBOSE: enable verbose
 # (Default: disabled)
