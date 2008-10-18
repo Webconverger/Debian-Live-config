@@ -10,3 +10,11 @@ xfs-modules-*
 reiserfs-modules-*
 mkreiserfs-udeb
 jfsutils-udeb
+lvm2-*
+cryptsetup*
+partman-crypto
+partman-lvm
+lilo
+loop-aes-utils
+elilo
+xfsprogs

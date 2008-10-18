@@ -100,7 +100,7 @@ LH_INITRAMFS="live-initramfs"
 
 # $LH_BREAKPOINTS: enable breakpoints
 # (Default: disabled)
-LH_BREAKPOINTS="enabled"
+# LH_BREAKPOINTS="enabled"
 
 # $LH_DEBUG: enable debug
 # (Default: disabled)
@@ -112,7 +112,7 @@ LH_BREAKPOINTS="enabled"
 
 # $LH_QUIET: enable quiet
 # (Default: disabled)
-#LH_QUIET="disabled"
+LH_QUIET="enabled"
 
 # $LH_VERBOSE: enable verbose
 # (Default: disabled)
