@@ -1,0 +1,1 @@
+/usr/share/live-helper/examples/hooks/rt2570.sh

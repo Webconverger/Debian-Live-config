@@ -48,5 +48,13 @@ myspell-en-gb
 iceweasel-webconverger
 #libwebkit-1.0-1
 
-#httpd
+# httpd - http://localhost services
 nostromo
+
+# wireless
+wpasupplicant
+
+firmware-bnx2
+firmware-iwlwifi
+firmware-qlogic
+firmware-ralink
