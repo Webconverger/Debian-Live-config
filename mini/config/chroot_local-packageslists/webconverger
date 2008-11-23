@@ -53,8 +53,12 @@ nostromo
 
 # wireless
 wpasupplicant
+wireless-tools
 
 firmware-bnx2
 firmware-iwlwifi
 firmware-qlogic
 firmware-ralink
+
+# bloat just for setting the volume. argh!
+alsa-utils
