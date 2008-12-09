@@ -11,7 +11,7 @@ LH_MIRROR_CHROOT="http://mirror.webconverger.com/debian"
 
 # $LH_MIRROR_CHROOT_SECURITY: set security mirror to fetch packages from
 # (Default: http://security.debian.org/)
-LH_MIRROR_CHROOT_SECURITY="ftp://mirror.hetzner.de/debian/security"
+#LH_MIRROR_CHROOT_SECURITY="ftp://mirror.hetzner.de/debian/security"
 
 # $LH_MIRROR_BINARY: set mirror which ends up in the image
 # (Default: http://ftp.us.debian.org/debian/)

@@ -40,7 +40,7 @@ LH_DEBIAN_INSTALLER_PRESEEDFILE="preseed.cfg"
 
 # $LH_DEBIAN_INSTALLER_DAILY: set daily images
 # (Default: disabled)
-LH_DEBIAN_INSTALLER_DAILY="enabled"
+#LH_DEBIAN_INSTALLER_DAILY="enabled"
 
 # $LH_ENCRYPTION: set encrytion
 # (Default: empty)

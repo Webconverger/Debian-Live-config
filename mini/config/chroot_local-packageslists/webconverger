@@ -37,6 +37,9 @@ splashy
 
 ########## non-free software
 flashplugin-nonfree
+openssl
+ca-certificates
+libcurl3
 
 #myspell-en-us
 myspell-en-gb
