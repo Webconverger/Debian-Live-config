@@ -18,7 +18,6 @@ webconverger-base
 webconverger-archive-keyring
 
 iceweasel
-iceweasel-webconverger
 
 # Window manager
 dwm
@@ -36,7 +35,29 @@ xpdf mozplugger
 # bootscreen
 splashy
 
-########## non-free software
-flashplugin-nonfree
+flash-player
+openssl
+ca-certificates
+libcurl3
 
+#myspell-en-us
+myspell-en-gb
+
+# For locking down the browser
+#iceweasel-webcnoaddressbar
+
+#Usually just
+iceweasel-webconverger
+#libwebkit-1.0-1
+
+# httpd - http://localhost services
 nostromo
+
+# wireless
+wpasupplicant
+wireless-tools
+
+firmware-bnx2
+firmware-iwlwifi
+firmware-qlogic
+firmware-ralink

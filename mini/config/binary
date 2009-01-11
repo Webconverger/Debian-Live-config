@@ -28,11 +28,6 @@ LH_BOOTLOADER="grub"
 # (Default: enabled)
 #LH_CHECKSUMS="enabled"
 
-# ${LH_CHROOT_BUILD: control if we build binary images chrooted
-# (Default: enabled)
-# DO NEVER, *NEVER*, *N*E*V*E*R* SET THIS OPTION to disabled.
-#LH_CHROOT_BUILD="enabled"
-
 # $LH_DEBIAN_INSTALLER: set debian-installer
 # (Default: disabled)
 LH_DEBIAN_INSTALLER="live"

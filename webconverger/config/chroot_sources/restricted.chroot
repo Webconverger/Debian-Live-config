@@ -1,0 +1,2 @@
+deb http://restricted.debian.net/debian/ ./
+deb-src http://restricted.debian.net/debian/ ./

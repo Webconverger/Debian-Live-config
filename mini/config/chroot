@@ -1,1 +1,4 @@
-../../webconverger/config/chroot
+LH_UNION_FILESYSTEM="aufs"
+LH_LINUX_FLAVOURS="486"
+LH_PACKAGES_LISTS="webconverger"
+LH_LINUX_PACKAGES="linux-image-2.6 ${LH_UNION_FILESYSTEM}-modules-2.6 squashfs-modules-2.6"
