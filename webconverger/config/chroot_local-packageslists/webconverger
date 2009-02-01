@@ -11,12 +11,10 @@ xorg xresprobe discover menu
 # Sound
 alsa-base alsa-oss alsa-utils
 
-# For upgrade, firewall et al. features
-live-initscripts
-
 webconverger-base
 webconverger-archive-keyring
 
+# firefox
 iceweasel
 
 # Window manager
@@ -27,7 +25,7 @@ xloadimage
 
 # fonts
 ttf-dejavu
-ttf-gentium
+# ttf-gentium
 
 # pdf
 xpdf mozplugger
@@ -40,8 +38,8 @@ openssl
 ca-certificates
 libcurl3
 
-#myspell-en-us
-myspell-en-gb
+myspell-en-us
+#myspell-en-gb
 
 # For locking down the browser
 #iceweasel-webcnoaddressbar
@@ -51,7 +49,7 @@ iceweasel-webconverger
 #libwebkit-1.0-1
 
 # httpd - http://localhost services
-nostromo
+# nostromo
 
 # wireless
 wpasupplicant

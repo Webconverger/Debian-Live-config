@@ -1,0 +1,24 @@
+#!/bin/sh
+
+MIRROR_DEBIAN="http://mirror.webconverger.com/debian/"
+MIRROR_SECURITY="http://ftp.de.debian.org/debian-security/"
+
+lh_config noautoconfig \
+	--apt-recommends disabled \
+	--debian-installer live \
+	--debian-installer-distribution lenny \
+	--bootappend-live "quiet homepage=http://portal.webconverger.com/ nonetworking nosudo splash vga=791" \
+	-k 486 \
+	-a i386 \
+	--username webc \
+	--hostname webconverger \
+	--bootloader grub \
+	--categories "main contrib non-free" \
+	--distribution lenny \
+	--mirror-bootstrap ${MIRROR_DEBIAN} \
+	--mirror-chroot ${MIRROR_DEBIAN} \
+	--mirror-chroot-security ${MIRROR_SECURITY} \
+	--mirror-binary ${MIRROR_DEBIAN} \
+	--mirror-binary-security ${MIRROR_SECURITY} \
+	--packages-lists "webconverger" \
+	${@}
