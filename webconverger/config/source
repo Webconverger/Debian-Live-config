@@ -2,8 +2,8 @@
 
 # $LH_SOURCE: set source option
 # (Default: disabled)
-#LH_SOURCE="enabled"
+LH_SOURCE="disabled"
 
 # $LH_SOURCE_IMAGES: set image type
 # (Default: tar)
-#LH_SOURCE_IMAGES="tar"
+LH_SOURCE_IMAGES="tar"
