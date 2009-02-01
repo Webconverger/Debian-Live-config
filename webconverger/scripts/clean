@@ -1,7 +1,5 @@
 #!/bin/sh
 
-lh_clean noautoconfig --all ${@}
-
 rm -f build.log
 
 # Remove generated files
