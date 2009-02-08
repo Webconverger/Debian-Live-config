@@ -10,6 +10,7 @@ lh_config noautoconfig \
 	--bootappend-live "quiet homepage=http://portal.webconverger.com/ nonetworking nosudo splash vga=791" \
 	-k 486 \
 	-a i386 \
+	--apt apt \
 	--username webc \
 	--hostname webconverger \
 	--bootloader grub \
