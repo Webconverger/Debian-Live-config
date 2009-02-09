@@ -6,8 +6,8 @@ MIRROR_SECURITY="http://ftp.de.debian.org/debian-security/"
 lh_config noautoconfig \
 	--apt-recommends disabled \
 	--bootappend-live "quiet homepage=http://portal.webconverger.com/ nonetworking nosudo splash vga=791" \
-    --debian-installer live \
-    --debian-installer-distribution lenny \
+	--debian-installer live \
+	--debian-installer-distribution lenny \
 	-k 486 \
 	-a i386 \
 	-f minimal \
