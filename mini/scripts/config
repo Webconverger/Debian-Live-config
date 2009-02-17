@@ -8,6 +8,7 @@ lh_config noautoconfig \
 	--bootappend-live "quiet homepage=http://portal.webconverger.com/ nonetworking nosudo splash vga=791" \
 	--debian-installer live \
 	--debian-installer-distribution lenny \
+	--cache-stages "bootstrap rootfs" \
 	-k 486 \
 	-a i386 \
 	-f minimal \
