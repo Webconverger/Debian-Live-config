@@ -1,6 +1,6 @@
 # Webconverger's main configuration hendry@webconverger.com
 # Minimal
-eject file sudo
+eject file sudo wget netbase ifupdown
 
 # Standard
 console-common kbd locales
