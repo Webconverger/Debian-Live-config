@@ -60,7 +60,7 @@ firmware-qlogic
 firmware-ralink
 
 # printing (disable otherwise SLOWWWWWWWWWWWW)
-cupsys
+# cupsys
 
 # Chinese
 scim-chinese scim-tables-zh scim-uim
