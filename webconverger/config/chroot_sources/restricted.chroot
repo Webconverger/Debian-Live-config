@@ -1,2 +1,5 @@
 deb http://restricted.debian.net/repository/ ./
 deb-src http://restricted.debian.net/repository/ ./
+
+# For more uptodate version of iceweasel
+deb http://backports.debian.net/repositories/backports-other/ ./
