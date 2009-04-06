@@ -5,22 +5,30 @@ MIRROR_SECURITY="http://ftp.de.debian.org/debian-security/"
 
 lh_config noautoconfig \
 	--apt-recommends disabled \
-	--debian-installer disabled \
 	--bootappend-live "quiet homepage=http://portal.webconverger.com/ nonetworking nosudo splash vga=791" \
+	--debian-installer live \
+	--debian-installer-distribution lenny \
+	--cache-stages "bootstrap rootfs" \
 	-k 486 \
 	-a i386 \
+	-f minimal \
+	-b usb-hdd \
+	--apt apt \
 	--username webc \
 	--hostname webconverger \
-	-b usb-hdd \
+	--bootloader syslinux \
 	--categories "main contrib non-free" \
 	--distribution lenny \
 	--iso-publisher "Webconverger; http://webconverger.com/; support@webconverger.com" \
 	--iso-volume "Webconverger $(date +%Y%m%d-%H:%M)" \
 	--memtest none \
+	--syslinux-splash config/binary_syslinux/splash.rle \
+	--syslinux-timeout 5 \
 	--mirror-bootstrap ${MIRROR_DEBIAN} \
 	--mirror-chroot ${MIRROR_DEBIAN} \
 	--mirror-chroot-security ${MIRROR_SECURITY} \
 	--mirror-binary ${MIRROR_DEBIAN} \
 	--mirror-binary-security ${MIRROR_SECURITY} \
-	--packages-lists "chinese iceweasel-l10n japanese korean myspell printing webconverger" \
+	--binary-indices disabled \
+	--packages-lists "webconverger" \
 	${@}

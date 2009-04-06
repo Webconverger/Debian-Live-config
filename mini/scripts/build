@@ -1,3 +1,0 @@
-#!/bin/sh
-
-lh_build noautoconfig ${@} 2>&1 | tee binary.log
