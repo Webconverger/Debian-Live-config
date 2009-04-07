@@ -10,7 +10,7 @@
 set -e
 
 echo Removing unused packages
-for PACKAGE in apt-utils aptitude man-db manpages info libxapian15 vim-common vim-tiny \
+for PACKAGE in apt-utils aptitude man-db manpages info libxapian15 grub grub-common vim-common vim-tiny \
 	tcpd netcat-traditional gcc gcc-4.1 gcc-4.1-base gcc-4.2 gcc-4.2-base xserver-xorg-video-dummy ed dmidecode menu \
 	iptables rsyslog nano
 do
