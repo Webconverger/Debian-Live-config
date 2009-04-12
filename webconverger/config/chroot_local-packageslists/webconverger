@@ -25,7 +25,6 @@ xloadimage
 
 # fonts
 ttf-dejavu
-# ttf-gentium
 
 # pdf
 xpdf mozplugger
@@ -60,7 +59,7 @@ firmware-qlogic
 firmware-ralink
 
 # printing (disable otherwise SLOWWWWWWWWWWWW)
-# cupsys
+cupsys
 
 # Chinese
 scim-chinese scim-tables-zh scim-uim
@@ -126,3 +125,5 @@ myspell-sv-se
 myspell-sw
 myspell-th
 myspell-uk
+
+live-initscripts
