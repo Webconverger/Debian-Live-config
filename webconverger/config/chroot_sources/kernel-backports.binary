@@ -1,0 +1,2 @@
+deb http://backports.undebian.org/repositories/backports-kernel/ ./
+deb-src http://backports.undebian.org/repositories/backports-kernel/ ./
