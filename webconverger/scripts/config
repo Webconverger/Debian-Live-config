@@ -5,7 +5,7 @@ MIRROR_SECURITY="http://ftp.de.debian.org/debian-security/"
 
 lh_config noautoconfig \
 	--apt-recommends disabled \
-	--bootappend-live "quiet homepage=http://portal.webconverger.com/ nonetworking nosudo splash vga=791 firewall" \
+	--bootappend-live "quiet homepage=http://portal.webconverger.com/ nonetworking nosudo splash firewall" \
 	--debian-installer live \
 	--debian-installer-distribution lenny \
 	--cache-stages "bootstrap rootfs" \
@@ -28,7 +28,7 @@ lh_config noautoconfig \
 	--mirror-bootstrap ${MIRROR_DEBIAN} \
 	--mirror-chroot ${MIRROR_DEBIAN} \
 	--mirror-chroot-security ${MIRROR_SECURITY} \
-	--mirror-binary ${MIRROR_DEBIAN} \
+	--mirror-binary "http://cdn.debian.net/debian/" \
 	--mirror-binary-security ${MIRROR_SECURITY} \
 	--binary-indices disabled \
 	--packages-lists "webconverger" \
