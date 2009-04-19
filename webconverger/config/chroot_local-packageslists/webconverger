@@ -27,8 +27,10 @@ xloadimage
 ttf-dejavu
 
 # pdf
-acroread # better printing dialog
-debian-multimedia-keyring # required for acroread
+# better printing dialog
+acroread
+# required for acroread
+debian-multimedia-keyring
 mozplugger
 
 # bootscreen
@@ -39,12 +41,7 @@ openssl
 ca-certificates
 libcurl3
 
-# For locking down the browser
-#iceweasel-webcnoaddressbar
-
-#Usually just
 iceweasel-webconverger
-#libwebkit-1.0-1
 
 dhcp3-client
 
@@ -64,7 +61,8 @@ libertas-firmware
 atmel-firmware
 firmware-ipw2x00
 
-cupsys # printing
+# printing
+cupsys
 #cups-client # this must be in to debug printing problems with `lpstat -p`
 
 # Chinese
