@@ -59,7 +59,7 @@ firmware-ralink
 zd1211-firmware
 libertas-firmware
 atmel-firmware
-# firmware-ipw2x00
+firmware-ipw2x00
 
 # printing
 cupsys
