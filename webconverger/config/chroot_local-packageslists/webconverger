@@ -27,7 +27,9 @@ xloadimage
 ttf-dejavu
 
 # pdf
-xpdf mozplugger
+acroread # better printing dialog
+debian-multimedia-keyring # required for acroread
+mozplugger
 
 # bootscreen
 splashy
@@ -57,24 +59,28 @@ firmware-bnx2
 firmware-iwlwifi
 firmware-qlogic
 firmware-ralink
+zd1211-firmware
+libertas-firmware
+atmel-firmware
+firmware-ipw2x00
 
-# printing (disable otherwise SLOWWWWWWWWWWWW)
-cupsys
+cupsys # printing
+#cups-client # this must be in to debug printing problems with `lpstat -p`
 
 # Chinese
-scim-chinese scim-tables-zh scim-uim
-xfonts-intl-chinese
-ttf-arphic-ukai ttf-arphic-uming
-xfonts-wqy
+#scim-chinese scim-tables-zh scim-uim
+#xfonts-intl-chinese
+#ttf-arphic-ukai ttf-arphic-uming
+#xfonts-wqy
 
 # For Korean locale support ko_KR.UTF-8
-scim-hangul scim-tables-ko scim-uim
-ttf-unfonts
-ttf-alee xfonts-baekmuk
+#scim-hangul scim-tables-ko scim-uim
+#ttf-unfonts
+#ttf-alee xfonts-baekmuk
 
 # Japanese
-ttf-vlgothic
-scim-anthy scim-uim scim-skk scim-prime scim-canna scim-tables-ja
+#ttf-vlgothic
+#scim-anthy scim-uim scim-skk scim-prime scim-canna scim-tables-ja
 
 iceweasel-l10n-all
 
