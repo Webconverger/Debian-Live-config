@@ -65,21 +65,6 @@ firmware-ipw2x00
 cupsys
 #cups-client # this must be in to debug printing problems with `lpstat -p`
 
-# Chinese
-#scim-chinese scim-tables-zh scim-uim
-#xfonts-intl-chinese
-#ttf-arphic-ukai ttf-arphic-uming
-#xfonts-wqy
-
-# For Korean locale support ko_KR.UTF-8
-#scim-hangul scim-tables-ko scim-uim
-#ttf-unfonts
-#ttf-alee xfonts-baekmuk
-
-# Japanese
-#ttf-vlgothic
-#scim-anthy scim-uim scim-skk scim-prime scim-canna scim-tables-ja
-
 iceweasel-l10n-all
 
 myspell-af
@@ -130,5 +115,5 @@ myspell-sw
 myspell-th
 myspell-uk
 
-live-initscripts
+# live-initscripts
 iptables
