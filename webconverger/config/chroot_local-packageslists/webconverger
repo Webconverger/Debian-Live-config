@@ -117,3 +117,6 @@ myspell-uk
 
 # live-initscripts
 iptables
+
+# powering down
+acpid
