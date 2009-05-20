@@ -120,3 +120,4 @@ iptables
 
 # powering down
 acpid
+acpi-support-base
