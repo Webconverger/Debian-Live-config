@@ -1,5 +1,0 @@
-sudo /sbin/ifup eth0
-sudo /etc/init.d/dhcp3-server start
-sudo /etc/init.d/tftpd-hpa start
-#sudo /etc/init.d/apache2 start
-sudo iptables -t nat -A POSTROUTING -o eth1 -j MASQUERADE

@@ -1,3 +1,0 @@
-ssh hendry.iki.fi cp ~/download.webconverger.com/webconverger.iso ~/
-rsync -essh -rtpvP binary.iso hendry.iki.fi:webconverger.iso
-#ssh hendry.iki.fi cp ~/download.webconverger.com/webconverger.iso ~/
