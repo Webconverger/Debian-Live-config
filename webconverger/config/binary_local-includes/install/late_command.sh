@@ -9,7 +9,7 @@ log () {
 USER="webc"
 
 log "Removing packages"
-in-target apt-get remove --yes aufs-modules-* squashfs-modules-* user-setup
+in-target apt-get remove --yes aufs-modules-* user-setup
 
 log "Removing empty xorg.conf files"
 rm -f /target/etc/X11/xorg.conf*
