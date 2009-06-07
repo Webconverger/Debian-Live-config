@@ -27,8 +27,7 @@ xloadimage
 ttf-dejavu
 
 # pdf
-# better printing dialog
-acroread
+xpdf
 # required for acroread
 debian-multimedia-keyring
 mozplugger
@@ -63,7 +62,7 @@ firmware-ipw2x00
 
 # printing
 cupsys
-#cups-client # this must be in to debug printing problems with `lpstat -p`
+# cups-client
 
 iceweasel-l10n-all
 
@@ -115,9 +114,12 @@ myspell-sw
 myspell-th
 myspell-uk
 
-# live-initscripts
+# firewall
 iptables
 
 # powering down
 acpid
 acpi-support-base
+
+# Getting the time right for certificate checks
+ntpdate

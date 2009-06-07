@@ -1,6 +1,6 @@
 #!/bin/sh
 
-MIRROR_DEBIAN="http://mirror.webconverger.com/debian/"
+MIRROR_DEBIAN="http://ftp.de.debian.org/debian/"
 MIRROR_SECURITY="http://ftp.de.debian.org/debian-security/"
 
 lh_config noautoconfig \
@@ -8,7 +8,7 @@ lh_config noautoconfig \
 	--bootappend-live "quiet homepage=http://portal.webconverger.com/ nonetworking nosudo splash video=vesa:ywrap,mtrr vga=788 nopersistent" \
 	--cache-stages "bootstrap rootfs" \
 	--debian-installer live \
-	--debian-installer-distribution lenny \
+	--debian-installer-distribution daily \
 	-k 486 \
 	-a i386 \
 	-f minimal \
@@ -32,4 +32,5 @@ lh_config noautoconfig \
 	--mirror-binary-security ${MIRROR_SECURITY} \
 	--binary-indices disabled \
 	--packages-lists "webconverger" \
+	--win32-loader disabled \
 	${@}
