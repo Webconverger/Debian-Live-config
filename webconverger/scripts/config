@@ -5,7 +5,7 @@ MIRROR_SECURITY="http://ftp.de.debian.org/debian-security/"
 
 lh_config noautoconfig \
 	--apt-recommends disabled \
-	--bootappend-live "quiet homepage=http://portal.webconverger.com/ nonetworking nosudo splash video=vesa:ywrap,mtrr vga=788 nopersistent" \
+	--bootappend-live "quiet homepage=http://portal.webconverger.com/ nonetworking nosudo splash video=vesa:ywrap,mtrr vga=788 nopersistent quickreboot" \
 	--cache-stages "bootstrap rootfs" \
 	--debian-installer live \
 	--debian-installer-distribution daily \
