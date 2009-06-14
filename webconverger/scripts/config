@@ -7,7 +7,7 @@ lh_config noautoconfig \
 	--apt-recommends disabled \
 	--bootappend-live "quiet homepage=http://portal.webconverger.com/ nonetworking nosudo splash video=vesa:ywrap,mtrr vga=788 nopersistent quickreboot" \
 	--cache-stages "bootstrap rootfs" \
-	--debian-installer live \
+	--debian-installer disabled \
 	--debian-installer-distribution daily \
 	-k 486 \
 	-a i386 \
