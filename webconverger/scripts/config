@@ -1,7 +1,6 @@
 #!/bin/sh
 
-MIRROR_DEBIAN="http://ftp.de.debian.org/debian/"
-MIRROR_SECURITY="http://ftp.de.debian.org/debian-security/"
+MIRROR_DEBIAN="http://mirror.webconverger.com/debian"
 
 lh_config noautoconfig \
 	--apt-recommends disabled \
@@ -27,9 +26,7 @@ lh_config noautoconfig \
 	--syslinux-timeout 5 \
 	--mirror-bootstrap ${MIRROR_DEBIAN} \
 	--mirror-chroot ${MIRROR_DEBIAN} \
-	--mirror-chroot-security ${MIRROR_SECURITY} \
 	--mirror-binary "http://cdn.debian.net/debian/" \
-	--mirror-binary-security ${MIRROR_SECURITY} \
 	--binary-indices disabled \
 	--packages-lists "webconverger" \
 	--win32-loader disabled \
