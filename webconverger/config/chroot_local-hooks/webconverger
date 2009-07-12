@@ -8,3 +8,6 @@ update-rc.d -f nostromo remove
 #
 # hence :
 apt-get update
+echo 'APT::Default-Release "stable";' > /etc/apt/apt.conf.d/default
+apt-get install -t testing libstartup-notification0 libsqlite3-0 libnss3-1d libhunspell-1.2-0 libasound2
+apt-get install iceweasel/experimental
