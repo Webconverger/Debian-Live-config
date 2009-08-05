@@ -4,6 +4,7 @@ eject file sudo wget netbase ifupdown
 
 # Standard
 console-common kbd locales
+dhcp3-client
 
 # X11
 xorg xresprobe discover menu
@@ -16,6 +17,10 @@ webconverger-archive-keyring
 
 # firefox
 iceweasel
+iceweasel-webconverger
+openssl
+ca-certificates
+libcurl3
 
 # Window manager
 dwm
@@ -27,22 +32,18 @@ xloadimage
 ttf-dejavu
 
 # pdf
-xpdf
-# required for acroread
-debian-multimedia-keyring
+epdfview
+#debian-multimedia-keyring
 mozplugger
 
 # bootscreen
 splashy
 
+# adobe flash
 flash-player
-openssl
-ca-certificates
-libcurl3
 
-iceweasel-webconverger
-
-dhcp3-client
+# hiding the cursor
+unclutter
 
 # httpd - http://localhost services
 # nostromo
@@ -64,8 +65,8 @@ firmware-ipw2x00
 cupsys
 # cups-client
 
+# http://webconverger.org/i18n/
 iceweasel-l10n-all
-
 myspell-af
 myspell-bg
 myspell-ca
