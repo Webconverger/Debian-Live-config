@@ -14,14 +14,14 @@ in-target apt-get remove --yes aufs-modules-* user-setup
 log "Removing empty xorg.conf files"
 rm -f /target/etc/X11/xorg.conf*
 
-log "Setting Grub splash"
-cp /cdrom/boot/grub/splash.xpm.gz /target/boot/grub/splash.xpm.gz
-in-target update-grub
+#log "Setting Grub splash"
+#cp /cdrom/boot/grub/splash.xpm.gz /target/boot/grub/splash.xpm.gz
+#in-target update-grub
 # Generated path is wrong
-sed -i -e 's|//grub/splash.xpm.gz|/boot/grub/splash.xpm.gz|' /target/boot/grub/menu.lst
+#sed -i -e 's|//grub/splash.xpm.gz|/boot/grub/splash.xpm.gz|' /target/boot/grub/menu.lst
 
-log "Workaround for older live-initramfs versions"
-in-target chown -R 1000:1000 /home/${USER}
+#log "Workaround for older live-initramfs versions"
+#in-target chown -R 1000:1000 /home/${USER}
 
 log "Remove passwords"
 in-target passwd --delete root
