@@ -1,0 +1,9 @@
+#!/bin/sh -e
+grep -qs "locale=ko_KR.UTF-8" /proc/cmdline || exit 0
+NOTTY="-q -y -o DPkg::Options::=--force-confdef"
+DEBIAN_FRONTEND="noninteractive"
+export DEBIAN_FRONTEND
+PKGS="scim-hangul scim-tables-ko scim-uim ttf-unfonts ttf-alee xfonts-baekmuk iceweasel-l10n-ko"
+logger "Setting up $0"
+sleep 5
+apt-get -q=2 update && apt-get ${NOTTY} install $PKGS

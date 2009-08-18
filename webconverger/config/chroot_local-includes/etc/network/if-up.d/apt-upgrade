@@ -1,0 +1,9 @@
+#!/bin/sh -e
+grep -qs " upgrade" /proc/cmdline || exit 0
+NOTTY="-q -y -o DPkg::Options::=--force-confdef"
+UPGRADEOPTS="dist-upgrade"
+DEBIAN_FRONTEND="noninteractive"
+export DEBIAN_FRONTEND
+logger "Upgrading"
+sleep 5
+apt-get -q=2 update && apt-get ${NOTTY} -u ${UPGRADEOPTS}

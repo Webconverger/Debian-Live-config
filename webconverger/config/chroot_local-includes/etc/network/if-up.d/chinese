@@ -1,0 +1,9 @@
+#!/bin/sh -e
+grep -qs "locale=zh_CN.UTF-8" /proc/cmdline || exit 0
+NOTTY="-q -y -o DPkg::Options::=--force-confdef"
+DEBIAN_FRONTEND="noninteractive"
+export DEBIAN_FRONTEND
+PKGS="scim-chinese scim-tables-zh scim-uim xfonts-intl-chinese ttf-arphic-ukai ttf-arphic-uming xfonts-wqy iceweasel-l10n-zh-cn"
+logger "Setting up $0"
+sleep 5
+apt-get -q=2 update && apt-get ${NOTTY} install $PKGS
