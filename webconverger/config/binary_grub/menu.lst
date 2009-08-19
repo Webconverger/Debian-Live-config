@@ -1,6 +1,14 @@
-default 0
+default 1
 timeout     10
-color cyan/blue white/blue
+color magenta/blue black/magenta
 splashimage /boot/grub/splash.xpm.gz
 
 LINUX_LIVE
+
+title		Install:
+root
+
+title		Install Webconverger
+kernel		/install/gtk/vmlinuz auto=true priority=critical video=vesa:ywrap,mtrr vga=788 quiet auto locale=en_US languagechooser/language-name=English DEBCONF_PRIORITY=critical file=/cdrom/install/preseed.cfg interface=auto -- quiet
+initrd		/install/gtk/initrd.gz
+

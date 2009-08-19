@@ -1,6 +1,6 @@
 #!/bin/sh
 
-MIRROR_DEBIAN="http://ftp.de.debian.org/debian"
+MIRROR_DEBIAN="ftp://mirror.hetzner.de/ftp.de.debian.org/debian/"
 
 lh_config noautoconfig \
 	--apt-recommends disabled \
@@ -25,8 +25,6 @@ lh_config noautoconfig \
 	--syslinux-splash config/binary_syslinux/splash.rle \
 	--syslinux-timeout 5 \
 	--mirror-bootstrap ${MIRROR_DEBIAN} \
-	--mirror-chroot ${MIRROR_DEBIAN} \
-	--mirror-binary "http://cdn.debian.net/debian/" \
 	--binary-indices disabled \
 	--packages-lists "webconverger" \
 	--win32-loader disabled \
