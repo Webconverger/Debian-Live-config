@@ -125,3 +125,5 @@ acpi-support-base
 # Getting the time right for certificate checks
 ntpdate
 
+iputils-ping
+
