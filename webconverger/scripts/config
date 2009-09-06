@@ -1,6 +1,7 @@
 #!/bin/sh
 
-MIRROR_DEBIAN="ftp://mirror.hetzner.de/ftp.de.debian.org/debian/"
+#MIRROR_DEBIAN="ftp://mirror.hetzner.de/ftp.de.debian.org/debian/"
+MIRROR_DEBIAN="http://ftp.de.debian.org/debian"
 
 lh_config noautoconfig \
 	--apt-recommends disabled \
