@@ -3,7 +3,7 @@
 #MIRROR_DEBIAN="ftp://mirror.hetzner.de/ftp.de.debian.org/debian/"
 MIRROR_DEBIAN="http://ftp.de.debian.org/debian"
 
-lh_config noautoconfig \
+lh config noautoconfig \
 	--apt-recommends disabled \
 	--bootappend-live "quiet homepage=http://portal.webconverger.com nonetworking nosudo splash video=vesa:ywrap,mtrr vga=788 nopersistent quickreboot" \
 	--cache-stages "bootstrap rootfs" \
@@ -17,7 +17,7 @@ lh_config noautoconfig \
 	--username webc \
 	--hostname webconverger \
 	--bootloader syslinux \
-	--categories "main contrib non-free" \
+	--archive-areas "main contrib non-free" \
 	--distribution lenny \
 	--iso-publisher "Webconverger; http://webconverger.com/; support@webconverger.com" \
 	--iso-volume "Webconverger $(date +%Y%m%d-%H:%M)" \
