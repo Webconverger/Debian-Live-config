@@ -9,7 +9,7 @@ lh config noautoconfig \
 	--cache-stages "bootstrap rootfs" \
 	--debian-installer disabled \
 	--debian-installer-distribution sid \
-	-k 486 \
+	-k 686 \
 	-a i386 \
 	-f minimal \
 	-b usb-hdd \

@@ -1,9 +1,5 @@
 update-rc.d -f openbsd-inetd remove
 update-rc.d -f stop-bootlogd remove
 
-#Package grub is not available, but is referred to by another package.
-#This may mean that the package is missing, has been obsoleted, or
-#is only available from another source
-#
-# hence :
-apt-get update
+# Fix dictionary transition
+ln -s /usr/share/myspell/dicts /usr/share/hunspell
