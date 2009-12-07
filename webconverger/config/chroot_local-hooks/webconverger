@@ -1,5 +1,6 @@
 update-rc.d -f openbsd-inetd remove
 update-rc.d -f stop-bootlogd remove
-
-# Fix dictionary transition
+sleep 5
+echo Fix dictionary transition
+set -ex
 ln -s /usr/share/myspell/dicts /usr/share/hunspell

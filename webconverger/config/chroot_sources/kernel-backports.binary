@@ -1,2 +1,2 @@
-deb http://backports.undebian.org/repositories/backports-kernel/ ./
-deb-src http://backports.undebian.org/repositories/backports-kernel/ ./
+deb http://unsupported.debian-maintainers.org/backports-kernel/ ./
+deb-src http://unsupported.debian-maintainers.org/backports-kernel/ ./
