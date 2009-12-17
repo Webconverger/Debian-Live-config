@@ -26,6 +26,5 @@ lh config noautoconfig \
 	--syslinux-timeout 5 \
 	--mirror-bootstrap ${MIRROR_DEBIAN} \
 	--binary-indices disabled \
-	--packages-lists "webconverger" \
 	--win32-loader disabled \
 	${@}
