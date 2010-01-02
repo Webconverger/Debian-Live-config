@@ -4,7 +4,7 @@
 MIRROR_DEBIAN="http://ftp.de.debian.org/debian"
 
 lh config noautoconfig \
-	--apt-recommends disabled \
+	--apt-recommends false \
 	--bootappend-live "quiet homepage=http://portal.webconverger.com nonetworking nosudo splash video=vesa:ywrap,mtrr vga=788 nopersistent quickreboot" \
 	--cache-stages "bootstrap rootfs" \
 	--debian-installer-distribution sid \
@@ -25,6 +25,6 @@ lh config noautoconfig \
 	--syslinux-splash config/binary_syslinux/splash.rle \
 	--syslinux-timeout 5 \
 	--mirror-bootstrap ${MIRROR_DEBIAN} \
-	--binary-indices disabled \
-	--win32-loader disabled \
+	--binary-indices false \
+	--win32-loader false \
 	${@}

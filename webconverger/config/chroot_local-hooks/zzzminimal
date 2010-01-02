@@ -12,7 +12,7 @@ set -e
 echo Removing unused packages
 for PACKAGE in apt-utils aptitude man-db manpages info libxapian15 grub grub-common vim-common vim-tiny \
 	tcpd netcat-traditional gcc gcc-4.1 gcc-4.1-base gcc-4.2 gcc-4.2-base xserver-xorg-video-dummy ed dmidecode menu \
-	rsyslog nano linux-headers-2.6
+	samba-common dbus rsyslog nano linux-headers-2.6 console-setup
 do
 	if apt-get remove --purge --yes "${PACKAGE}"
 	then
