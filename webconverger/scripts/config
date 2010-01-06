@@ -8,7 +8,7 @@ lh config noautoconfig \
 	--bootappend-live "quiet homepage=http://portal.webconverger.com nonetworking nosudo splash video=vesa:ywrap,mtrr vga=788 nopersistent quickreboot" \
 	--cache-stages "bootstrap rootfs" \
 	--debian-installer-distribution sid \
-	-k 686 \
+	-k 486 \
 	-a i386 \
 	-f minimal \
 	-b usb-hdd \

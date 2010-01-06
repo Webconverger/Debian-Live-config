@@ -1,0 +1,2 @@
+deb http://backports.debian-maintainers.org/ lenny/backports-client-mozilla main contrib non-free
+deb-src http://backports.debian-maintainers.org/ lenny/backports-client-mozilla main contrib non-free
