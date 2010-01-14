@@ -56,7 +56,6 @@ firmware-bnx2
 firmware-iwlwifi
 firmware-qlogic
 firmware-ralink
-atmel-firmware
 firmware-ipw2x00
 
 # printing
