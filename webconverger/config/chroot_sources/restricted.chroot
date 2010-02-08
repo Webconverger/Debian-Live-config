@@ -1,3 +1,2 @@
-deb http://unofficial.debian-maintainers.org/ lenny/backports main contrib non-free restricted
-deb-src http://unofficial.debian-maintainers.org/ lenny/backports main contrib non-free restricted
-
+deb http://unofficial.debian-maintainers.org/ lenny main contrib non-free restricted
+deb-src http://unofficial.debian-maintainers.org/ lenny main contrib non-free restricted
