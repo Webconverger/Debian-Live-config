@@ -11,7 +11,7 @@ lh config noautoconfig \
 	-k 486 \
 	-a i386 \
 	-f minimal \
-	-b usb-hdd \
+	-b iso-hybrid \
 	--apt apt \
 	--username webc \
 	--hostname webconverger \
