@@ -27,4 +27,5 @@ lh config noautoconfig \
 	--mirror-bootstrap ${MIRROR_DEBIAN} \
 	--binary-indices false \
 	--win32-loader false \
+	--source true \
 	${@}
