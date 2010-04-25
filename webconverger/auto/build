@@ -1,3 +1,3 @@
 #!/bin/sh
 
-lh build noautoconfig ${@} 2>&1 | tee binary.log
+lh build noauto ${@} 2>&1 | tee binary.log
