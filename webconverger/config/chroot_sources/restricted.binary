@@ -1,1 +1,2 @@
-restricted.chroot
+deb http://unofficial.debian-maintainers.org/ squeeze main contrib non-free restricted
+deb-src http://unofficial.debian-maintainers.org/ squeeze main contrib non-free restricted

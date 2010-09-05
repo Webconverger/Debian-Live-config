@@ -17,7 +17,7 @@ lh config noauto \
 	--hostname webconverger \
 	--bootloader syslinux \
 	--archive-areas "main contrib non-free" \
-	--distribution lenny \
+	--distribution squeeze \
 	--iso-publisher "Webconverger; http://webconverger.com/; support@webconverger.com" \
 	--iso-volume "Webconverger $(date +%Y%m%d-%H:%M)" \
 	--linux-packages "linux-image-2.6 aufs-modules-2.6" \
@@ -27,5 +27,5 @@ lh config noauto \
 	--mirror-bootstrap ${MIRROR_DEBIAN} \
 	--binary-indices false \
 	--win32-loader false \
-	--source true \
+	--source false \
 	${@}
