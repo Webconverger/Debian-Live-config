@@ -5,7 +5,7 @@ MIRROR_DEBIAN="http://ftp.de.debian.org/debian"
 
 lh config noauto \
 	--apt-recommends false \
-	--bootappend-live "quiet homepage=http://portal.webconverger.com nonetworking nosudo splash video=vesa:ywrap,mtrr vga=788 nopersistent quickreboot" \
+	--bootappend-live "quiet homepage=http://portal.webconverger.com nonetworking noroot splash video=vesa:ywrap,mtrr vga=788 nopersistent quickreboot" \
 	--cache-stages "bootstrap rootfs" \
 	--debian-installer-distribution sid \
 	-k 486 \
@@ -20,7 +20,6 @@ lh config noauto \
 	--distribution squeeze \
 	--iso-publisher "Webconverger; http://webconverger.com/; support@webconverger.com" \
 	--iso-volume "Webconverger $(date +%Y%m%d-%H:%M)" \
-	--linux-packages "linux-image-2.6 aufs-modules-2.6" \
 	--memtest none \
 	--syslinux-splash config/binary_syslinux/splash.rle \
 	--syslinux-timeout 5 \
@@ -28,4 +27,5 @@ lh config noauto \
 	--binary-indices false \
 	--win32-loader false \
 	--source false \
+	--repositories unofficial.debian-maintainers.org \
 	${@}

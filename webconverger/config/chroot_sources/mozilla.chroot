@@ -1,2 +1,0 @@
-deb http://backports.debian-maintainers.org/ squeeze/backports-client-mozilla main contrib non-free
-deb-src http://backports.debian-maintainers.org/ squeeze/backports-client-mozilla main contrib non-free

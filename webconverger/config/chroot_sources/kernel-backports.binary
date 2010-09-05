@@ -1,5 +1,0 @@
-deb http://unsupported.debian-maintainers.org/backports-kernel/ ./
-deb-src http://unsupported.debian-maintainers.org/backports-kernel/ ./
-
-deb http://unsupported.debian-maintainers.org/backports/ ./
-deb-src http://unsupported.debian-maintainers.org/backports/ ./
