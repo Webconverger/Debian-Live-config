@@ -59,8 +59,7 @@ firmware-ralink
 firmware-ipw2x00
 
 # printing
-cupsys
-# cups-client
+cups
 
 # http://webconverger.org/i18n/
 
