@@ -5,7 +5,7 @@ MIRROR_DEBIAN="http://ftp.de.debian.org/debian"
 
 lh config noauto \
 	--apt-recommends false \
-	--bootappend-live "quiet homepage=http://portal.webconverger.com nonetworking noroot splash video=vesa:ywrap,mtrr vga=788 nopersistent quickreboot noautologin debug" \
+	--bootappend-live "quiet homepage=http://portal.webconverger.com nonetworking splash video=vesa:ywrap,mtrr vga=788 nopersistent quickreboot" \
 	--cache-stages "bootstrap rootfs" \
 	--debian-installer-distribution sid \
 	-k 486 \
@@ -27,5 +27,5 @@ lh config noauto \
 	--binary-indices false \
 	--win32-loader false \
 	--source false \
-	--repositories unofficial.debian-maintainers.org \
+	-r 'unofficial.debian-maintainers.org live.debian.net' \
 	${@}
