@@ -1,17 +1,7 @@
 #!/bin/sh
 
-rm -f build.log
+lb clean noauto ${@}
 
-# Remove generated files
 rm -f config/binary config/bootstrap config/chroot config/common config/source
 
-# Remove empty directories in config tree
-if ls config/*/ > /dev/null 2>&1
-then
-	rmdir --ignore-fail-on-non-empty config/*/
-fi
-
-if [ -d config ]
-then
-	rmdir --ignore-fail-on-non-empty config
-fi
+rm -f binary.log
