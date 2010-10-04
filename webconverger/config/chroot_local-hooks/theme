@@ -1,5 +1,0 @@
-rm /etc/splashy/themes/default/background.png
-ln -s /etc/webconverger/background.jpg /etc/splashy/themes/default/background.png
-
-# Theme is stored in initramfs; need to update it.
-update-initramfs -u -k all
