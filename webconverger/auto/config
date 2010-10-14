@@ -9,7 +9,7 @@ lb config noauto --clean \
 	--cache-stages "bootstrap rootfs" \
 	-k 486 \
 	-a i386 \
-	-f minimal \
+	-f standard \
 	-b iso-hybrid \
 	--apt apt \
 	--username webc \
