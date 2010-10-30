@@ -1,0 +1,2 @@
+#!/bin/sh
+wget -qO- --timeout=5 --post-data="M=$(cat /sys/class/net/eth0/address)&V=$(dpkg -s webconverger-base|awk '/^Version: / { print $2 }')" http://ping.webconverger.org
