@@ -5,7 +5,7 @@ MIRROR_DEBIAN="http://ftp.de.debian.org/debian"
 
 lb config noauto --clean \
 	--apt-recommends false \
-	--bootappend-live "homepage=http://portal.webconverger.com nonetworking nopersistent quickreboot noroot splash" \
+	--bootappend-live "homepage=http://portal.webconverger.com nonetworking nopersistent quickreboot nomodeset noroot splash" \
 	--cache-stages "bootstrap rootfs" \
 	-k 486 \
 	-a i386 \
