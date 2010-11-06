@@ -25,6 +25,6 @@ lb config noauto --clean \
 	--mirror-bootstrap ${MIRROR_DEBIAN} \
 	--binary-indices false \
 	--win32-loader false \
-	--source true \
+	--source false \
 	-r 'unofficial.debian-maintainers.org live.debian.net' \
 	${@}
