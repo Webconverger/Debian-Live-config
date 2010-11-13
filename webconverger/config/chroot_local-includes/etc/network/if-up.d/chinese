@@ -1,5 +1,5 @@
 #!/bin/sh -e
-grep -qs "locale=zh_CN.UTF-8" /proc/cmdline || exit 0
+grep -qs "locales=zh_CN.UTF-8" /proc/cmdline || exit 0
 NOTTY="-q -y -o DPkg::Options::=--force-confdef"
 DEBIAN_FRONTEND="noninteractive"
 export DEBIAN_FRONTEND
