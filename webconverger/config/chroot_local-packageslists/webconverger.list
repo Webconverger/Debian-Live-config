@@ -7,7 +7,7 @@ console-common kbd locales
 dhcp3-client
 
 # X11
-xorg xresprobe discover menu
+xorg
 
 # Sound
 alsa-base alsa-oss alsa-utils
