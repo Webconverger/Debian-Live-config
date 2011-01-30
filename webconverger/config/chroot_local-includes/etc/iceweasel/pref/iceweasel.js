@@ -4,3 +4,4 @@ pref("extensions.update.enabled", false);
 pref("intl.locale.matchOS", true);
 
 pref("browser.shell.checkDefaultBrowser", false);
+lockPref("xpinstall.enabled" ,false);
