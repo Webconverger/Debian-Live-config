@@ -17,7 +17,7 @@ webconverger-archive-keyring
 
 # firefox
 iceweasel
-iceweasel-webconverger
+#iceweasel-webconverger
 openssl
 ca-certificates
 libcurl3
@@ -48,12 +48,6 @@ unclutter
 # wireless
 wpasupplicant
 wireless-tools
-
-firmware-bnx2
-firmware-iwlwifi
-firmware-qlogic
-firmware-ralink
-firmware-ipw2x00
 
 # printing
 cups
@@ -131,3 +125,5 @@ myspell-uk
 
 # Korean
 #scim-hangul scim-tables-ko scim-uim ttf-alee xfonts-baekmuk ttf-unfonts-core ttf-unfonts-extra
+#
+user-setup

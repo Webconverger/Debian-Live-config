@@ -1,12 +1,11 @@
 #!/bin/sh
 
 #MIRROR_DEBIAN="ftp://mirror.hetzner.de/ftp.de.debian.org/debian/"
-MIRROR_DEBIAN="http://ftp.de.debian.org/debian"
+#MIRROR_DEBIAN="http://ftp.de.debian.org/debian"
 
 lb config noauto --clean \
 	--apt-recommends false \
 	--bootappend-live "homepage=http://portal.webconverger.com nonetworking nopersistent quickreboot nomodeset noroot splash" \
-	--cache-stages "bootstrap rootfs" \
 	-k 486 \
 	-a i386 \
 	-f standard \
@@ -16,14 +15,9 @@ lb config noauto --clean \
 	--hostname webconverger \
 	--bootloader syslinux \
 	--archive-areas "main contrib non-free" \
-	--distribution squeeze \
-	--iso-publisher "Webconverger; http://webconverger.com/; support@webconverger.com" \
-	--iso-volume "Webconverger $(date +%Y%m%d-%H:%M)" \
-	--memtest none \
-	--syslinux-splash config/binary_syslinux/splash.rle \
-	--syslinux-timeout 5 \
-	--mirror-bootstrap ${MIRROR_DEBIAN} \
-	--binary-indices false \
+	--mode progress --distribution artax \
+	--debian-installer false \
+	--apt-indices false \
 	--win32-loader false \
 	--source false \
 	-r 'unofficial.debian-maintainers.org live.debian.net' \
