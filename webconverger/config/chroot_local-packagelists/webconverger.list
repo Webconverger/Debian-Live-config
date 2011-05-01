@@ -17,7 +17,7 @@ webconverger-archive-keyring
 
 # firefox
 iceweasel
-#iceweasel-webconverger
+iceweasel-webconverger
 openssl
 ca-certificates
 libcurl3
