@@ -5,7 +5,7 @@
 
 lb config noauto --clean \
 	--apt-recommends false \
-	--bootappend-live "homepage=http://portal.webconverger.com nonetworking nopersistent quickreboot nomodeset noroot splash" \
+	--bootappend-live "homepage=http://portal.webconverger.com nonetworking nopersistent quickreboot nomodeset noroot splash username=webc" \
 	-k 486 \
 	-a i386 \
 	-f standard \
