@@ -17,6 +17,7 @@ lb config noauto --clean \
 	--archive-areas "main contrib non-free" \
 	--mode progress --distribution artax \
 	--debian-installer false \
+	--syslinux-theme webc \
 	--apt-indices false \
 	--win32-loader false \
 	--source false \
