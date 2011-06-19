@@ -37,7 +37,7 @@ epdfview
 mozplugger
 
 # adobe flash
-adobe-flash-player-browserplugin
+browser-plugin-adobe-flash
 
 # hiding the cursor
 unclutter
