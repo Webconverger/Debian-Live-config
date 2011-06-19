@@ -4,22 +4,18 @@
 #MIRROR_DEBIAN="http://ftp.de.debian.org/debian"
 
 lb config noauto --clean \
-	--apt-recommends false \
 	--bootappend-live "homepage=http://portal.webconverger.com hostname=webconverger nonetworking nopersistent quickreboot nomodeset noroot splash username=webc vga=current quiet" \
 	-k 486 \
 	-a i386 \
 	-f standard \
 	-b iso-hybrid \
-	--apt apt \
 	--username webc \
 	--hostname webconverger \
-	--bootloader syslinux \
 	--archive-areas "main contrib non-free" \
 	--mode progress --distribution artax \
 	--debian-installer false \
 	--syslinux-theme webc \
 	--apt-indices false \
-	--win32-loader false \
 	--source false \
 	-r live.debian.net \
 	${@}
