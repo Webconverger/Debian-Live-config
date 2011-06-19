@@ -7,7 +7,6 @@ lb config noauto --clean \
 	--bootappend-live "homepage=http://portal.webconverger.com hostname=webconverger nonetworking nopersistent quickreboot nomodeset noroot splash username=webc vga=current quiet" \
 	-k 486 \
 	-a i386 \
-	-f standard \
 	-b iso-hybrid \
 	--username webc \
 	--hostname webconverger \
