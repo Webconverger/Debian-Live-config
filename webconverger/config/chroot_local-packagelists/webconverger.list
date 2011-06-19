@@ -4,7 +4,7 @@ eject file sudo wget netbase ifupdown
 
 # Standard
 console-common kbd locales-all
-dhcp3-client
+isc-dhcp-client
 
 # X11
 xorg
