@@ -3,7 +3,7 @@
 eject file sudo wget netbase ifupdown
 
 # Standard
-console-common kbd locales
+console-common kbd locales-all
 dhcp3-client
 
 # X11
