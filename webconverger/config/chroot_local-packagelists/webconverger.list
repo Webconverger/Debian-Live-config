@@ -48,6 +48,11 @@ unclutter
 # wireless
 wpasupplicant
 wireless-tools
+wireless-regdb
+crda
+firmware-linux-nonfree
+firmware-linux-free
+firmware-ipw2x00
 
 # printing
 cups
