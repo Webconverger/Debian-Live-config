@@ -53,6 +53,7 @@ crda
 firmware-linux-nonfree
 firmware-linux-free
 firmware-ipw2x00
+firmware-iwlwifi
 
 # printing
 cups
