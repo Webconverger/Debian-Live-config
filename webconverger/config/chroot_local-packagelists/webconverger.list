@@ -51,6 +51,7 @@ wireless-tools
 wireless-regdb
 crda
 firmware-linux-nonfree
+firmware-b43-installer
 firmware-linux-free
 firmware-ipw2x00
 firmware-iwlwifi

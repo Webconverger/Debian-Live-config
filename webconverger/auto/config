@@ -16,5 +16,5 @@ lb config noauto --clean \
 	--syslinux-theme webc \
 	--apt-indices false \
 	--source false \
-	-r live.debian.net \
+	--archives live \
 	${@}
