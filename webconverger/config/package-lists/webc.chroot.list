@@ -51,9 +51,10 @@ wireless-tools
 wireless-regdb
 crda
 firmware-linux-nonfree
-firmware-b43-installer
+#firmware-b43-installer
 firmware-linux-free
-firmware-ipw2x00
+#TODO hook broken?
+#firmware-ipw2x00
 firmware-iwlwifi
 
 # printing
