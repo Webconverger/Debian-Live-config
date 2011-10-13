@@ -17,6 +17,7 @@ lb config noauto --clean \
 	--apt-indices false \
 	--archive-areas "main contrib non-free" \
 	--apt-recommends false \
+	--memtest none \
 	--source false \
 	--archives live \
 	${@}

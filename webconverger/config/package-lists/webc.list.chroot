@@ -54,7 +54,7 @@ firmware-linux-nonfree
 #firmware-b43-installer
 firmware-linux-free
 #TODO hook broken?
-#firmware-ipw2x00
+firmware-ipw2x00
 firmware-iwlwifi
 
 # printing
