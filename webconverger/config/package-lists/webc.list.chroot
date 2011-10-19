@@ -51,7 +51,7 @@ wireless-tools
 wireless-regdb
 crda
 firmware-linux-nonfree
-#firmware-b43-installer
+firmware-b43-installer
 firmware-linux-free
 #TODO hook broken?
 firmware-ipw2x00

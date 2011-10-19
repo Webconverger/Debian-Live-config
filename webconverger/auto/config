@@ -10,7 +10,7 @@ lb config noauto --clean \
 	-b iso-hybrid \
 	--username webc \
 	--hostname webconverger \
-	--archive-areas "main contrib non-free" \
+	--parent-archive-areas "main contrib non-free" \
 	--mode progress --distribution artax \
 	--debian-installer false \
 	--syslinux-theme webc \
@@ -18,6 +18,6 @@ lb config noauto --clean \
 	--archive-areas "main contrib non-free" \
 	--apt-recommends false \
 	--memtest none \
-	--source false \
+	--source true \
 	--archives live \
 	${@}
