@@ -6,17 +6,20 @@ auto lo
 iface lo inet loopback
 
 # The primary network interface
-allow-hotplug eth0
+allow-hotplug eth0 eth1
 iface eth0 inet dhcp
 	pre-up iptables-restore < /etc/iptables.conf
 
-# The wireless network interface (dhcp)
-iface wlan0 inet dhcp
-	pre-up iptables-restore < /etc/iptables.conf
-    wpa-driver wext
-    wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf
-
+# Can be either fixed or wireless
 iface eth1 inet dhcp
 	pre-up iptables-restore < /etc/iptables.conf
-    wpa-driver wext
-    wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf
+	wpa-driver wext
+	wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf
+
+# The wireless network interface
+iface wlan0 inet dhcp
+	pre-up iptables-restore < /etc/iptables.conf
+	wpa-driver wext
+	wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf
+
+
