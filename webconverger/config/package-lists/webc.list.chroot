@@ -17,7 +17,10 @@ webconverger-archive-keyring
 
 # firefox
 iceweasel
+
+# http://webconverger.org/kiosk/ shows options are iceweasel-webcnoaddressbar or iceweasel-webcfullscreen
 iceweasel-webconverger
+
 openssl
 ca-certificates
 libcurl3
@@ -33,7 +36,6 @@ ttf-dejavu
 
 # pdf
 epdfview
-#debian-multimedia-keyring
 mozplugger
 
 # adobe flash
@@ -53,7 +55,6 @@ crda
 firmware-linux-nonfree
 firmware-b43-installer
 firmware-linux-free
-#TODO hook broken?
 firmware-ipw2x00
 firmware-iwlwifi
 
