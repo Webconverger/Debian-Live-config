@@ -4,7 +4,7 @@
 #MIRROR_DEBIAN="http://ftp.de.debian.org/debian"
 
 lb config noauto --clean \
-	--bootappend-live "homepage=http://webconverger.com?v=9.0 hostname=webconverger nonetworking nopersistent quickreboot nomodeset noroot splash username=webc vga=current quiet" \
+	--bootappend-live "homepage=http://webconverger.com hostname=webconverger nonetworking nopersistent quickreboot nomodeset splash username=webc vga=current quiet noroot" \
 	-k 486 \
 	-a i386 \
 	-b iso-hybrid \
