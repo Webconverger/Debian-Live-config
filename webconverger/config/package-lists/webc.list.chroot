@@ -57,6 +57,7 @@ firmware-b43-installer
 firmware-linux-free
 firmware-ipw2x00
 firmware-iwlwifi
+firmware-ralink
 
 # printing
 cups
