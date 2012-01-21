@@ -89,3 +89,4 @@ myspell-en-us
 #scim-hangul scim-tables-ko scim-uim ttf-alee xfonts-baekmuk ttf-unfonts-core ttf-unfonts-extra
 #
 user-setup
+nvidia-vdpau-driver
