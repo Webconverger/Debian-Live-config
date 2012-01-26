@@ -58,6 +58,7 @@ firmware-linux-free
 firmware-ipw2x00
 firmware-iwlwifi
 firmware-ralink
+firmware-realtek
 
 # printing
 #cups
