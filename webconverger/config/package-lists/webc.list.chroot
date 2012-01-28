@@ -52,6 +52,8 @@ wpasupplicant
 wireless-tools
 wireless-regdb
 crda
+
+# http://packages.qa.debian.org/f/firmware-nonfree.html
 firmware-linux-nonfree
 firmware-b43-installer
 firmware-linux-free
@@ -59,6 +61,9 @@ firmware-ipw2x00
 firmware-iwlwifi
 firmware-ralink
 firmware-realtek
+firmware-atheros
+firmware-brcm80211
+firmware-libertas
 
 # printing
 #cups
