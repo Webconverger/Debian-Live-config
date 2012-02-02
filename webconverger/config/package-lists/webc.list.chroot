@@ -8,7 +8,6 @@ isc-dhcp-client
 
 # X11
 xorg
-xserver-xorg-video-nouveau
 
 # Sound
 alsa-base alsa-oss alsa-utils
