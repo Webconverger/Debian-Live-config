@@ -80,18 +80,7 @@ ntpdate
 
 iputils-ping
 
-# http://webconverger.org/i18n/
-iceweasel-l10n-en-us
-
 # Dictionaries
 myspell-en-us
-# Chinese
-#scim-chinese scim-tables-zh scim-uim xfonts-intl-chinese ttf-arphic-ukai ttf-arphic-uming xfonts-wqy
 
-# Japanese
-#ttf-vlgothic scim-anthy scim-uim scim-skk scim-prime scim-canna scim-tables-ja
-
-# Korean
-#scim-hangul scim-tables-ko scim-uim ttf-alee xfonts-baekmuk ttf-unfonts-core ttf-unfonts-extra
-#
 user-setup
