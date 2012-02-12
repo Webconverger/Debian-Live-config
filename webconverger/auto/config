@@ -1,10 +1,9 @@
 #!/bin/sh
 
-#MIRROR_DEBIAN="ftp://mirror.hetzner.de/ftp.de.debian.org/debian/"
-#MIRROR_DEBIAN="http://ftp.de.debian.org/debian"
-
 lb config noauto --clean \
 	--bootappend-live "homepage=http://webconverger.com hostname=webconverger nonetworking nopersistent quickreboot nomodeset splash username=webc vga=current quiet noroot" \
+	--parent-mirror-chroot "http://cdn.debian.net/debian/" \
+	--parent-mirror-binary "http://cdn.debian.net/debian/" \
 	-k 486 \
 	-a i386 \
 	-b iso-hybrid \
