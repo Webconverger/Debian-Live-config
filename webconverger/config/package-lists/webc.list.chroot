@@ -12,14 +12,10 @@ xorg
 # Sound
 alsa-base alsa-oss alsa-utils
 
-webconverger-base
 webconverger-archive-keyring
 
 # firefox
 iceweasel
-
-# http://webconverger.org/kiosk/ shows options are iceweasel-webcnoaddressbar or iceweasel-webcfullscreen
-iceweasel-webconverger
 
 openssl
 ca-certificates
@@ -43,9 +39,6 @@ browser-plugin-adobe-flash
 
 # hiding the cursor
 unclutter
-
-# httpd - http://localhost services
-# nostromo
 
 # wireless
 wpasupplicant

@@ -1,8 +1,5 @@
-# This file describes the network interfaces available on your system
-# and how to activate them. For more information, see interfaces(5).
-
 # The loopback network interface
-auto lo eth0
+auto lo
 iface lo inet loopback
 
 allow-hotplug eth0 eth1 usb0
@@ -25,5 +22,3 @@ iface wlan0 inet dhcp
 	pre-up iptables-restore < /etc/iptables.conf
 	wpa-driver wext
 	wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf
-
-
