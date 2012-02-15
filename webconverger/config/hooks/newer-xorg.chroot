@@ -1,0 +1,2 @@
+#!/bin/sh
+apt-get install -t squeeze-backports -y xorg

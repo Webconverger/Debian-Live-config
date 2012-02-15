@@ -1,4 +1,12 @@
 Package: *
+Pin: release a=stable
+Pin-Priority: 900
+
+Package: *
+Pin: release a=squeeze-backports
+Pin-Priority: 950
+
+Package: *
 Pin: release n=artax
 Pin-Priority: 999
 
