@@ -1,0 +1,4 @@
+#!/bin/sh
+rm -f /etc/rc2.d/S*plymouth
+
+ln -s /etc/init.d/plymouth2 /etc/rc2.d/S00plymouth2
