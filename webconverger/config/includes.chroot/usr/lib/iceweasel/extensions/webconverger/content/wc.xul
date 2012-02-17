@@ -79,7 +79,7 @@
 
     <key id="key_newNavigator" disabled="true"/>
     <key id="key_newNavigatorTab" disabled="false"/>
-    <key id="focusURLBar" disabled="true"/>
+    <key id="focusURLBar" disabled="false"/>
     <key id="focusURLBar2" disabled="true"/>
     <key id="key_search" disabled="false"/>
     <key id="key_search2" disabled="false"/>
@@ -120,5 +120,9 @@
 <menuitem id="menu_tabview" hidden="true"/>
 <menuseparator id="alltabs-popup-separator" hidden="true"/>
 <key id="key_tabview" command=""/>
-
+<menupopup id="contentAreaContextMenu">
+<menuseparator id="inspect-separator" style="display: none;"/>
+<menuseparator id="context-sep-viewsource" style="display: none;"/>
+<menuitem id="context-inspect" style="display: none;"/>
+</menupopup>
 </overlay>

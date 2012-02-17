@@ -80,13 +80,7 @@ for x in $(cat /proc/cmdline); do
 			export HOMEPAGE="http://portal.webconverger.com/"
 		fi
 
-for i in $(ls /sys/class/net)
-do
-    test $(basename $i) = "lo" && continue
-    mac=$(cat /sys/class/net/$i/address | tr -d ":")
-    test "$mac" && break
-done
-x=$(echo $1 | sed "s,MACID,$mac,")
+x=$1
 shift
 
 		if test -e /etc/iceweasel/profile/prefs.js
