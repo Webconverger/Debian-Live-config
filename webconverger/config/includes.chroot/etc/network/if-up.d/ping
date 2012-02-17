@@ -1,5 +1,31 @@
 #!/bin/sh
-# http://serverfault.com/questions/334967/how-do-you-find-current-internet-network-interface
-cat /sys/class/net/$(for i in $(ip r); do echo $i; done | grep -A 1 -m 1 dev | tail -n1)/address > /tmp/MACID
-wget -qO- --timeout=5 --post-data="M=$(md5sum /tmp/MACID |
-awk '{print $1}')&V=$(cat /etc/webc/version)" http://ping.webconverger.org
+server="http://ping.webconverger.org"
+sleeping=5
+
+test -f /etc/webc/version || exit
+
+ping () {
+	logger Pinging $1
+	wget -qO- --timeout=5 --post-data="M=$(md5sum $1 |
+	awk '{print $1}')&V=$(cat /etc/webc/version)" "$server"
+}
+
+while true
+do
+
+for i in /sys/class/net/*/address
+do
+	if test "$i" != "/sys/class/net/lo/address"
+	then
+		if ping "$i"
+		then
+			logger Successful ping to "$server"
+			exit
+		else
+			logger Failed to ping "$server", sleeping $sleeping seconds
+		fi
+	fi
+	sleep $sleeping
+done
+
+done
