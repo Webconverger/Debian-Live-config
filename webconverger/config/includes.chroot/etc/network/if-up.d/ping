@@ -28,4 +28,4 @@ do
 	sleep $sleeping
 done
 
-done
+done &
