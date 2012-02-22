@@ -1,0 +1,15 @@
+label live-@FLAVOUR@
+	menu label ^English
+	menu default
+	kernel @KERNEL@
+	append initrd=@INITRD@ boot=live config @LB_BOOTAPPEND_LIVE@
+
+label live-@FLAVOUR@
+	menu label ^German
+	kernel @KERNEL@
+	append initrd=@INITRD@ boot=live config @LB_BOOTAPPEND_LIVE@ locales=de keyboard-layouts=de
+
+label live-@FLAVOUR@
+	menu label ^French
+	kernel @KERNEL@
+	append initrd=@INITRD@ boot=live config @LB_BOOTAPPEND_LIVE@ locales=fr
