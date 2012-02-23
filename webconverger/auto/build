@@ -1,5 +1,9 @@
 #!/bin/sh
 
-export http_proxy=http://localhost:3128
+if test -f /var/run/squid.pid
+then
+	export http_proxy=http://localhost:3128
+	echo Using squid proxy
+fi
 
 lb build noauto ${@} 2>&1 | tee binary.log
