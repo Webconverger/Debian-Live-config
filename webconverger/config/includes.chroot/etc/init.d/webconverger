@@ -6,7 +6,6 @@
 # Default-Start:	 2 3 4 5
 # Default-Stop:		 0 1 6
 # Short-Description: Webconverger Live environment setup
-# Description:		 http://git.webconverger.org/?p=webconverger-base.git
 ### END INIT INFO
 
 # Author: Kai Hendry <hendry@webconverger.com>
@@ -112,9 +111,6 @@ shift
 			then
 				#echo ESSID: "$essid"
 				iwconfig $iface essid "$essid" &>/dev/null
-			else
-				#echo "No ESSID set (will try connect to any open network)"
-				iwconfig $iface essid any &>/dev/null
 			fi
 
 			if test $key
@@ -156,8 +152,6 @@ END
 		;;
 	esac
 done
-
-
 
 	case "$?" in
 		0|1) [ "$VERBOSE" != no ] && log_end_msg 0 ;;
