@@ -28,3 +28,18 @@ label live-@FLAVOUR@
 	menu label S^wedish
 	kernel @KERNEL@
 	append initrd=@INITRD@ boot=live config @LB_BOOTAPPEND_LIVE@ locales=sv
+
+label live-@FLAVOUR@
+	menu label ^Dutch
+	kernel @KERNEL@
+	append initrd=@INITRD@ boot=live config @LB_BOOTAPPEND_LIVE@ locales=nl
+
+label live-@FLAVOUR@
+	menu label Norwegian ^Bokmål
+	kernel @KERNEL@
+	append initrd=@INITRD@ boot=live config @LB_BOOTAPPEND_LIVE@ locales=nb_NO.UTF-8 keyboard-layouts=no
+
+label live-@FLAVOUR@
+	menu label Norwegian ^Nynorsk
+	kernel @KERNEL@
+	append initrd=@INITRD@ boot=live config @LB_BOOTAPPEND_LIVE@ locales=nn_NO.UTF-8 keyboard-layouts=no
