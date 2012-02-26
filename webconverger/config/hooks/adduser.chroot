@@ -1,3 +1,5 @@
 #!/bin/bash
 groupadd -g 1000 webc
 useradd -u 1000 -g 1000 webc
+sed -i 's/^root:\*:/root:!:/' /etc/shadow
+chown -R webc /home/webc
