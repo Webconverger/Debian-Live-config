@@ -1,34 +1,29 @@
 #!/bin/sh
 
-# This is an binary hook for live-build(7) to overwrite the banner
-# in the graphical Debian Installer.
-# To enable it, copy or symlink this hook into your config/binary_local-hooks
-# directory and add a replacement banner.png at:
-#
-banner="config/binary_debian-installer/banner.png"
-#
-# The file should be a PNG image of dimensions 800 x 75.
+# The banner file should be a PNG image of dimensions 800 x 75.
+
+initrd_overwrites () 
+{
+	dir="$1"
+	cp config/binary_debian-installer/banner.png ${dir}/usr/share/graphics/logo_debian.png
+	cp config/binary_debian-installer/preseed.cfg ${dir}/.
+} 
 
 set -e
 
-if [ -e $banner ]
-then
-	TARGET_INITRD="binary/install/gtk/initrd.gz"
-	REPACK_TMPDIR="binary.initrd"
+TARGET_INITRD="binary/install/gtk/initrd.gz"
+REPACK_TMPDIR="binary.initrd"
 
-	if [ -e "${TARGET_INITRD}" ]
-	then
-		# cpio does not have a "extract to directory", so we must change
-		# directory
-		mkdir -p ${REPACK_TMPDIR}
-		cd ${REPACK_TMPDIR}
-		gzip -d < ../${TARGET_INITRD} | cpio -i --make-directories --no-absolute-filenames
+test ! -e "${TARGET_INITRD}" && exit 0
 
-		# Overwrite banner
-		cp ../$banner ./usr/share/graphics/logo_debian.png
+# cpio does not have a "extract to directory", so we must change directory
+mkdir -p ${REPACK_TMPDIR}
+gzip -d < ${TARGET_INITRD} | ( 
+	cd ${REPACK_TMPDIR} && cpio -i --make-directories --no-absolute-filenames
+)
 
-		find | cpio -H newc -o | gzip -9 > ../${TARGET_INITRD}
-		cd ..
-		rm -rf ${REPACK_TMPDIR}
-	fi
-fi
+# Overwrites 
+initrd_overwrites ${REPACK_TMPDIR}
+
+( cd ${REPACK_TMPDIR} && find | cpio -H newc -o ) | gzip -9 > ${TARGET_INITRD}
+rm -rf ${REPACK_TMPDIR}
