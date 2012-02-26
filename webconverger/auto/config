@@ -1,17 +1,16 @@
 #!/bin/sh
 
 lb config noauto --clean \
-	--bootappend-live "homepage=http://webconverger.com hostname=webconverger nonetworking nopersistent quickreboot nomodeset splash username=webc vga=current quiet noroot" \
+	--bootappend-live "homepage=http://webconverger.com hostname=webconverger nonetworking nopersistent quickreboot nomodeset splash vga=current quiet noroot" \
 	--parent-mirror-chroot "http://cdn.debian.net/debian/" \
 	--parent-mirror-binary "http://cdn.debian.net/debian/" \
 	-k 486 \
 	-a i386 \
 	-b iso-hybrid \
-	--username webc \
 	--hostname webconverger \
 	--parent-archive-areas "main contrib non-free" \
 	--mode progress --distribution artax \
-	--debian-installer false \
+	--debian-installer live \
 	--syslinux-theme webc \
 	--apt-indices false \
 	--iso-publisher "http://webconverger.com" \

@@ -19,6 +19,7 @@ fi
 set bell-style none
 
 # (re)start X
+exit # see /etc/inittab
 
 if [ -z "$DISPLAY" ] && [ $(tty) == /dev/tty1 ]; then
 while true

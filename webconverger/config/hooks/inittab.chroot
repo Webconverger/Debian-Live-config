@@ -1,0 +1,3 @@
+#!/bin/bash
+
+echo 'X1:2:respawn:su - webc -c startx' >> /etc/inittab
