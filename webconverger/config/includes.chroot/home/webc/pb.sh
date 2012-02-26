@@ -4,13 +4,6 @@
 # hendry@webconverger.com
 WEBCHOME=/home/webc
 
-if test -e /tmp/pb-loop
-then
-	logger pb invoked
-	exit
-fi
-touch /tmp/pb-loop
-
 # disable bell
 xset b 0 0
 

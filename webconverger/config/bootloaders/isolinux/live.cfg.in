@@ -1,0 +1,45 @@
+label live-@FLAVOUR@
+	menu label ^English
+	menu default
+	kernel @KERNEL@
+	append initrd=@INITRD@ boot=live config @LB_BOOTAPPEND_LIVE@
+
+label live-@FLAVOUR@
+	menu label ^German
+	kernel @KERNEL@
+	append initrd=@INITRD@ boot=live config @LB_BOOTAPPEND_LIVE@ locales=de keyboard-layouts=de
+
+label live-@FLAVOUR@
+	menu label ^French
+	kernel @KERNEL@
+	append initrd=@INITRD@ boot=live config @LB_BOOTAPPEND_LIVE@ locales=fr
+
+label live-@FLAVOUR@
+	menu label ^Spanish
+	kernel @KERNEL@
+	append initrd=@INITRD@ boot=live config @LB_BOOTAPPEND_LIVE@ locales=es keyboard-layouts=es
+
+label live-@FLAVOUR@
+	menu label ^Italian
+	kernel @KERNEL@
+	append initrd=@INITRD@ boot=live config @LB_BOOTAPPEND_LIVE@ locales=it
+
+label live-@FLAVOUR@
+	menu label S^wedish
+	kernel @KERNEL@
+	append initrd=@INITRD@ boot=live config @LB_BOOTAPPEND_LIVE@ locales=sv
+
+label live-@FLAVOUR@
+	menu label ^Dutch
+	kernel @KERNEL@
+	append initrd=@INITRD@ boot=live config @LB_BOOTAPPEND_LIVE@ locales=nl
+
+label live-@FLAVOUR@
+	menu label Norwegian ^Bokmål
+	kernel @KERNEL@
+	append initrd=@INITRD@ boot=live config @LB_BOOTAPPEND_LIVE@ locales=nb_NO.UTF-8 keyboard-layouts=no
+
+label live-@FLAVOUR@
+	menu label Norwegian ^Nynorsk
+	kernel @KERNEL@
+	append initrd=@INITRD@ boot=live config @LB_BOOTAPPEND_LIVE@ locales=nn_NO.UTF-8 keyboard-layouts=no

@@ -8,12 +8,16 @@ Pin-Priority: 950
 
 Package: *
 Pin: release n=artax
-Pin-Priority: 999
+Pin-Priority: 990
 
 Package: *
 Pin: release n=artax-security
-Pin-Priority: 999
+Pin-Priority: 990
 
 Package: *
 Pin: release n=artax-backports
+Pin-Priority: 990
+
+Package: *
+Pin: release o=webconverger
 Pin-Priority: 999
