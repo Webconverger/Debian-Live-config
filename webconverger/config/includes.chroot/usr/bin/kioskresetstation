@@ -1,29 +1,53 @@
 #!/bin/sh
-# hendry@webconverger.com (c) 2008-2010
+if test -z "$1"
+then
+	echo Please specify minutes. e.g. $0 5 \# reset kiosk in 5 minutes of inactivity on non-default page
+	exit
+fi
 
-KIOSKRESETSTATION=$1
-test $KIOSKRESETSTATION || exit
-test $KIOSKRESETSTATION -lt 1 -o $KIOSKRESETSTATION -gt 60 && exit
+kioskresetstation=$1
+test "$kioskresetstation" -lt 1 -o "$kioskresetstation" -gt 120 && exit
 
-KIOSKRESETSECONDS=`expr $KIOSKRESETSTATION \* 60`
-echo Killing after $KIOSKRESETSECONDS idle seconds
+kioskresetseconds=$( expr $kioskresetstation \* 60 )
+logger "Killing after $kioskresetseconds idle seconds"
+
+title ()
+{
+       xwininfo -root -tree | grep Navigator | grep -v '"Iceweasel":' | awk -F\" '{print $2}'
+}
+
+# when we start up, get the default page
+default=""
+while test "$default" = ""
+do
+       default=$( title )
+done
+
+logger Default: $default
 
 while true
 do
+       # if mouse moved, sleep and try again
+       idleseconds=$( /usr/bin/idleseconds )
+       sleepfor=$( expr $kioskresetseconds \- $idleseconds )
+       if test "$sleepfor" -gt 0
+       then
+               echo "Sleeping for $sleepfor"
+               sleep $sleepfor
+               continue
+       fi
 
-	IDLESECONDS=$(/usr/bin/idleseconds)
+       # if on default page, sleep and try again
+       if test "$( title )" = "$default"
+       then
+               sleep $kioskresetseconds
+               continue
+       fi
 
-	if test $IDLESECONDS -lt $KIOSKRESETSECONDS
-	then
+	logger KILLING
+	logger $( title )
+	logger $default
 
-		SLEEPFOR=`expr $KIOSKRESETSECONDS \- $IDLESECONDS`
-		echo Sleeping for $SLEEPFOR
-		sleep $SLEEPFOR
-
-	else
-
-		pkill X
-		sleep $KIOSKRESETSECONDS
-
-fi
+       pkill X
 done
+
