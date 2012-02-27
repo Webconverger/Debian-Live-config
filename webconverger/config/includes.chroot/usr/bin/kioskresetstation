@@ -1,4 +1,9 @@
 #!/bin/sh
+# BUGS:
+# * Dependent on Iceweasel
+# * Changes on a form / scroll position on the homepage, won't reset kiosk since we are only working from homepage title
+# Perhaps look into a layer utilising https://developer.mozilla.org/en/nsIIdleService
+
 if test -z "$1"
 then
 	echo Please specify minutes. e.g. $0 5 \# reset kiosk in 5 minutes of inactivity on non-default page
@@ -13,41 +18,39 @@ logger "Killing after $kioskresetseconds idle seconds"
 
 title ()
 {
-       xwininfo -root -tree | grep Navigator | grep -v '"Iceweasel":' | awk -F\" '{print $2}'
+	xwininfo -root -tree | grep Navigator | grep -v '"Iceweasel":' | awk -F\" '{print $2}'
 }
 
 # when we start up, get the default page
 default=""
 while test "$default" = ""
 do
-       default=$( title )
+	default=$( title )
 done
-
-logger Default: $default
 
 while true
 do
-       # if mouse moved, sleep and try again
-       idleseconds=$( /usr/bin/idleseconds )
-       sleepfor=$( expr $kioskresetseconds \- $idleseconds )
-       if test "$sleepfor" -gt 0
-       then
-               echo "Sleeping for $sleepfor"
-               sleep $sleepfor
-               continue
-       fi
 
-       # if on default page, sleep and try again
-       if test "$( title )" = "$default"
-       then
-               sleep $kioskresetseconds
-               continue
-       fi
+# if mouse moved, sleep and try again
+	idleseconds=$( /usr/bin/idleseconds )
+	sleepfor=$( expr $kioskresetseconds \- $idleseconds )
+	if test "$sleepfor" -gt 0
+	then
+		echo "Sleeping for $sleepfor"
+		sleep $sleepfor
+		continue
+	fi
 
-	logger KILLING
-	logger $( title )
-	logger $default
+# if on default page, sleep and try again
+	current="$( title )"
+	if test "$current" = "$default"
+	then
+		sleep $sleepfor
+		continue
+	fi
 
-       pkill X
+	logger "Killing '$current' for '$default'"
+
+	pkill X
 done
 
