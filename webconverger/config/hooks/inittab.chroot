@@ -1,4 +1,4 @@
 #!/bin/bash
 
-echo 'X1:2:respawn:su webc -c startx' >> /etc/inittab
+echo 'X1:2:respawn:/etc/webc/startx.sh' >> /etc/inittab
 sed -i 's/^1:2345:/1:345:/' /etc/inittab

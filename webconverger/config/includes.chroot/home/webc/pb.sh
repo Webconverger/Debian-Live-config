@@ -4,6 +4,15 @@
 # hendry@webconverger.com
 WEBCHOME=/home/webc
 
+logger xsession invoked
+
+! grep -qs noroot /proc/cmdline && {
+	set -x
+	exec 2> ~/pb.log
+}
+
+homepage="$1"
+
 # disable bell
 xset b 0 0
 
@@ -11,10 +20,12 @@ xset b 0 0
 xsetroot -solid "#ffffff"
 
 # only when noroot is supplied, we use Webc's WM dwm.web
-grep -qs noroot /proc/cmdline && /usr/bin/dwm.web || /usr/bin/dwm.default &
+wm="/usr/bin/dwm.default"
+grep -qs noroot /proc/cmdline && wm="/usr/bin/dwm.web"
+exec $wm &
 
 # hide the cursor by default, showcursor to override
-grep -qs showcursor /proc/cmdline || /usr/bin/unclutter &
+! grep -qs showcursor /proc/cmdline && exec /usr/bin/unclutter &
 
 # Stop (ab)users breaking the loop to restart the exited browser
 trap "echo Unbreakable!" SIGINT SIGTERM
@@ -22,28 +33,35 @@ trap "echo Unbreakable!" SIGINT SIGTERM
 for x in $(cat /proc/cmdline); do
 	case $x in
 		homepage=*)
-		set -f -- $(/bin/busybox httpd -d ${x#homepage=})
-		;;
+			homepage="$( /bin/busybox httpd -d ${x#homepage=} )"
+			;;
 		kioskresetstation=*) # For killing the browser after a number of minutes of idleness
-		/usr/bin/kioskresetstation ${x#kioskresetstation=} &
-		;;
+			exec /usr/bin/kioskresetstation ${x#kioskresetstation=} &
+			;;
 	esac
 done
 
 grep -qs compose /proc/cmdline && setxkbmap -option "compose:rwin" && logger "Compose key setup"
 
 # Set default homepage if homepage cmdline isn't set
-test $1 || set -- "http://portal.webconverger.com/"
+test $homepage = "" &&  homepage="http://portal.webconverger.com/"
 
 # if no-x-background is unset, try setup a background from homepage sans query
-grep -qs noxbg /proc/cmdline || {
-wget --timeout=5 $1/bg.png -O $WEBCHOME/bg.png && file $WEBCHOME/bg.png | grep -q "image data" ||
-cp /etc/webc/bg.png $WEBCHOME/bg.png
-xloadimage -quiet -onroot -center $WEBCHOME/bg.png
+! grep -qs noxbg /proc/cmdline && {
+	cp /etc/webc/bg.png $WEBCHOME/bg.png
+	wget --timeout=5 ${homepage}/bg.png -O $WEBCHOME/bg.png.tmp 
+	file $WEBCHOME/bg.png.tmp | grep -qs "image data" && {
+		mv $WEBCHOME/bg.png.tmp $WEBCHOME/bg.png
+	}
+	xloadimage -quiet -onroot -center $WEBCHOME/bg.png
 }
 
 # No screen blanking - needed for Digital signage
-grep -qs noblank /proc/cmdline && xset s off && xset -dpms && logger noblank
+grep -qs noblank /proc/cmdline && {
+	logger noblank
+	xset s off 
+	xset -dpms
+}
 
 
 # TODO: Maybe merge MAC finding code?
@@ -54,7 +72,7 @@ do
 	mac=$(cat /sys/class/net/$i/address | tr -d ":")
 	test "$mac" && break
 done
-x=$(echo $1 | sed "s,MACID,$mac,")
+x=$(echo $homepage | sed "s,MACID,$mac,")
 shift
 
 while true
