@@ -97,7 +97,7 @@ then
 	exit
 fi
 
-sed -i "s,BOOTCONFIG,$wirelesscfg,g" /etc/network/interfaces
+sed -i "s,wireless config,$wirelesscfg,g" /etc/network/interfaces
 
 for iface in wlan0 eth1 # for want of a better way of detecting wireless interfaces
 do
