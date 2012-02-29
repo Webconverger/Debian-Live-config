@@ -1,7 +1,6 @@
 #!/bin/bash
-groupadd -g 1000 webc
-useradd -u 1000 -g 1000 -G sudo -s /bin/bash webc
-sed -i 's/^root:\*:/root:!:/' /etc/shadow
-chown -R webc /home/webc
-sed -i 's/^user.*//' /etc/sudoers
-sed -i 's/^%sudo.*/%sudo ALL=(ALL) NOPASSWD: ALL/' /etc/sudoers
+
+sed -i 's/^LIVE_HOSTNAME="progress"/LIVE_HOSTNAME="webconverger"/' /lib/live/config.sh
+sed -i 's/^LIVE_USERNAME="user"/LIVE_USERNAME="webc"/' /lib/live/config.sh
+sed -i 's/^LIVE_USER_FULLNAME="Progress Linux user"/LIVE_USER_FULLNAME="Webconverger Hero"/' /lib/live/config.sh
+
