@@ -94,7 +94,7 @@ done
 # Don't try setup wireless if there is no config or we have a working internet connection
 if test -z "$wirelesscfg"
 then
-	exit
+	exit 0
 fi
 
 sed -i "s,wireless config,$wirelesscfg,g" /etc/network/interfaces
