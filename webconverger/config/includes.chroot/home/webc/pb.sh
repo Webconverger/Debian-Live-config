@@ -13,6 +13,20 @@ logger xsession invoked
 
 homepage="$1"
 
+for x in $(cat /proc/cmdline); do
+	case $x in
+		homepage=*)
+			homepage="$( /bin/busybox httpd -d ${x#homepage=} )"
+			;;
+		kioskresetstation=*) # For killing the browser after a number of minutes of idleness
+			exec /usr/bin/kioskresetstation ${x#kioskresetstation=} &
+			;;
+		locales=*)
+			export LANG=$( locale -a | grep ^${x#locales=}_...utf8 )
+			;;
+	esac
+done
+
 # disable bell
 xset b 0 0
 
@@ -29,17 +43,6 @@ exec $wm &
 
 # Stop (ab)users breaking the loop to restart the exited browser
 trap "echo Unbreakable!" SIGINT SIGTERM
-
-for x in $(cat /proc/cmdline); do
-	case $x in
-		homepage=*)
-			homepage="$( /bin/busybox httpd -d ${x#homepage=} )"
-			;;
-		kioskresetstation=*) # For killing the browser after a number of minutes of idleness
-			exec /usr/bin/kioskresetstation ${x#kioskresetstation=} &
-			;;
-	esac
-done
 
 grep -qs compose /proc/cmdline && setxkbmap -option "compose:rwin" && logger "Compose key setup"
 
