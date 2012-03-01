@@ -45,7 +45,7 @@ do
 	current="$( title )"
 	if test "$current" = "$default"
 	then
-		sleep $sleepfor
+		sleep $kioskresetseconds
 		continue
 	fi
 
