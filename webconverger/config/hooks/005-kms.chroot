@@ -1,0 +1,12 @@
+#!/bin/sh
+
+set -e
+
+# temporary hack until initramfs-tools supports /etc/initramfs-tools/modules.d
+cat >> /etc/initramfs-tools/modules << EOF
+
+# KMS (Kernel Mode Setting)
+i915 modeset=1
+nouveau modeset=1
+radeon modeset=1
+EOF

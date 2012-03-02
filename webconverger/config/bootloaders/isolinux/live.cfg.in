@@ -27,17 +27,17 @@ label live-@FLAVOUR@
 label live-@FLAVOUR@
 	menu label ^Polish
 	kernel @KERNEL@
-	append initrd=@INITRD@ boot=live config @LB_BOOTAPPEND_LIVE@ locales=pl_PL.UTF-8 keyboard-layouts=pl
+	append initrd=@INITRD@ boot=live config @LB_BOOTAPPEND_LIVE@ locales=pl keyboard-layouts=pl
 
 label live-@FLAVOUR@
 	menu label Norwegian ^Nynorsk
 	kernel @KERNEL@
-	append initrd=@INITRD@ boot=live config @LB_BOOTAPPEND_LIVE@ locales=nn_NO.UTF-8 keyboard-layouts=no
+	append initrd=@INITRD@ boot=live config @LB_BOOTAPPEND_LIVE@ locales=nn keyboard-layouts=no
 
 label live-@FLAVOUR@
 	menu label Norwegian Bokmal
 	kernel @KERNEL@
-	append initrd=@INITRD@ boot=live config @LB_BOOTAPPEND_LIVE@ locales=nb_NO.UTF-8 keyboard-layouts=no
+	append initrd=@INITRD@ boot=live config @LB_BOOTAPPEND_LIVE@ locales=nb keyboard-layouts=no
 
 label live-@FLAVOUR@
 	menu label ^Spanish
