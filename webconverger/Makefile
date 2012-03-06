@@ -7,7 +7,7 @@ TODAY=$(shell date +%Y-%m-%d)
 		-stroke black -strokewidth 2 -annotate 0 $(TODAY) \
 		-background none -shadow 150x3+0+0 +repage \
 		-stroke none -fill white     -annotate 0 $(TODAY) \
-		$< +swap -gravity south -geometry +260-0 \
+		$< +swap -gravity south -geometry +250-0 \
 		-composite $@
 
 all: clean $(OUTFILES)
