@@ -17,15 +17,10 @@ WEBCHOME=/home/webc
 
 # Read configuration variable file if it is present
 [ -r /etc/default/$NAME ] && . /etc/default/$NAME
-
-# POTENTIALLY DANGEROUS IF RUN ON !WEBCONVERGER LIVE SYSTEM
-if grep -qs noroot /proc/cmdline
-then
-	find /usr/bin -name '*term' -exec rm -f {} \;
-fi
+. /etc/webc/webc.conf
 
 # Make sure we use a default closeicon
-grep -qs "closeicon=" /proc/cmdline || $WEBCHOME/iwcloseconfig.sh strip
+cmdline | grep -qs "closeicon=" || $WEBCHOME/iwcloseconfig.sh strip
 
 # Ensure volume is 100%
 amixer -s &>/dev/null <<END
@@ -45,7 +40,7 @@ Section "ServerFlags"
 EndSection
 WCEND
 
-for x in $(cat /proc/cmdline)
+for x in $(cmdline)
 do
 	case $x in
 		homepage=*)

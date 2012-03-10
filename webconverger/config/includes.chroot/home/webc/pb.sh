@@ -6,14 +6,16 @@ WEBCHOME=/home/webc
 
 logger xsession invoked
 
-! grep -qs noroot /proc/cmdline && {
+cmdline ! grep -qs noroot && {
 	set -x
 	exec 2> ~/pb.log
 }
 
+source "/etc/webc/webc.conf"
 homepage="$1"
+wm="/usr/bin/dwm.default"
 
-for x in $(cat /proc/cmdline); do
+for x in $(cmdline); do
 	case $x in
 		homepage=*)
 			homepage="$( /bin/busybox httpd -d ${x#homepage=} )"
@@ -23,6 +25,22 @@ for x in $(cat /proc/cmdline); do
 			;;
 		locales=*)
 			export LANG=$( locale -a | grep ^${x#locales=}_...utf8 )
+			;;
+		install)
+			homepage="$install_qa_url"
+			;;
+		noroot)
+			wm="/usr/bin/dwm.web"
+			;;
+
+		compose)
+			setxkbmap -option "compose:rwin" 
+			logs "Compose key setup"
+			;;
+		noblank)
+			logs "noblank"
+			xset s off 
+			xset -dpms
 			;;
 	esac
 done
@@ -34,23 +52,19 @@ xset b 0 0
 xsetroot -solid "#ffffff"
 
 # only when noroot is supplied, we use Webc's WM dwm.web
-wm="/usr/bin/dwm.default"
-grep -qs noroot /proc/cmdline && wm="/usr/bin/dwm.web"
 exec $wm &
 
 # hide the cursor by default, showcursor to override
-! grep -qs showcursor /proc/cmdline && exec /usr/bin/unclutter &
+! cmdline | grep -qs showcursor && exec /usr/bin/unclutter &
 
 # Stop (ab)users breaking the loop to restart the exited browser
 trap "echo Unbreakable!" SIGINT SIGTERM
-
-grep -qs compose /proc/cmdline && setxkbmap -option "compose:rwin" && logger "Compose key setup"
 
 # Set default homepage if homepage cmdline isn't set
 test $homepage = "" &&  homepage="http://portal.webconverger.com/"
 
 # if no-x-background is unset, try setup a background from homepage sans query
-! grep -qs noxbg /proc/cmdline && {
+! cmdline | grep -qs noxbg && {
 	cp /etc/webc/bg.png $WEBCHOME/bg.png
 	wget --timeout=5 ${homepage}/bg.png -O $WEBCHOME/bg.png.tmp 
 	file $WEBCHOME/bg.png.tmp | grep -qs "image data" && {
@@ -59,12 +73,6 @@ test $homepage = "" &&  homepage="http://portal.webconverger.com/"
 	xloadimage -quiet -onroot -center $WEBCHOME/bg.png
 }
 
-# No screen blanking - needed for Digital signage
-grep -qs noblank /proc/cmdline && {
-	logger noblank
-	xset s off 
-	xset -dpms
-}
 
 
 # TODO: Maybe merge MAC finding code?

@@ -1,0 +1,14 @@
+#!/bin/sh
+#sed -i 's/alias platform:pcspkr snd_pcsp//' /lib/modules/3.2.0-1artax1-486/modules.alias
+
+modules="intel_agp"
+
+for m in $modules; do 
+	echo "${m}" > /etc/modprobe.d/${m}-enabled.conf
+done
+
+modules="pcspkr i2c_piix4"
+
+for m in $modules; do 
+	echo "blacklist ${m}" > /etc/modprobe.d/${m}-disabled.conf
+done

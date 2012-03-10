@@ -48,3 +48,8 @@ label live-@FLAVOUR@
 	menu label S^wedish
 	kernel @KERNEL@
 	append initrd=@INITRD@ boot=live config @LB_BOOTAPPEND_LIVE@ locales=sv
+
+label install
+	menu label ^Install
+	kernel @KERNEL@
+	append initrd=@INITRD@ boot=live config install quiet splash noroot

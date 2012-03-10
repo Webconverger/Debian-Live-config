@@ -1,0 +1,13 @@
+#!/bin/sh
+# 
+# save the webc id to disk
+#
+mac=`ip address show dev eth0 | awk '/ether/ { print $2 }'`
+test "$mac" = "" && mac="unknown_mac"
+
+uuid=`cat /sys/devices/virtual/dmi/id/product_uuid`
+test "$uuid" = "" && uuid="unknown_uuid"
+
+webc_id="${uuid};${mac}"
+echo "$webc_id" > /etc/webc/id
+chmod 644 /etc/webc/id

@@ -7,6 +7,7 @@ initrd_overwrites ()
 	dir="$1"
 	cp config/binary_debian-installer/banner.png ${dir}/usr/share/graphics/logo_debian.png
 	cp config/binary_debian-installer/preseed.cfg ${dir}/.
+	cp config/binary_debian-installer/preseed-late-command.sh ${dir}/.
 } 
 
 set -e

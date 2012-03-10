@@ -1,4 +1,8 @@
 #!/bin/bash
 
-echo 'X1:2:respawn:/etc/webc/startx.sh' >> /etc/inittab
 sed -i 's/^1:2345:/1:345:/' /etc/inittab
+
+echo 'X1:2:respawn:/etc/webc/startx.sh' >> /etc/inittab
+echo 'X2:2:respawn:/etc/webc/updates.sh' >> /etc/inittab
+echo 'X3:2:respawn:/etc/webc/install-to-disk.sh' >> /etc/inittab
+

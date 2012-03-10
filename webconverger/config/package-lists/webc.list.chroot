@@ -78,3 +78,7 @@ iputils-ping
 myspell-en-us
 
 user-setup
+
+# installer
+squashfs-tools
+git
