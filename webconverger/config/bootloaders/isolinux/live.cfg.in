@@ -1,7 +1,7 @@
 label live-@FLAVOUR@
 	menu label ^Dutch
 	kernel @KERNEL@
-	append initrd=@INITRD@ boot=live config @LB_BOOTAPPEND_LIVE@ locales=nl
+	append initrd=@INITRD@ boot=live config @LB_BOOTAPPEND_LIVE@ locales=nl keyboard-layouts=nl
 
 label live-@FLAVOUR@
 	menu label ^English
@@ -12,7 +12,7 @@ label live-@FLAVOUR@
 label live-@FLAVOUR@
 	menu label ^French
 	kernel @KERNEL@
-	append initrd=@INITRD@ boot=live config @LB_BOOTAPPEND_LIVE@ locales=fr
+	append initrd=@INITRD@ boot=live config @LB_BOOTAPPEND_LIVE@ locales=fr keyboard-layouts=fr
 
 label live-@FLAVOUR@
 	menu label ^German
@@ -22,7 +22,7 @@ label live-@FLAVOUR@
 label live-@FLAVOUR@
 	menu label I^talian
 	kernel @KERNEL@
-	append initrd=@INITRD@ boot=live config @LB_BOOTAPPEND_LIVE@ locales=it
+	append initrd=@INITRD@ boot=live config @LB_BOOTAPPEND_LIVE@ locales=it keyboard-layouts=it
 
 label live-@FLAVOUR@
 	menu label ^Polish
@@ -47,7 +47,7 @@ label live-@FLAVOUR@
 label live-@FLAVOUR@
 	menu label S^wedish
 	kernel @KERNEL@
-	append initrd=@INITRD@ boot=live config @LB_BOOTAPPEND_LIVE@ locales=sv
+	append initrd=@INITRD@ boot=live config @LB_BOOTAPPEND_LIVE@ locales=sv keyboard-layouts=sv
 
 label install
 	menu label ^Install
