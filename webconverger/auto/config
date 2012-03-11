@@ -10,8 +10,8 @@ lb config noauto --clean \
 	--hostname webconverger \
 	--parent-archive-areas "main contrib non-free" \
 	--mode progress --distribution artax \
-	--debian-installer live \
-	--debian-installer-preseedfile config/binary_debian-installer/preseed.cfg \
+	--debian-installer false \
+	--debian-installer-gui false \
 	--syslinux-theme live-build \
 	--apt-indices false \
 	--iso-publisher "http://webconverger.com" \
