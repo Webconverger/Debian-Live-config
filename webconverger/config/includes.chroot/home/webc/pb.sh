@@ -73,16 +73,7 @@ test $homepage = "" &&  homepage="http://portal.webconverger.com/"
 	xloadimage -quiet -onroot -center $WEBCHOME/bg.png
 }
 
-
-
-# TODO: Maybe merge MAC finding code?
-# https://github.com/Webconverger/Debian-Live-config/blob/master/webconverger/config/includes.chroot/etc/network/if-up.d/ping
-for i in $(ls /sys/class/net)
-do
-	test $(basename $i) = "lo" && continue
-	mac=$(cat /sys/class/net/$i/address | tr -d ":")
-	test "$mac" && break
-done
+mac=`mac_address`
 x=$(echo $homepage | sed "s,MACID,$mac,")
 shift
 
