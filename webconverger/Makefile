@@ -10,6 +10,12 @@ TODAY=$(shell date +%Y-%m-%d)
 		$< +swap -gravity south -geometry +250-0 \
 		-composite $@
 
+iso:
+	sudo rm binary/live/filesystem.squashfs
+	sudo mksquashfs chroot binary/live/filesystem.squashfs
+	sudo lb binary_iso --force
+
+
 all: clean $(OUTFILES)
 	lb config
 	sudo lb build
