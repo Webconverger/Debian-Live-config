@@ -4,6 +4,7 @@ lb config noauto --clean \
 	--bootappend-live "homepage=http://webconverger.com hostname=webconverger nonetworking nopersistent quickreboot vga=normal video=vesa nomodeset splash quiet noroot" \
 	--parent-mirror-chroot "http://cdn.debian.net/debian/" \
 	--parent-mirror-binary "http://cdn.debian.net/debian/" \
+	--build-with-chroot false \
 	-k 486 \
 	-a i386 \
 	-b iso-hybrid \

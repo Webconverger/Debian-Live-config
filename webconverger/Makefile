@@ -10,15 +10,14 @@ TODAY=$(shell date +%Y-%m-%d)
 		$< +swap -gravity south -geometry +250-0 \
 		-composite $@
 
-iso:
-	sudo rm binary/live/filesystem.squashfs
-	sudo mksquashfs chroot binary/live/filesystem.squashfs
-	sudo lb binary_iso --force
-
-
 all: clean $(OUTFILES)
 	lb config
-	sudo lb build
+	sudo git clone ~phaller/webc/webconverger/chroot
+	sudo lb binary_rootfs
+	sudo mkdir binary/isolinux
+	sudo lb binary_linux-image
+	sudo lb binary_syslinux
+	sudo lb binary_iso
 
 clean:
 	sudo lb clean
