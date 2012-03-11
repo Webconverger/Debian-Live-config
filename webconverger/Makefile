@@ -1,4 +1,4 @@
-INFILES = config/binary_debian-installer/banner.orig config/bootloaders/isolinux/splash.orig config/includes.chroot/etc/webc/bg.orig
+INFILES = config/bootloaders/isolinux/splash.orig config/includes.chroot/etc/webc/bg.orig
 OUTFILES = $(addsuffix .png, $(basename $(INFILES)))
 TODAY=$(shell date +%Y-%m-%d)
 
@@ -10,9 +10,15 @@ TODAY=$(shell date +%Y-%m-%d)
 		$< +swap -gravity south -geometry +250-0 \
 		-composite $@
 
-all: clean $(OUTFILES)
+live: clean $(OUTFILES)
 	lb config
-	sudo git clone ~phaller/webc/webconverger/chroot
+	sudo lb build
+
+chroot: clean $(OUTFILES)
+	lb config --build-with-chroot false
+	test -d github_chroot || git clone git://github.com/Webconverger/webc.git github_chroot
+	test -d github_chroot && cp -r github_chroot chroot
+	cd chroot && git pull
 	sudo lb binary_rootfs
 	sudo mkdir binary/isolinux
 	sudo lb binary_linux-image
