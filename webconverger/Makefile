@@ -1,6 +1,7 @@
 INFILES = config/bootloaders/isolinux/splash.orig config/includes.chroot/etc/webc/bg.orig
 OUTFILES = $(addsuffix .png, $(basename $(INFILES)))
 TODAY=$(shell date +%Y-%m-%d)
+REPO = git://github.com/Webconverger/webc.git
 
 %.png : %.orig
 	convert -size 75x14 xc:none -gravity center -pointsize 10 \
@@ -14,11 +15,10 @@ live: clean $(OUTFILES)
 	lb config
 	sudo lb build
 
-chroot: clean $(OUTFILES)
+chroot: $(OUTFILES)
 	lb config --build-with-chroot false
-	test -d github_chroot || git clone git://github.com/Webconverger/webc.git github_chroot
-	test -d github_chroot && cp -a github_chroot chroot
-	(cd chroot && git pull && for s in .git-fixups/*; do sh $$s; done )
+	if test -d chroot; then sudo chroot chroot git pull; else sudo git clone $(REPO) chroot; fi
+	sudo chroot chroot sh -c 'for s in .git-fixups/*; do sh $$s; done '
 	sudo lb binary_rootfs
 	sudo mkdir binary/isolinux
 	sudo lb binary_linux-image
