@@ -17,7 +17,7 @@ live: clean $(OUTFILES)
 chroot: clean $(OUTFILES)
 	lb config --build-with-chroot false
 	test -d github_chroot || git clone git://github.com/Webconverger/webc.git github_chroot
-	test -d github_chroot && cp -r github_chroot chroot
+	test -d github_chroot && cp -a github_chroot chroot
 	(cd chroot && git pull && for s in .git-fixups/*; do sh $$s; done )
 	sudo lb binary_rootfs
 	sudo mkdir binary/isolinux
