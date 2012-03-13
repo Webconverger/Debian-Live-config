@@ -4,11 +4,6 @@ label live-@FLAVOUR@
 	kernel @KERNEL@
 	append initrd=@INITRD@ boot=live config @LB_BOOTAPPEND_LIVE@
 
-label install
-	menu label ^Install
-	kernel @KERNEL@
-	append initrd=@INITRD@ boot=live config install quiet splash noroot
-
 MENU BEGIN ^lang
 MENU TITLE Languages
 
@@ -61,3 +56,8 @@ LABEL exit
 	MENU LABEL Back to main menu
 MENU EXIT
 MENU END
+
+label install
+	menu label ^Install to hard disk
+	kernel @KERNEL@
+	append initrd=@INITRD@ boot=live config install quiet splash noroot
