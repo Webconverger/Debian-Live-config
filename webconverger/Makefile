@@ -15,7 +15,7 @@ chroot: clean
 	sudo mkdir binary/isolinux
 	sudo lb binary_linux-image
 	sudo lb binary_syslinux
-	sed -i "/append/s/$$/ ver=$$(cd chroot; git describe)/" binary/isolinux/live.cfg
+	sudo sed -i "/append/s/$$/ ver=$$(cd chroot; git describe)/" binary/isolinux/live.cfg
 	sudo lb binary_iso
 
 clean:
