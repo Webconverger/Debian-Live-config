@@ -8,6 +8,8 @@ initrd_overwrites ()
 	cp config/binary_debian-installer/banner.png ${dir}/usr/share/graphics/logo_debian.png
 	cp config/binary_debian-installer/preseed.cfg ${dir}/.
 	cp config/binary_debian-installer/preseed-late-command.sh ${dir}/.
+	#rm -f ${dir}/etc/modprobe.d/radeon-kms.conf
+	#rm -f ${dir}/etc/modprobe.d/i915-kms.conf
 } 
 
 set -e
