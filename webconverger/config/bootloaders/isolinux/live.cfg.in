@@ -10,47 +10,47 @@ MENU TITLE Languages
 label nl
 	menu label ^Dutch
 	kernel @KERNEL@
-	append initrd=@INITRD@ boot=live config @LB_BOOTAPPEND_LIVE@ locales=nl keyboard-layouts=nl
+	append initrd=@INITRD@ boot=live config @LB_BOOTAPPEND_LIVE@ locale=nl keyboard-layouts=nl
 
 label fr
 	menu label ^French
 	kernel @KERNEL@
-	append initrd=@INITRD@ boot=live config @LB_BOOTAPPEND_LIVE@ locales=fr keyboard-layouts=fr
+	append initrd=@INITRD@ boot=live config @LB_BOOTAPPEND_LIVE@ locale=fr keyboard-layouts=fr
 
 label de
 	menu label ^German
 	kernel @KERNEL@
-	append initrd=@INITRD@ boot=live config @LB_BOOTAPPEND_LIVE@ locales=de keyboard-layouts=de
+	append initrd=@INITRD@ boot=live config @LB_BOOTAPPEND_LIVE@ locale=de keyboard-layouts=de
 
 label it
 	menu label I^talian
 	kernel @KERNEL@
-	append initrd=@INITRD@ boot=live config @LB_BOOTAPPEND_LIVE@ locales=it keyboard-layouts=it
+	append initrd=@INITRD@ boot=live config @LB_BOOTAPPEND_LIVE@ locale=it keyboard-layouts=it
 
 label pl
 	menu label ^Polish
 	kernel @KERNEL@
-	append initrd=@INITRD@ boot=live config @LB_BOOTAPPEND_LIVE@ locales=pl keyboard-layouts=pl
+	append initrd=@INITRD@ boot=live config @LB_BOOTAPPEND_LIVE@ locale=pl keyboard-layouts=pl
 
 label nn
 	menu label Norwegian ^Nynorsk
 	kernel @KERNEL@
-	append initrd=@INITRD@ boot=live config @LB_BOOTAPPEND_LIVE@ locales=nn keyboard-layouts=no
+	append initrd=@INITRD@ boot=live config @LB_BOOTAPPEND_LIVE@ locale=nn keyboard-layouts=no
 
 label nb
 	menu label Norwegian Bokmal
 	kernel @KERNEL@
-	append initrd=@INITRD@ boot=live config @LB_BOOTAPPEND_LIVE@ locales=nb keyboard-layouts=no
+	append initrd=@INITRD@ boot=live config @LB_BOOTAPPEND_LIVE@ locale=nb keyboard-layouts=no
 
 label es
 	menu label ^Spanish
 	kernel @KERNEL@
-	append initrd=@INITRD@ boot=live config @LB_BOOTAPPEND_LIVE@ locales=es keyboard-layouts=es
+	append initrd=@INITRD@ boot=live config @LB_BOOTAPPEND_LIVE@ locale=es keyboard-layouts=es
 
 label sv
 	menu label S^wedish
 	kernel @KERNEL@
-	append initrd=@INITRD@ boot=live config @LB_BOOTAPPEND_LIVE@ locales=sv keyboard-layouts=se
+	append initrd=@INITRD@ boot=live config @LB_BOOTAPPEND_LIVE@ locale=sv keyboard-layouts=se
 
 LABEL exit
 	MENU LABEL Back to main menu
