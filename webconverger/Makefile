@@ -1,11 +1,13 @@
 REPO = git://github.com/Webconverger/webc.git
 
+all: chroot
+
 # build from scratch
 live: clean
 	lb config
 	sudo lb build
 
-# Use curated rootfs
+# use curated REPO
 chroot: clean
 	lb config --build-with-chroot false
 	if test -d git-chroot; then sudo chroot git-chroot git pull; else sudo git clone $(REPO) git-chroot; fi
