@@ -1,7 +1,7 @@
 #!/bin/sh
 
 lb config noauto --clean \
-	--bootappend-live "hostname=webconverger vga=771 video=vesa nonetworking nomodeset splash quiet" \
+	--bootappend-live "vga=771 video=vesa nomodeset splash quiet" \
 	--parent-mirror-chroot "http://cdn.debian.net/debian/" \
 	--parent-mirror-binary "http://cdn.debian.net/debian/" \
 	-k 486 \
