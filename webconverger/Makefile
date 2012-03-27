@@ -18,6 +18,6 @@ binary-hybrid.iso: clean
 clean:
 	sudo lb clean --binary
 
-deploy:
+deploy: build
 	for i in webc*.iso; do mv $$i $(OUTPUT); echo "Redirect /latest.iso /$$i " > $(OUTPUT)/.htaccess ; done
 	for i in webc*.txt; do mv $$i $(OUTPUT); echo "Redirect /latest.txt /$$i " >> $(OUTPUT)/.htaccess ; done
