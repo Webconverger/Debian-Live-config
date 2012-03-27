@@ -2,17 +2,10 @@ REPO = git://github.com/Webconverger/webc.git
 
 all: chroot
 
-# build from scratch
-live: clean
-	lb config
-	sudo lb build
-
-# use curated REPO
 chroot: clean
-	lb config --build-with-chroot false
-	if test -d git-chroot; then sudo chroot git-chroot git pull; else sudo git clone $(REPO) git-chroot; fi
-	sudo chroot git-chroot sh -c 'for s in .git-fixups/*; do sh $$s; done '
-	sudo cp -a git-chroot chroot
+	lb config --build-with-chroot false # --chroot-filesystem none
+	if test -d chroot; then sudo chroot chroot git pull; else sudo git clone $(REPO) chroot; fi
+	sudo chroot chroot sh -c 'for s in .git-fixups/*; do sh $$s; done '
 	sudo lb binary_rootfs
 	sudo mkdir binary/isolinux
 	sudo lb binary_linux-image
@@ -20,4 +13,4 @@ chroot: clean
 	sudo lb binary_iso
 
 clean:
-	sudo lb clean
+	sudo lb clean --binary
