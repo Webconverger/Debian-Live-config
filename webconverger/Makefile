@@ -17,6 +17,7 @@ binary-hybrid.iso: clean
 
 clean:
 	sudo lb clean --binary
+	rm -f webc*.iso webc*.txt
 
 deploy: build
 	for i in webc*.iso; do mv $$i $(OUTPUT); echo "Redirect /latest.iso /$$i " > $(OUTPUT)/.htaccess ; done
