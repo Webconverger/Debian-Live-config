@@ -2,8 +2,8 @@ REPO := git://github.com/Webconverger/webc.git
 OUTPUT := /srv/www/build.webconverger.org/output
 
 build: binary-hybrid.iso
-	mv binary-hybrid.iso webc-$(shell cd chroot; git describe).iso
-	./chroot.sh "dpkg-query -W" > webc-$(shell cd chroot; git describe).txt
+	mv binary-hybrid.iso webc-$(shell cd chroot; git describe --always).iso
+	./chroot.sh "dpkg-query -W" > webc-$(shell cd chroot; git describe --always).txt
 
 binary-hybrid.iso: clean
 	lb config --build-with-chroot false # --chroot-filesystem none
