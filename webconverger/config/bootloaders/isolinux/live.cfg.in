@@ -57,7 +57,7 @@ LABEL exit
 MENU EXIT
 MENU END
 
-#label install
-#	menu label ^Install to hard disk
-#	kernel @KERNEL@
-#	append initrd=@INITRD@ boot=live config install quiet splash noroot
+label install
+	menu label Irrevocably replace hard disk with Webconverger
+	kernel @KERNEL@
+	append initrd=@INITRD@ boot=live config install 3 splash quiet
