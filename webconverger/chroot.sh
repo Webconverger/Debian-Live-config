@@ -11,14 +11,18 @@ Chroot ()
 	return "${?}"
 }
 
-#sudo mount -o bind /sys $chroot/sys
-#sudo mount -o bind /proc $chroot/proc
-#sudo umount $chroot/sys
-#sudo umount $chroot/proc
-
 if test $# -gt 0
 then
 	Chroot chroot $@
 else
-	sudo chroot chroot
+sudo mount -o bind /dev chroot/dev
+sudo mount -o bind /sys chroot/sys
+sudo mount -o bind /proc chroot/proc
+sudo chroot chroot
+sudo umount chroot/sys
+sudo umount chroot/proc
+sudo umount chroot/dev
+
+
+
 fi

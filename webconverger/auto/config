@@ -7,7 +7,6 @@ lb config noauto --clean \
 	-k 486 \
 	-a i386 \
 	-b iso-hybrid \
-	--hostname webconverger \
 	--parent-archive-areas "main contrib non-free" \
 	--mode progress --distribution artax \
 	--debian-installer false \
