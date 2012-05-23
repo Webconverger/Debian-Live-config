@@ -2,7 +2,7 @@ label live-@FLAVOUR@
 	menu label ^Live
 	menu default
 	kernel @KERNEL@
-	append initrd=@INITRD@ boot=live config @LB_BOOTAPPEND_LIVE@
+	append initrd=@INITRD@ boot=live @LB_BOOTAPPEND_LIVE@
 
 MENU BEGIN ^lang
 MENU TITLE Languages
@@ -10,47 +10,47 @@ MENU TITLE Languages
 label nl
 	menu label ^Dutch
 	kernel @KERNEL@
-	append initrd=@INITRD@ boot=live config @LB_BOOTAPPEND_LIVE@ locale=nl xkb=-layout%20nl
+	append initrd=@INITRD@ boot=live @LB_BOOTAPPEND_LIVE@ locale=nl xkb=-layout%20nl
 
 label fr
 	menu label ^French
 	kernel @KERNEL@
-	append initrd=@INITRD@ boot=live config @LB_BOOTAPPEND_LIVE@ locale=fr xkb=-layout%20fr
+	append initrd=@INITRD@ boot=live @LB_BOOTAPPEND_LIVE@ locale=fr xkb=-layout%20fr
 
 label de
 	menu label ^German
 	kernel @KERNEL@
-	append initrd=@INITRD@ boot=live config @LB_BOOTAPPEND_LIVE@ locale=de xkb=-layout%20de
+	append initrd=@INITRD@ boot=live @LB_BOOTAPPEND_LIVE@ locale=de xkb=-layout%20de
 
 label it
 	menu label I^talian
 	kernel @KERNEL@
-	append initrd=@INITRD@ boot=live config @LB_BOOTAPPEND_LIVE@ locale=it xkb=-layout%20it
+	append initrd=@INITRD@ boot=live @LB_BOOTAPPEND_LIVE@ locale=it xkb=-layout%20it
 
 label pl
 	menu label ^Polish
 	kernel @KERNEL@
-	append initrd=@INITRD@ boot=live config @LB_BOOTAPPEND_LIVE@ locale=pl xkb=-layout%20pl
+	append initrd=@INITRD@ boot=live @LB_BOOTAPPEND_LIVE@ locale=pl xkb=-layout%20pl
 
 label nn
 	menu label Norwegian ^Nynorsk
 	kernel @KERNEL@
-	append initrd=@INITRD@ boot=live config @LB_BOOTAPPEND_LIVE@ locale=nn xkb=-layout%20no
+	append initrd=@INITRD@ boot=live @LB_BOOTAPPEND_LIVE@ locale=nn xkb=-layout%20no
 
 label nb
 	menu label Norwegian Bokmal
 	kernel @KERNEL@
-	append initrd=@INITRD@ boot=live config @LB_BOOTAPPEND_LIVE@ locale=nb xkb=-layout%20no
+	append initrd=@INITRD@ boot=live @LB_BOOTAPPEND_LIVE@ locale=nb xkb=-layout%20no
 
 label es
 	menu label ^Spanish
 	kernel @KERNEL@
-	append initrd=@INITRD@ boot=live config @LB_BOOTAPPEND_LIVE@ locale=es xkb=-layout%20es
+	append initrd=@INITRD@ boot=live @LB_BOOTAPPEND_LIVE@ locale=es xkb=-layout%20es
 
 label sv
 	menu label S^wedish
 	kernel @KERNEL@
-	append initrd=@INITRD@ boot=live config @LB_BOOTAPPEND_LIVE@ locale=sv xkb=-layout%20se
+	append initrd=@INITRD@ boot=live @LB_BOOTAPPEND_LIVE@ locale=sv xkb=-layout%20se
 
 LABEL exit
 	MENU LABEL Back to main menu
@@ -60,4 +60,4 @@ MENU END
 label install
 	menu label Irrevocably replace hard disk with Webconverger
 	kernel @KERNEL@
-	append initrd=@INITRD@ boot=live config install 3 splash quiet
+	append initrd=@INITRD@ boot=live install 3 splash quiet
