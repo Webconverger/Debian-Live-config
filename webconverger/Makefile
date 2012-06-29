@@ -7,8 +7,9 @@ build: binary-hybrid.iso
 
 binary-hybrid.iso: clean
 	lb config --build-with-chroot false # --chroot-filesystem none
-	if test -d chroot; then sudo chroot chroot git pull; else sudo git clone --depth 1 $(REPO) chroot; fi
-	sudo chroot chroot sh -c 'for s in .git-fixups/*; do sh $$s; done '
+	test -d chroot || sudo git clone --depth 1 $(REPO) chroot
+	sudo chroot chroot ldconfig # does not make sense to keep /etc/ld.so.cache in git
+	sudo chroot chroot sh -c 'for s in .git-fixups/*; do sh $$s; done'
 	sudo lb binary_rootfs
 	sudo mkdir binary/isolinux
 	sudo lb binary_linux-image
