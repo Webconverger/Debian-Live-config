@@ -2,7 +2,7 @@ REPO := git://github.com/Webconverger/webc.git
 OUTPUT := /srv/www/build.webconverger.org/output
 
 build: binary-hybrid.iso
-	mv binary-hybrid.iso webc-$(shell cd chroot; git describe --always).iso
+	mv binary.hybrid.iso webc-$(shell cd chroot; git describe --always).iso
 	./chroot.sh "dpkg-query -W" > webc-$(shell cd chroot; git describe --always).txt
 
 binary-hybrid.iso: clean
@@ -13,6 +13,7 @@ binary-hybrid.iso: clean
 	sudo lb binary_rootfs
 	sudo mkdir binary/isolinux
 	sudo lb binary_linux-image
+	sudo mkdir binary/boot
 	sudo lb binary_syslinux
 	sudo lb binary_iso
 
