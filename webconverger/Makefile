@@ -13,9 +13,7 @@ binary-hybrid.iso: clean
 	sudo chroot chroot ldconfig # does not make sense to keep /etc/ld.so.cache in git
 	sudo chroot chroot sh -c 'for s in .git-fixups/*; do sh $$s; done'
 	sudo lb binary_rootfs
-	sudo mkdir binary/isolinux
 	sudo lb binary_linux-image
-	sudo mkdir binary/boot
 	sudo lb binary_syslinux
 	sudo lb binary_iso
 
