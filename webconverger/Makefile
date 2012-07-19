@@ -1,6 +1,13 @@
 REPO := git://github.com/Webconverger/webc.git
 OUTPUT := /srv/www/build.webconverger.org/output
 
+# Check if live-build is new enough
+LB_VERSION:=$(shell lb --version)
+MIN_LB_VERSION:=3.0~a54
+ifneq ($(shell dpkg --compare-versions "$(LB_VERSION)" ge "$(MIN_LB_VERSION)"; echo $$?),0)
+$(error live-build is too old, needs at least version $(MIN_LB_VERSION) $(CMP))
+endif
+
 VERSION:=$(shell cd chroot; git describe --always)
 
 build: binary-hybrid.iso
