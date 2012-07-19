@@ -10,12 +10,18 @@ endif
 
 VERSION:=$(shell cd chroot; git describe --always)
 
-build: binary-hybrid.iso
+build: TYPE=iso-hybrid
+build: binary
 	mv binary.hybrid.iso webc-$(VERSION).iso
 	./chroot.sh "dpkg-query -W" > webc-$(VERSION).txt
 
-binary-hybrid.iso: clean
-	lb config --build-with-chroot false # --chroot-filesystem none
+build-hdd: TYPE=hdd
+build-hdd: binary
+	mv binary.img webc-$(VERSION).img
+	./chroot.sh "dpkg-query -W" > webc-$(VERSION).txt
+
+binary: clean
+	lb config -b $(TYPE) --build-with-chroot false # --chroot-filesystem none
 	test -d chroot || sudo git clone --depth 1 $(REPO) chroot
 	sudo chroot chroot ldconfig # does not make sense to keep /etc/ld.so.cache in git
 	sudo chroot chroot sh -c 'for s in .git-fixups/*; do sh $$s; done'
@@ -23,10 +29,11 @@ binary-hybrid.iso: clean
 	sudo lb binary_linux-image
 	sudo lb binary_syslinux
 	sudo lb binary_iso
+	sudo lb binary_hdd
 
 clean:
 	sudo lb clean --binary
-	rm -f webc*.iso webc*.txt
+	rm -f webc*.iso webc*.img webc*.txt
 
 deploy: build
 	for i in webc*.iso; do mv $$i $(OUTPUT); echo "Redirect /latest.iso /$$i " > $(OUTPUT)/.htaccess ; done

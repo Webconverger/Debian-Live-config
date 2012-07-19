@@ -6,7 +6,6 @@ lb config noauto --clean \
 	--parent-mirror-binary "http://cdn.debian.net/debian/" \
 	-k 686 \
 	-a i386 \
-	-b iso-hybrid \
 	--parent-archive-areas "main contrib non-free" \
 	--mode progress --distribution artax \
 	--debian-installer false \
