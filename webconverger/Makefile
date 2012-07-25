@@ -29,8 +29,7 @@ build-vbox-hdd: build-hdd
 binary: clean
 	lb config -b $(TYPE) --build-with-chroot false # --chroot-filesystem none
 	test -d chroot || sudo git clone --depth 1 $(REPO) chroot
-	sudo chroot chroot sh -c 'for s in .git-fixups/*; do sh $$s; done'
-	sudo lb binary_rootfs
+	git clone --bare chroot/.git binary/live/filesystem.git
 	sudo lb binary_linux-image
 	sudo lb binary_syslinux
 	sudo lb binary_iso
