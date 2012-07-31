@@ -23,7 +23,6 @@ build-hdd: binary
 binary: clean
 	lb config -b $(TYPE) --build-with-chroot false # --chroot-filesystem none
 	test -d chroot || sudo git clone --depth 1 $(REPO) chroot
-	sudo chroot chroot ldconfig # does not make sense to keep /etc/ld.so.cache in git
 	sudo chroot chroot sh -c 'for s in .git-fixups/*; do sh $$s; done'
 	sudo lb binary_rootfs
 	sudo lb binary_linux-image
