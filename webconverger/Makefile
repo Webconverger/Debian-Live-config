@@ -29,7 +29,10 @@ build-vbox-hdd: build-hdd
 binary: clean
 	lb config -b $(TYPE) --build-with-chroot false # --chroot-filesystem none
 	test -d chroot || sudo git clone --depth 1 $(REPO) chroot
-	git clone --bare chroot/.git binary/live/filesystem.git
+	# Do a shallow clone to minimize image size. This only works
+	# when using a file:// url (instead of plain path), so we use
+	# $CURDIR to construct an absolute path).
+	git clone --no-local --depth 1 --bare file://$(CURDIR)/chroot/.git binary/live/filesystem.git
 	git --git-dir=binary/live/filesystem.git remote set-url origin "$(REPO)"
 	sudo lb binary_linux-image
 	sudo lb binary_syslinux
