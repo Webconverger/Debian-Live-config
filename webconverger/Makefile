@@ -12,13 +12,9 @@ VERSION=$(shell cd chroot; git describe --always)
 
 build: TYPE=iso-hybrid
 build: binary
-	mv binary.hybrid.iso webc-$(VERSION).iso
-	./chroot.sh "dpkg-query -W" > webc-$(VERSION).txt
 
 build-hdd: TYPE=hdd
 build-hdd: binary
-	mv binary.img webc-$(VERSION).img
-	./chroot.sh "dpkg-query -W" > webc-$(VERSION).txt
 
 binary: clean
 	lb config -b $(TYPE) --build-with-chroot false # --chroot-filesystem none
@@ -35,5 +31,7 @@ clean:
 	rm -f webc*.iso webc*.img webc*.txt
 
 deploy: build
+	mv binary.hybrid.iso webc-$(VERSION).iso
+	./chroot.sh "dpkg-query -W" > webc-$(VERSION).txt
 	for i in webc*.iso; do mv $$i $(OUTPUT); echo "Redirect /latest.iso /$$i " > $(OUTPUT)/.htaccess ; done
 	for i in webc*.txt; do mv $$i $(OUTPUT); echo "Redirect /latest.txt /$$i " >> $(OUTPUT)/.htaccess ; done
