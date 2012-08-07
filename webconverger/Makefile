@@ -8,7 +8,7 @@ ifneq ($(shell dpkg --compare-versions "$(LB_VERSION)" ge "$(MIN_LB_VERSION)"; e
 $(error live-build is too old, needs at least version $(MIN_LB_VERSION) $(CMP))
 endif
 
-VERSION:=$(shell cd chroot; git describe --always)
+VERSION=$(shell cd chroot; git describe --always)
 
 build: TYPE=iso-hybrid
 build: binary
