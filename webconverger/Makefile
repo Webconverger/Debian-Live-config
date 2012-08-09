@@ -16,6 +16,16 @@ build: binary
 build-hdd: TYPE=hdd
 build-hdd: binary
 
+VDI=binary.vdi
+build-vbox-hdd: build-hdd
+	# If there's already a vdi file, try to keep the UUID the same,
+	# so you don't have to re-add the vdi file in Virtualbox.
+	if [ -f "$(VDI)" ]; then \
+		UUID="--uuid $$(VBoxManage showhdinfo binary.vdi | awk '$$1 == "UUID:" {print $$2}')"; \
+		rm -f binary.vdi; \
+	fi; \
+	VBoxManage convertfromraw binary.img binary.vdi $$UUID
+
 binary: clean
 	lb config -b $(TYPE) --build-with-chroot false # --chroot-filesystem none
 	test -d chroot || sudo git clone --depth 1 $(REPO) chroot
