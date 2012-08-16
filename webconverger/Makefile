@@ -27,6 +27,8 @@ build-vbox-hdd: build-hdd
 	VBoxManage convertfromraw binary.img binary.vdi $$UUID
 
 binary: clean
+	# Check that the chroot has no changes
+	[ -z "$$(cd chroot &&  git status --porcelain)" ] || (echo "You have uncommitted changes in the chroot, bailing out now!" && false)
 	lb config -b $(TYPE) --build-with-chroot false # --chroot-filesystem none
 	test -d chroot || sudo git clone --depth 1 $(REPO) chroot
 	# Do a shallow clone to minimize image size. This only works
