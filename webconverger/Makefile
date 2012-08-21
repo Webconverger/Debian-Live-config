@@ -27,10 +27,22 @@ build-vbox-hdd: build-hdd
 	VBoxManage convertfromraw binary.img binary.vdi $$UUID
 
 binary: clean
+	# Check that the chroot has no changes
+	[ -z "$$(cd chroot &&  git status --porcelain)" ] || (echo "You have uncommitted changes in the chroot, bailing out now!" && false)
 	lb config -b $(TYPE) --build-with-chroot false # --chroot-filesystem none
 	test -d chroot || sudo git clone --depth 1 $(REPO) chroot
-	sudo chroot chroot sh -c 'for s in .git-fixups/*; do sh $$s; done'
-	sudo lb binary_rootfs
+	# Do a shallow clone to minimize image size. This only works
+	# when using a file:// url (instead of plain path), so we use
+	# $CURDIR to construct an absolute path).
+	git clone --no-local --depth 1 --bare file://$(CURDIR)/chroot/.git binary/live/filesystem.git
+	git --git-dir=binary/live/filesystem.git remote set-url origin "$(REPO)"
+	# Make the repository look like a non-bare one. It will still
+	# not have a worktree on disk, but in a running system, the
+	# filesystem.git directory will be bindmounted as /.git, making
+	# the root filesystem its worktree
+	git --git-dir=binary/live/filesystem.git config --replace-all core.bare false
+	# Let git create an index, containing HEAD
+	git --git-dir=binary/live/filesystem.git reset HEAD -q
 	sudo lb binary_linux-image
 	sudo lb binary_syslinux
 	sudo lb binary_iso
