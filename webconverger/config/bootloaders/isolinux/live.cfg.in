@@ -1,11 +1,11 @@
 label live-@FLAVOUR@
-	menu label ^Live
+	menu label @FLAVOUR@: Live
 	menu default
 	kernel @KERNEL@
 	append initrd=@INITRD@ boot=live skipconfig @LB_BOOTAPPEND_LIVE@
 
 MENU BEGIN ^lang
-MENU TITLE Languages
+MENU TITLE @FLAVOUR@: Languages
 
 label nl
 	menu label ^Dutch
@@ -58,6 +58,6 @@ MENU EXIT
 MENU END
 
 label install
-	menu label Irrevocably replace hard disk with Webconverger
+	menu label @FLAVOUR@: Irrevocably replace hard disk with Webconverger 
 	kernel @KERNEL@
 	append initrd=@INITRD@ boot=live install 3 splash quiet
