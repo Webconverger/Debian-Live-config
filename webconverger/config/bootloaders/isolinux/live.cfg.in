@@ -60,4 +60,4 @@ MENU END
 label install
 	menu label @FLAVOUR@: Irrevocably replace hard disk with Webconverger 
 	kernel @KERNEL@
-	append initrd=@INITRD@ boot=live install 3 splash quiet
+	append initrd=@INITRD@ boot=live install 3 splash quiet bootfrom=removable
