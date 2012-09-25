@@ -45,6 +45,12 @@ binary: clean
 	git --git-dir=binary/live/filesystem.git reset HEAD -q
 	sudo lb binary_linux-image
 	sudo lb binary_syslinux
+	# Copy the template bootloader config, so the config can be
+	# regenerated on upgrades (but only on an hdd image, since an
+	# iso-hybrid image is not writable anyway).
+	if [ "$(TYPE)" = hdd ]; then \
+		sudo cp config/bootloaders/syslinux/live.cfg.in binary/boot; \
+	fi
 	sudo lb binary_iso
 	sudo lb binary_hdd
 
