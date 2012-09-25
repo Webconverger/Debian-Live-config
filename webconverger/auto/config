@@ -1,7 +1,9 @@
 #!/bin/sh
 
+BOOTAPPEND=$(cat chroot/etc/webc/boot-cmdline | grep -v "^#" | head -n 1)
+
 lb config noauto --clean \
-	--bootappend-live "boot=live vga=771 video=vesa nomodeset splash quiet skipconfig" \
+	--bootappend-live "$BOOTAPPEND" \
 	--parent-mirror-chroot "http://cdn.debian.net/debian/" \
 	--parent-mirror-binary "http://cdn.debian.net/debian/" \
 	-k "486 686-pae" \
