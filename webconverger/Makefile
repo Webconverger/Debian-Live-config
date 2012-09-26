@@ -42,8 +42,6 @@ binary: clean
 	# filesystem.git directory will be bindmounted as /.git, making
 	# the root filesystem its worktree
 	git --git-dir=binary/live/filesystem.git config --replace-all core.bare false
-	# Let git create an index, containing HEAD
-	git --git-dir=binary/live/filesystem.git reset HEAD -q
 	sudo lb binary_linux-image
 	sudo lb binary_syslinux
 	# Copy the template bootloader config, so the config can be
