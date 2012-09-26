@@ -36,6 +36,7 @@ binary: clean
 	# $CURDIR to construct an absolute path).
 	git clone --no-local --depth 1 --bare file://$(CURDIR)/chroot/.git binary/live/filesystem.git
 	git --git-dir=binary/live/filesystem.git remote set-url origin "$(REPO)"
+	git --git-dir=binary/live/filesystem.git tag initial-revision
 	# Make the repository look like a non-bare one. It will still
 	# not have a worktree on disk, but in a running system, the
 	# filesystem.git directory will be bindmounted as /.git, making
