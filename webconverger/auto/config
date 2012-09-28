@@ -1,7 +1,7 @@
 #!/bin/sh
 
 lb config noauto --clean \
-	--bootappend-live "vga=771 video=vesa nomodeset splash quiet skipconfig" \
+	--bootappend-live "boot=live vga=771 video=vesa nomodeset splash quiet skipconfig" \
 	--parent-mirror-chroot "http://cdn.debian.net/debian/" \
 	--parent-mirror-binary "http://cdn.debian.net/debian/" \
 	-k "486 686-pae" \
