@@ -2,7 +2,7 @@ label live-@FLAVOUR@
 	menu label @FLAVOUR@: Live
 	menu default
 	kernel @KERNEL@
-	append initrd=@INITRD@ boot=live skipconfig @LB_BOOTAPPEND_LIVE@
+	append initrd=@INITRD@ boot=live @LB_BOOTAPPEND_LIVE@
 
 MENU BEGIN ^lang
 MENU TITLE @FLAVOUR@: Languages
