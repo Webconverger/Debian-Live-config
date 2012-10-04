@@ -29,7 +29,6 @@ build-vbox-hdd: build-hdd
 binary: clean
 	# Check that the chroot has no changes
 	[ -z "$$(cd chroot &&  git status --porcelain)" ] || (echo "You have uncommitted changes in the chroot, bailing out now!" && false)
-	lb config -b $(TYPE) --build-with-chroot false # --chroot-filesystem none
 	test -d chroot || sudo git clone --depth 1 $(REPO) chroot
 	# Do a shallow clone to minimize image size. This only works
 	# when using a file:// url (instead of plain path), so we use
@@ -42,6 +41,7 @@ binary: clean
 	# filesystem.git directory will be bindmounted as /.git, making
 	# the root filesystem its worktree
 	git --git-dir=binary/live/filesystem.git config --replace-all core.bare false
+	lb config -b $(TYPE) --build-with-chroot false # --chroot-filesystem none
 	sudo lb binary_linux-image
 	sudo lb binary_syslinux
 	# Copy the template bootloader config, so the config can be
