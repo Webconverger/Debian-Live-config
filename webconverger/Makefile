@@ -3,7 +3,7 @@ OUTPUT := /srv/www/build.webconverger.org/output
 
 # Check if live-build is new enough
 LB_VERSION:=$(shell lb --version)
-MIN_LB_VERSION:=3.0~a54
+MIN_LB_VERSION:=3.0~a62
 ifneq ($(shell dpkg --compare-versions "$(LB_VERSION)" ge "$(MIN_LB_VERSION)"; echo $$?),0)
 $(error live-build is too old, needs at least version $(MIN_LB_VERSION) $(CMP))
 endif
