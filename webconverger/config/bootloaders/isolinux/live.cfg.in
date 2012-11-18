@@ -1,6 +1,7 @@
+DEFAULT live-686-pae
+
 label live-@FLAVOUR@
 	menu label @FLAVOUR@: Live
-	menu default
 	kernel @LINUX@
 	append initrd=@INITRD@ @APPEND_LIVE@ bootfrom=removable
 
