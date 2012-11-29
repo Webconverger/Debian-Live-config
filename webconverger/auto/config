@@ -9,7 +9,7 @@ lb config noauto --clean \
 	-k "486 686-pae" \
 	-a i386 \
 	--parent-archive-areas "main contrib non-free" \
-	--mode progress --distribution artax \
+	--mode progress-linux --distribution artax \
 	--debian-installer false \
 	--debian-installer-gui false \
 	--syslinux-theme live-build \
