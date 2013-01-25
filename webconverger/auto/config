@@ -6,6 +6,7 @@ lb config noauto --clean \
 	--bootappend-live "$BOOTAPPEND" \
 	--parent-mirror-chroot "http://cdn.debian.net/debian/" \
 	--parent-mirror-binary "http://cdn.debian.net/debian/" \
+	--binary-filesystem ext4 \
 	-k "486 686-pae" \
 	-a i386 \
 	--parent-archive-areas "main contrib non-free" \
