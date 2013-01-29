@@ -1,6 +1,6 @@
 REPO := git://github.com/Webconverger/webc.git
-BRANCH := "-b systemd"
-B := "systemd-"
+BRANCH := -b systemd
+B := systemd-
 OUTPUT := /srv/www/build.webconverger.org/output
 
 # Check if live-build is new enough
