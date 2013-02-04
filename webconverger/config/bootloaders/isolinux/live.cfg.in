@@ -59,6 +59,6 @@ MENU EXIT
 MENU END
 
 label install
-	menu label @FLAVOUR@: Irrevocably replace hard disk with Webconverger 
+	menu label @FLAVOUR@: Install Webconverger
 	kernel @LINUX@
 	append initrd=@INITRD@ kernel-flavour=@FLAVOUR@ systemd.unit=install.target @APPEND_LIVE@ bootfrom=removable
