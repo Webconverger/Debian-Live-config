@@ -1,6 +1,4 @@
 REPO := git://github.com/Webconverger/webc.git
-BRANCH := -b systemd
-B := systemd-
 OUTPUT := /srv/www/build.webconverger.org/output
 
 # Check if live-build is new enough
@@ -31,7 +29,7 @@ build-vbox-hdd: build-hdd
 binary: clean
 	# Check that the chroot has no changes
 	[ -z "$$(cd chroot &&  git status --porcelain)" ] || (echo "You have uncommitted changes in the chroot, bailing out now!" && false)
-	test -d chroot || sudo git clone --depth 1 $(BRANCH) $(REPO) chroot
+	test -d chroot || sudo git clone --depth 1 $(REPO) chroot
 	# Do a shallow clone to minimize image size. This only works
 	# when using a file:// url (instead of plain path), so we use
 	# ${CURDIR} to construct an absolute path).
@@ -54,14 +52,13 @@ binary: clean
 		sudo cp config/bootloaders/syslinux/live.cfg.in binary/boot; \
 	fi
 	sudo lb binary_iso
-	sudo lb binary_hdd
 
 clean:
 	sudo lb clean --binary
 	rm -f webc*.iso webc*.img webc*.txt
 
 deploy: build
-	mv binary.hybrid.iso webc-$(B)$(VERSION).iso
-	./chroot.sh "dpkg-query -W" > webc-$(B)$(VERSION).txt
+	mv binary.hybrid.iso webc-$(VERSION).iso
+	./chroot.sh "dpkg-query -W" > webc-$(VERSION).txt
 	for i in webc*.iso; do mv $$i $(OUTPUT); echo "Redirect /latest.iso /$$i " > $(OUTPUT)/.htaccess ; done
 	for i in webc*.txt; do mv $$i $(OUTPUT); echo "Redirect /latest.txt /$$i " >> $(OUTPUT)/.htaccess ; done
