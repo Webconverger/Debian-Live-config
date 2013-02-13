@@ -8,6 +8,11 @@ label live-@FLAVOUR@
 MENU BEGIN ^lang
 MENU TITLE @FLAVOUR@: Languages
 
+label ar
+	menu label ^Arabic
+	kernel @LINUX@
+	append initrd=@INITRD@ @APPEND_LIVE@ bootfrom=removable locale=ar xkb=-layout%20us,ar%20-option%20grp:alt_shift_toggle
+
 label nl
 	menu label ^Dutch
 	kernel @LINUX@
@@ -42,6 +47,11 @@ label nb
 	menu label Norwegian Bokmal
 	kernel @LINUX@
 	append initrd=@INITRD@ @APPEND_LIVE@ bootfrom=removable locale=nb xkb=-layout%20no
+
+label ru
+	menu label ^Russian
+	kernel @LINUX@
+	append initrd=@INITRD@ @APPEND_LIVE@ bootfrom=removable locale=ru xkb=-layout%20us,ru%20-option%20grp:alt_shift_toggle
 
 label es
 	menu label ^Spanish
