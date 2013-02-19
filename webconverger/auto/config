@@ -13,7 +13,6 @@ lb config noauto --clean \
 	--mode progress-linux --distribution artax \
 	--debian-installer false \
 	--debian-installer-gui false \
-	--syslinux-theme live-build \
 	--apt-indices false \
 	--iso-publisher "http://webconverger.com" \
 	--iso-volume "Webconverger" \
