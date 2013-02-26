@@ -6,14 +6,13 @@ lb config noauto --clean \
 	--bootappend-live "$BOOTAPPEND" \
 	--parent-mirror-chroot "http://cdn.debian.net/debian/" \
 	--parent-mirror-binary "http://cdn.debian.net/debian/" \
-	--binary-filesystem ext4 \
+	--binary-filesystem fat16 \
 	-k "486 686-pae" \
 	-a i386 \
 	--parent-archive-areas "main contrib non-free" \
 	--mode progress-linux --distribution artax \
 	--debian-installer false \
 	--debian-installer-gui false \
-	--syslinux-theme live-build \
 	--apt-indices false \
 	--iso-publisher "http://webconverger.com" \
 	--iso-volume "Webconverger" \

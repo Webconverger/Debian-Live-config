@@ -51,7 +51,10 @@ binary: clean
 	if [ "$(TYPE)" = hdd ]; then \
 		sudo cp config/bootloaders/syslinux/live.cfg.in binary/boot; \
 	fi
+	# Build either a .iso or .img file, depending on the configured
+	# image type
 	sudo lb binary_iso
+	sudo lb binary_hdd
 
 clean:
 	sudo lb clean --binary
