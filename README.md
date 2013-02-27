@@ -1,8 +1,9 @@
-# Webconverger [Debian Live](http://live.debian.net) "community" configuration
+# Webconverger [Debian Live](http://live.debian.net) build configuration
 
 Please contribute to opensource by [testing](http://build.webconverger.org/) the [daily build](http://build.webconverger.org/latest.iso). Thank you!
 
-We welcome [security review](http://webconverger.org/security/) and code critique. Notice something crap? Let us know! <feedback2012@webconverger.com>
+For the source of the chroot, please consult: <https://github.com/Webconverger/webc>
+
+We welcome [security review](http://webconverger.org/security/) and code critique.
 
 * [Community mailing list](https://groups.google.com/forum/#!forum/webc-users)
-* [Statistics](http://ping.webconverger.org)

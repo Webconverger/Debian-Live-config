@@ -1,6 +1,0 @@
-#!/bin/bash
-# TODO SECURITY restrict group permissions on a typical boot to -G audio,video and even try restrict shell somehow?
-
-sed -i 's/^LIVE_HOSTNAME="progress"/LIVE_HOSTNAME="webconverger"/' /lib/live/config.sh
-sed -i 's/^LIVE_USERNAME="user"/LIVE_USERNAME="webc"/' /lib/live/config.sh
-sed -i 's/^LIVE_USER_FULLNAME="Progress Linux user"/LIVE_USER_FULLNAME="Webconverger Hero"/' /lib/live/config.sh
