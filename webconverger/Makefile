@@ -62,6 +62,6 @@ clean:
 
 deploy: build
 	mv binary.hybrid.iso webc-$(VERSION).iso
-	./chroot.sh "dpkg-query -W" > webc-$(VERSION).txt
+	./chroot.sh "dpkg-query -l" | grep ^ii > webc-$(VERSION).txt
 	for i in webc*.iso; do mv $$i $(OUTPUT); echo "Redirect /latest.iso /$$i " > $(OUTPUT)/.htaccess ; done
 	for i in webc*.txt; do mv $$i $(OUTPUT); echo "Redirect /latest.txt /$$i " >> $(OUTPUT)/.htaccess ; done
