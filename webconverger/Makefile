@@ -1,4 +1,4 @@
-REPO := git://github.com/Webconverger/webc.git
+REPO := https://github.com/Webconverger/webc.git
 OUTPUT := /srv/www/build.webconverger.org/output
 
 # Check if live-build is new enough
