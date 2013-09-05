@@ -29,7 +29,7 @@ build-vbox-hdd: build-hdd
 binary: clean
 	# Check that the chroot has no changes
 	[ -z "$$(cd chroot &&  git status --porcelain)" ] || (echo "You have uncommitted changes in the chroot, bailing out now!" && false)
-	test -d chroot || sudo git clone --depth 1 $(REPO) chroot
+	test -d chroot || git clone --depth 1 $(REPO) chroot
 	# Do a shallow clone to minimize image size. This only works
 	# when using a file:// url (instead of plain path), so we use
 	# ${CURDIR} to construct an absolute path).
@@ -43,21 +43,21 @@ binary: clean
 	# the root filesystem its worktree
 	git --git-dir=binary/live/filesystem.git config --replace-all core.bare false
 	lb config -b $(TYPE) --build-with-chroot false # --chroot-filesystem none
-	sudo lb binary_linux-image
-	sudo lb binary_syslinux
+	lb binary_linux-image
+	lb binary_syslinux
 	# Copy the template bootloader config, so the config can be
 	# regenerated on upgrades (but only on an hdd image, since an
 	# iso-hybrid image is not writable anyway).
 	if [ "$(TYPE)" = hdd ]; then \
-		sudo cp config/bootloaders/syslinux/live.cfg.in binary/boot; \
+		cp config/bootloaders/syslinux/live.cfg.in binary/boot; \
 	fi
 	# Build either a .iso or .img file, depending on the configured
 	# image type
-	sudo lb binary_iso
-	sudo lb binary_hdd
+	lb binary_iso
+	lb binary_hdd
 
 clean:
-	sudo lb clean --binary
+	lb clean --binary
 	rm -f webc*.iso webc*.img webc*.txt
 
 deploy: build
