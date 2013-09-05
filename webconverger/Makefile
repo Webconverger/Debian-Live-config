@@ -33,8 +33,7 @@ binary: clean
 	# Do a shallow clone to minimize image size. This only works
 	# when using a file:// url (instead of plain path), so we use
 	# ${CURDIR} to construct an absolute path).
-	if test -f chroot/.git/shallow; then rm chroot/.git/shallow; fi
-	git clone --no-local --depth 1 --bare file://$(CURDIR)/chroot/.git binary/live/filesystem.git
+	if test -f chroot/.git/shallow; then mkdir -p binary/live; cp -r chroot/.git binary/live/filesystem.git; else git clone --no-local --depth 1 --bare file://$(CURDIR)/chroot/.git binary/live/filesystem.git; fi
 	git --git-dir=binary/live/filesystem.git remote set-url origin "$(REPO)"
 	git --git-dir=binary/live/filesystem.git tag initial-revision
 	# Make the repository look like a non-bare one. It will still
