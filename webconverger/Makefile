@@ -28,12 +28,16 @@ build-vbox-hdd: build-hdd
 
 binary: clean
 	# Check that the chroot has no changes
-	[ -z "$$(cd chroot &&  git status --porcelain)" ] || (echo "You have uncommitted changes in the chroot, bailing out now!" && false)
+	[ -z "$$(cd chroot &&  git status --porcelain)" ] || \
+	(echo "You have uncommitted changes in the chroot, bailing out now!" && false)
+
 	test -d chroot || git clone --depth 1 $(REPO) chroot
 	# Do a shallow clone to minimize image size. This only works
 	# when using a file:// url (instead of plain path), so we use
 	# ${CURDIR} to construct an absolute path).
-	if test -f chroot/.git/shallow; then mkdir -p binary/live; cp -r chroot/.git binary/live/filesystem.git; else git clone --no-local --depth 1 --bare file://$(CURDIR)/chroot/.git binary/live/filesystem.git; fi
+	if test -f chroot/.git/shallow; then \
+	mkdir -p binary/live; cp -r chroot/.git binary/live/filesystem.git; else \
+	git clone --no-local --depth 1 --bare file://$(CURDIR)/chroot/.git binary/live/filesystem.git; fi
 	git --git-dir=binary/live/filesystem.git remote set-url origin "$(REPO)"
 	git --git-dir=binary/live/filesystem.git tag initial-revision
 	# Make the repository look like a non-bare one. It will still
