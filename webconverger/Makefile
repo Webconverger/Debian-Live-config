@@ -20,6 +20,10 @@ build: binary
 build-hdd: TYPE=hdd
 build-hdd: binary
 
+ifneq ($(shell id -u),0)
+SUDO=sudo
+endif
+
 VDI=binary.vdi
 build-vbox-hdd: build-hdd
 	# If there's already a vdi file, try to keep the UUID the same,
@@ -54,21 +58,21 @@ binary: clean
 	# the root filesystem its worktree
 	git --git-dir=binary/live/filesystem.git config --replace-all core.bare false
 	lb config -b $(TYPE) --build-with-chroot false # --chroot-filesystem none
-	lb binary_linux-image
-	lb binary_syslinux
+	$(SUDO) lb binary_linux-image
+	$(SUDO) lb binary_syslinux
 	# Copy the template bootloader config, so the config can be
 	# regenerated on upgrades (but only on an hdd image, since an
 	# iso-hybrid image is not writable anyway).
 	if [ "$(TYPE)" = hdd ]; then \
-		cp config/bootloaders/syslinux/live.cfg.in binary/boot; \
+		$(SUDO) cp config/bootloaders/syslinux/live.cfg.in binary/boot; \
 	fi
 	# Build either a .iso or .img file, depending on the configured
 	# image type
-	lb binary_iso
-	lb binary_hdd
+	$(SUDO) lb binary_iso
+	$(SUDO) lb binary_hdd
 
 clean:
-	lb clean --binary
+	$(SUDO) lb clean --binary
 	rm -f webc*.iso webc*.img webc*.txt
 
 deploy: build
