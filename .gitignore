@@ -1,0 +1,11 @@
+webconverger/.build
+webconverger/binary.hybrid.iso
+webconverger/binary.img
+webconverger/binary.vdi
+webconverger/binary/
+webconverger/chroot/
+webconverger/config/binary
+webconverger/config/bootstrap
+webconverger/config/chroot
+webconverger/config/common
+webconverger/config/source
