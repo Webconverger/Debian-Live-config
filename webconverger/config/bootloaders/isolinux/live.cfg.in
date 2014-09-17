@@ -1,12 +1,12 @@
-DEFAULT live-686-pae
+DEFAULT en
 
-label live-@FLAVOUR@
-	menu label @FLAVOUR@: Live
+label en
+	menu label Webconverger Live for Web kiosks
 	kernel @LINUX@
-	append initrd=@INITRD@ @APPEND_LIVE@ bootfrom=removable
+	append initrd=@INITRD@ @APPEND_LIVE@ bootfrom=removable 
 
 MENU BEGIN ^lang
-MENU TITLE @FLAVOUR@: Languages
+MENU TITLE Other languages
 
 label ar
 	menu label ^Arabic
@@ -68,7 +68,12 @@ LABEL exit
 MENU EXIT
 MENU END
 
+label neon-@FLAVOUR@
+	menu label Neon Live for Web Digital Signage
+	kernel @LINUX@
+	append initrd=@INITRD@ @APPEND_LIVE@ bootfrom=removable chrome=neon noblank
+
 label install
-	menu label @FLAVOUR@: Install Webconverger
+	menu label Install Webconverger for automatic updates
 	kernel @LINUX@
 	append initrd=@INITRD@ kernel-flavour=@FLAVOUR@ systemd.unit=install.target @APPEND_LIVE@ bootfrom=removable

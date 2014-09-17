@@ -7,7 +7,7 @@ lb config noauto --clean \
 	--parent-mirror-chroot "http://cdn.debian.net/debian/" \
 	--parent-mirror-binary "http://cdn.debian.net/debian/" \
 	--binary-filesystem fat16 \
-	-k "486 686-pae" \
+	-k "686-pae" \
 	-a i386 \
 	--parent-archive-areas "main contrib non-free" \
 	--mode progress-linux --distribution artax \
