@@ -1,12 +1,12 @@
 DEFAULT en
 
 label en
-	menu label Webconverger Live for Web kiosks
+	menu label Webconverger Live for Web Kiosks
 	kernel @LINUX@
 	append initrd=@INITRD@ @APPEND_LIVE@ bootfrom=removable 
 
 MENU BEGIN ^lang
-MENU TITLE Other languages
+MENU TITLE Webconverger Live (Other Languages)
 
 label ar
 	menu label ^Arabic
