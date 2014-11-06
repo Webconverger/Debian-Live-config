@@ -3,7 +3,7 @@ DEFAULT en
 label en
 	menu label Webconverger Live for Web Kiosks
 	kernel @LINUX@
-	append initrd=@INITRD@ @APPEND_LIVE@ bootfrom=removable 
+	append initrd=@INITRD@ @APPEND_LIVE@ bootfrom=removable
 
 MENU BEGIN ^lang
 MENU TITLE Webconverger Live (Other Languages)
