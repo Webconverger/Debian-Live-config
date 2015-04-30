@@ -2,17 +2,6 @@ REPO := https://github.com/Webconverger/webc.git
 OUTPUT := /srv/www/build.webconverger.org/output
 BRANCH := master
 
-# Check if live-build is new enough
-LB_VERSION:=$(shell lb --version)
-MIN_LB_VERSION:=3.0.0
-TOONEW_LB_VERSION:=4.0~
-ifneq ($(shell dpkg --compare-versions "$(LB_VERSION)" ge "$(MIN_LB_VERSION)"; echo $$?),0)
-$(error live-build is too old, needs at least version $(MIN_LB_VERSION) $(CMP))
-endif
-ifneq ($(shell dpkg --compare-versions "$(LB_VERSION)" lt "$(TOONEW_LB_VERSION)"; echo $$?),0)
-$(error live-build is too new, needs at less than version $(TOONEW_LB_VERSION) $(CMP))
-endif
-
 VERSION=$(shell cd chroot; git describe --always)
 
 build: TYPE=iso-hybrid
@@ -78,6 +67,7 @@ clean:
 
 deploy: build
 	mv binary.hybrid.iso webc-$(VERSION).iso
-	./chroot.sh "dpkg-query -l" | grep ^ii > webc-$(VERSION).txt
-	for i in webc*.iso; do mv $$i $(OUTPUT); echo "Redirect /latest.iso /$$i " > $(OUTPUT)/.htaccess ; done
+	./chroot.sh "dpkg-query -l" | grep ^ii > webc-$(VERSION).tx
+	echo -e "Options All\nOptions Indexes FollowSymLinks" > $(OUTPUT)/.htaccess
+	for i in webc*.iso; do mv $$i $(OUTPUT); echo "Redirect /latest.iso /$$i " >> $(OUTPUT)/.htaccess ; done
 	for i in webc*.txt; do mv $$i $(OUTPUT); echo "Redirect /latest.txt /$$i " >> $(OUTPUT)/.htaccess ; done
