@@ -1,5 +1,6 @@
 REPO := https://github.com/Webconverger/webc.git
 OUTPUT := /srv/www/build.webconverger.org/output
+BRANCH := master
 
 # Check if live-build is new enough
 LB_VERSION:=$(shell lb --version)
@@ -39,7 +40,7 @@ binary: clean
 	[ -z "$$(cd chroot &&  git status --porcelain)" ] || \
 	(echo "You have uncommitted changes in the chroot, bailing out now!" && false)
 
-	test -d chroot || git clone --depth 1 $(REPO) chroot
+	test -d chroot || git clone --depth 1 -b $(BRANCH) $(REPO) chroot
 	# Do a shallow clone to minimize image size. This only works
 	# when using a file:// url (instead of plain path), so we use
 	# ${CURDIR} to construct an absolute path). If chroot is already
