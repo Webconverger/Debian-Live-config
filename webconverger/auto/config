@@ -10,7 +10,7 @@ lb config noauto --clean \
 	-k "686-pae" \
 	-a i386 \
 	--parent-archive-areas "main contrib non-free" \
-	--mode progress-linux --distribution artax \
+	--mode progress-linux --distribution cairon-backports \
 	--debian-installer false \
 	--debian-installer-gui false \
 	--apt-indices false \
