@@ -21,5 +21,4 @@ lb config noauto --clean \
 	--apt-recommends false \
 	--memtest none \
 	--source false \
-	--archives live \
 	${@}
