@@ -4,13 +4,13 @@ BOOTAPPEND=$(cat chroot/etc/webc/boot-cmdline | grep -v "^#" | head -n 1)
 
 lb config noauto --clean \
 	--bootappend-live "$BOOTAPPEND" \
-	--parent-mirror-chroot "http://cdn.debian.net/debian/" \
-	--parent-mirror-binary "http://cdn.debian.net/debian/" \
+	--parent-mirror-chroot "http://http.debian.net/debian/" \
+	--parent-mirror-binary "http://http.debian.net/debian/" \
 	--binary-filesystem fat16 \
 	-k "686-pae" \
 	-a i386 \
 	--parent-archive-areas "main contrib non-free" \
-	--mode progress-linux --distribution artax \
+	--mode progress-linux --distribution cairon-backports \
 	--debian-installer false \
 	--debian-installer-gui false \
 	--apt-indices false \
@@ -21,5 +21,4 @@ lb config noauto --clean \
 	--apt-recommends false \
 	--memtest none \
 	--source false \
-	--archives live \
 	${@}
