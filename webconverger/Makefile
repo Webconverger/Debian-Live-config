@@ -66,7 +66,7 @@ clean:
 	rm -f webc*.iso webc*.img webc*.txt
 
 deploy: build
-	mv binary.hybrid.iso webc-$(VERSION).iso
+	mv live-image-i386.hybrid.iso webc-$(VERSION).iso
 	./chroot.sh "dpkg-query -l" | grep ^ii > webc-$(VERSION).tx
 	echo -e "Options All\nOptions Indexes FollowSymLinks" > $(OUTPUT)/.htaccess
 	for i in webc*.iso; do mv $$i $(OUTPUT); echo "Redirect /latest.iso /$$i " >> $(OUTPUT)/.htaccess ; done
