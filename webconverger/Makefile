@@ -1,6 +1,17 @@
 REPO := https://github.com/Webconverger/webc.git
 BRANCH := master
 
+# Check if live-build is new enough
+LB_VERSION:=$(shell lb --version)
+MIN_LB_VERSION:=4.0.0
+TOONEW_LB_VERSION:=5.0~
+ifneq ($(shell dpkg --compare-versions "$(LB_VERSION)" ge "$(MIN_LB_VERSION)"; echo $$?),0)
+$(error live-build is too old, needs at least version $(MIN_LB_VERSION) $(CMP))
+endif
+ifneq ($(shell dpkg --compare-versions "$(LB_VERSION)" lt "$(TOONEW_LB_VERSION)"; echo $$?),0)
+$(error live-build is too new, needs at less than version $(TOONEW_LB_VERSION) $(CMP))
+endif
+
 VERSION=$(shell cd chroot; git describe --always)
 
 build: TYPE=iso-hybrid
@@ -18,10 +29,10 @@ build-vbox-hdd: build-hdd
 	# If there's already a vdi file, try to keep the UUID the same,
 	# so you don't have to re-add the vdi file in Virtualbox.
 	if [ -f "$(VDI)" ]; then \
-		UUID="--uuid $$(VBoxManage showhdinfo binary.vdi | awk '$$1 == "UUID:" {print $$2}')"; \
-		rm -f binary.vdi; \
+		UUID="--uuid $$(VBoxManage showhdinfo $(VDI) | awk '$$1 == "UUID:" {print $$2}')"; \
+		rm -f $(VDI); \
 	fi; \
-	VBoxManage convertfromraw binary.img binary.vdi $$UUID
+	VBoxManage convertfromraw live-image-i386 $(VDI) $$UUID
 
 binary: clean
 	# Check that the chroot has no changes
