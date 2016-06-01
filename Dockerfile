@@ -13,17 +13,3 @@ VOLUME /root/Debian-Live-config/webconverger/chroot
 WORKDIR /root/Debian-Live-config/webconverger/
 
 CMD /bin/bash
-
-## Setup
-# docker build -t webcbuildimage .
-# docker run --name buildwebc -it -v $WEBC_CHECKOUT:/root/Debian-Live-config/webconverger/chroot webcbuildimage
-
-# make # <--- run inside container
-
-## Get the built ISO out
-
-# docker cp buildwebc:/root/Debian-Live-config/webconverger/live-image-i386.hybrid.iso test.iso
-
-##  When you need to revisit the image
-
-# docker start -ai buildwebc
