@@ -14,6 +14,8 @@ endif
 
 VERSION=$(shell cd chroot; git describe --always)
 
+export SOURCE_DATE_EPOCH ?= $(shell git log -1 --pretty=%ct)
+
 build: TYPE=iso-hybrid
 build: binary
 
@@ -21,7 +23,7 @@ build-hdd: TYPE=hdd
 build-hdd: binary
 
 ifneq ($(shell id -u),0)
-SUDO=sudo
+SUDO=sudo env SOURCE_DATE_EPOCH=$(SOURCE_DATE_EPOCH)
 endif
 
 VDI=binary.vdi
