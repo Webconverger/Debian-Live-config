@@ -70,7 +70,7 @@ binary: clean
 	fi
 	# Build either a .iso or .img file, depending on the configured
 	# image type
-	$(SUDO) lb binary_reproducible
+	-$(SUDO) lb binary_reproducible
 	$(SUDO) lb binary_iso
 	$(SUDO) lb binary_hdd
 
