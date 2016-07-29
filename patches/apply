@@ -1,0 +1,43 @@
+#!/bin/sh
+
+set -eux
+
+cd "$(dirname "${0}")"
+
+echo "deb-src http://httpredir.debian.org/debian jessie main" > /etc/apt/sources.list.d/jessie-src.list
+apt-get update --yes
+apt-get install --yes --no-install-recommends devscripts
+
+for X in $(pwd)/*/
+do
+	SRC="$(basename "${X}")"
+	apt-get build-dep --yes ${SRC}
+
+	rm -rf /tmp/buildd
+	mkdir -p /tmp/buildd
+	cd /tmp/buildd
+
+	apt-get source ${SRC}
+	cd */
+
+	EDITOR=cat dch --local=+webconverger "Rebuild for Webconverger"
+
+	# Merge patch series'
+	if ls ${X}/* >/dev/null 2>&1
+	then
+		for Y in $(echo ${X}/* | LC_ALL=C sort)
+		do
+			mkdir -p debian/patches
+			cp ${Y} debian/patches
+			echo "$(basename "${Y}") -p1" >> debian/patches/series
+		done
+	fi
+
+	dpkg-buildpackage
+
+	for Y in ../*.deb
+	do
+		dpkg -i ${Y} || true
+		apt-get -f --yes install
+	done
+done
