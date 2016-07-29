@@ -1,0 +1,76 @@
+--- libisofs-1.3.2.orig/libisofs/eltorito.c
++++ libisofs-1.3.2/libisofs/eltorito.c
+@@ -19,6 +19,7 @@
+ #include "image.h"
+ #include "messages.h"
+ #include "writer.h"
++#include "util.h"
+ 
+ #include <stdlib.h>
+ #include <string.h>
+@@ -292,7 +293,7 @@ int iso_tree_add_boot_node(IsoDir *paren
+     node->node.hidden = parent->node.hidden;
+ 
+     /* current time */
+-    now = time(NULL);
++    now = iso_current_time();
+     node->node.atime = now;
+     node->node.ctime = now;
+     node->node.mtime = now;
+--- libisofs-1.3.2.orig/libisofs/node.c
++++ libisofs-1.3.2/libisofs/node.c
+@@ -1373,7 +1373,7 @@ int iso_node_new_root(IsoDir **root)
+     }
+     dir->node.refcount = 1;
+     dir->node.type = LIBISO_DIR;
+-    dir->node.atime = dir->node.ctime = dir->node.mtime = time(NULL);
++    dir->node.atime = dir->node.ctime = dir->node.mtime = iso_current_time();
+     dir->node.mode = S_IFDIR | 0555;
+ 
+     /* set parent to itself, to prevent root to be added to another dir */
+--- libisofs-1.3.2.orig/libisofs/tree.c
++++ libisofs-1.3.2/libisofs/tree.c
+@@ -23,6 +23,7 @@
+ #include "builder.h"
+ #include "messages.h"
+ #include "tree.h"
++#include "util.h"
+ 
+ #include <stdlib.h>
+ #include <string.h>
+@@ -86,7 +87,7 @@ int iso_tree_add_new_dir(IsoDir *parent,
+     iso_node_set_hidden((IsoNode*)node, parent->node.hidden);
+ 
+     /* current time */
+-    now = time(NULL);
++    now = iso_current_time();
+     iso_node_set_atime((IsoNode*)node, now);
+     iso_node_set_ctime((IsoNode*)node, now);
+     iso_node_set_mtime((IsoNode*)node, now);
+@@ -161,7 +162,7 @@ int iso_tree_add_new_symlink(IsoDir *par
+     iso_node_set_hidden((IsoNode*)node, parent->node.hidden);
+ 
+     /* current time */
+-    now = time(NULL);
++    now = iso_current_time();
+     iso_node_set_atime((IsoNode*)node, now);
+     iso_node_set_ctime((IsoNode*)node, now);
+     iso_node_set_mtime((IsoNode*)node, now);
+@@ -250,7 +251,7 @@ int iso_tree_add_new_special(IsoDir *par
+     iso_node_set_hidden((IsoNode*)node, parent->node.hidden);
+ 
+     /* current time */
+-    now = time(NULL);
++    now = iso_current_time();
+     iso_node_set_atime((IsoNode*)node, now);
+     iso_node_set_ctime((IsoNode*)node, now);
+     iso_node_set_mtime((IsoNode*)node, now);
+@@ -325,7 +326,7 @@ int iso_tree_add_new_file(IsoDir *parent
+     iso_node_set_hidden((IsoNode*)node, parent->node.hidden);
+ 
+     /* current time */
+-    now = time(NULL);
++    now = iso_current_time();
+     iso_node_set_atime((IsoNode*)node, now);
+     iso_node_set_ctime((IsoNode*)node, now);
+     iso_node_set_mtime((IsoNode*)node, now);
