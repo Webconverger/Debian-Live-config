@@ -59,6 +59,7 @@ binary: clean
 	# filesystem.git directory will be bindmounted as /.git, making
 	# the root filesystem its worktree
 	git --git-dir=binary/live/filesystem.git config --replace-all core.bare false
+	rm -f binary/live/filesystem.git/index binary/live/filesystem.git/logs
 	lb config -b $(TYPE) --build-with-chroot false # --chroot-filesystem none
 	$(SUDO) lb binary_linux-image
 	$(SUDO) lb binary_syslinux
@@ -70,7 +71,7 @@ binary: clean
 	fi
 	# Build either a .iso or .img file, depending on the configured
 	# image type
-	-$(SUDO) lb binary_reproducible
+	$(SUDO) lb binary_reproducible
 	$(SUDO) lb binary_iso
 	$(SUDO) lb binary_hdd
 
