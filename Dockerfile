@@ -3,7 +3,7 @@ MAINTAINER Kai Hendry <hendry@webconverger.com>
 
 RUN apt-get update || true
 RUN apt-get install -y git live-build xorriso vim-tiny make isolinux python3-pip
-RUN pip3 install diffoscope awscli
+RUN pip3 install awscli
 
 RUN git clone git://github.com/Webconverger/Debian-Live-config.git /root/Debian-Live-config
 
