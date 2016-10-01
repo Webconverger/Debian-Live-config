@@ -2,30 +2,50 @@
 
 set -eux
 
-cd "$(dirname "${0}")"
+export DEB_BUILD_OPTIONS="nocheck"
 
-echo "deb-src http://httpredir.debian.org/debian jessie main" > /etc/apt/sources.list.d/jessie-src.list
+# Install utilities for the rest of the build
 apt-get update --yes
 apt-get install --yes --no-install-recommends devscripts
 
-for X in $(pwd)/*/
+cd "$(dirname "${0}")"
+find $(pwd) -mindepth 1 -maxdepth 1 -type d | LC_ALL=C sort | while read X
 do
-	SRC="$(basename "${X}")"
+	# Get package name from directory, stripping ordering prefix
+	SRC="$(basename "${X}" | cut -b4-)"
+
+	# Ge source
+	case "${SRC}" in
+	live-build)
+		BACKPORT_FROM="jessie"
+		;;
+	*)
+		BACKPORT_FROM="sid"
+		;;
+	esac
+
+	# Install build-dependencies
+	echo "deb-src http://httpredir.debian.org/debian ${BACKPORT_FROM} main" \
+		> /etc/apt/sources.list.d/webconverger.list
+	apt-get update --yes
 	apt-get build-dep --yes ${SRC}
 
+	# Clear build area
 	rm -rf /tmp/buildd
 	mkdir -p /tmp/buildd
-	cd /tmp/buildd
 
+	# Get source
+	cd /tmp/buildd
 	apt-get source ${SRC}
 	cd */
 
-	EDITOR=cat dch --local=+webconverger "Rebuild for Webconverger"
+	# Set changelog entry
+	EDITOR=cat dch --local=+webconverger "Rebuild for Webconverger." -D unstable
 
-	# Merge patch series'
-	if ls ${X}/* >/dev/null 2>&1
+	# Merge patch series
+	if ls ${X}/*.patches >/dev/null 2>&1
 	then
-		for Y in $(echo ${X}/* | LC_ALL=C sort)
+		find ${X} -name '*.patch' | LC_ALL=C sort | while read Y
 		do
 			mkdir -p debian/patches
 			cp ${Y} debian/patches
@@ -33,11 +53,12 @@ do
 		done
 	fi
 
-	dpkg-buildpackage
+	# Build
+	dpkg-buildpackage -uc -us
 
-	for Y in ../*.deb
+	# Install
+	while read Y
 	do
-		dpkg -i ${Y} || true
-		apt-get -f --yes install
-	done
+		dpkg -i ../${Y}_*.deb
+	done < ${X}/install
 done
