@@ -1,0 +1,97 @@
+From 4291db0e2e6ee69dca7fcf936f3e66f81dd15a84 Mon Sep 17 00:00:00 2001
+From: Chris Lamb <lamby@debian.org>
+Date: Sun, 17 Jul 2016 10:19:48 +0200
+Subject: [PATCH 1/2] Add binary_reproducible script to clamp mtimes.
+
+Signed-off-by: Chris Lamb <lamby@debian.org>
+---
+ scripts/build/binary              |  1 +
+ scripts/build/binary_reproducible | 53 +++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 54 insertions(+)
+ create mode 100755 scripts/build/binary_reproducible
+
+diff --git a/scripts/build/binary b/scripts/build/binary
+index fe90d8e..2a03e03 100755
+--- a/scripts/build/binary
++++ b/scripts/build/binary
+@@ -69,6 +69,7 @@ lb binary_win32-loader ${@}
+ lb binary_includes ${@}
+ lb binary_hooks ${@}
+ lb binary_checksums ${@}
++lb binary_reproducible ${@}
+ 
+ if [ "${LB_BUILD_WITH_CHROOT}" != "true" ]
+ then
+diff --git a/scripts/build/binary_reproducible b/scripts/build/binary_reproducible
+new file mode 100755
+index 0000000..a26eb23
+--- /dev/null
++++ b/scripts/build/binary_reproducible
+@@ -0,0 +1,53 @@
++#!/bin/sh
++
++## live-build(7) - System Build Scripts
++## Copyright (C) 2016 Chris Lamb <lamby@debian.org>
++##
++## This program comes with ABSOLUTELY NO WARRANTY; for details see COPYING.
++## This is free software, and you are welcome to redistribute it
++## under certain conditions; see COPYING for details.
++
++
++set -e
++
++# Including common functions
++[ -e "${LIVE_BUILD}/scripts/build.sh" ] && . "${LIVE_BUILD}/scripts/build.sh" || . /usr/lib/live/build.sh
++
++# Setting static variables
++DESCRIPTION="$(Echo 'ensure binary image is reproducible')"
++HELP=""
++USAGE="${PROGRAM} [--force]"
++
++Arguments "${@}"
++
++# Reading configuration files
++Read_conffiles config/all config/common config/bootstrap config/chroot config/binary config/source
++Set_defaults
++
++if [ "${SOURCE_DATE_EPOCH:-}" = "" ]
++then
++	exit 0
++fi
++
++Echo_message "Begin ensuring binary image is reproducible..."
++
++# Requiring stage file
++Require_stagefile .build/config .build/bootstrap
++
++# Checking stage file
++Check_stagefile .build/binary_reproducible
++
++# Checking lock file
++Check_lockfile .lock
++
++# Creating lock file
++Create_lockfile .lock
++
++# "Clamp" the time to SOURCE_DATE_EPOCH when the file is more recent to keep
++# the original times for files that have not been created or modified during
++# the build process:
++find binary -newermt "@${SOURCE_DATE_EPOCH}" -print0 | \
++	xargs -0r touch --no-dereference --date="@${SOURCE_DATE_EPOCH}"
++
++# Creating stage file
++Create_stagefile .build/binary_reproducible
+--- a/Makefile
++++ b/Makefile
+@@ -49,6 +49,7 @@ install:
+ 
+ 	mkdir -p $(DESTDIR)/usr/lib/live
+ 	cp -a scripts/* $(DESTDIR)/usr/lib/live
++	chmod +x $(DESTDIR)/usr/lib/live/build/*
+ 
+ 	# Installing documentation
+ 	mkdir -p $(DESTDIR)/usr/share/doc/live-build
+
+-- 
+2.8.1
+

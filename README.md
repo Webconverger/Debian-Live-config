@@ -18,3 +18,8 @@ For the source of the rootfs aka `$WEBC_CHECKOUT`, please use: <https://github.c
 ##  When you need to revisit the image
 
 	yourhost # docker start -ai buildwebc
+
+or
+
+	yourhost # docker start buildwebc
+	yourhost # docker exec -it buildwebc /bin/bash

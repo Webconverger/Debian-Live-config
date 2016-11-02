@@ -5,7 +5,9 @@ webconverger/binary.vdi
 webconverger/binary/
 webconverger/chroot/
 webconverger/config/binary
+webconverger/config/build
 webconverger/config/bootstrap
+webconverger/config/hooks/
 webconverger/config/chroot
 webconverger/config/common
 webconverger/config/source
