@@ -43,7 +43,7 @@ do
 	EDITOR=cat dch --local=+webconverger "Rebuild for Webconverger." -D unstable
 
 	# Merge patch series
-	if ls ${X}/*.patches >/dev/null 2>&1
+	if ls ${X}/*.patch >/dev/null 2>&1
 	then
 		find ${X} -name '*.patch' | LC_ALL=C sort | while read Y
 		do
