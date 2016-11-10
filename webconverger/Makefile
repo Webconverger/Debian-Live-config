@@ -60,6 +60,8 @@ binary: clean
 	# the root filesystem its worktree
 	git --git-dir=binary/live/filesystem.git config --replace-all core.bare false
 	lb config -b $(TYPE) --build-with-chroot false # --chroot-filesystem none
+	# Remove logs for reproducibility; they contain timestamps
+	rm -rf binary/live/filesystem.git/logs
 	$(SUDO) lb binary_linux-image
 	$(SUDO) lb binary_syslinux
 	# Copy the template bootloader config, so the config can be
