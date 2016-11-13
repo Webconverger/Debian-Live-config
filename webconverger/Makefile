@@ -62,6 +62,9 @@ binary: clean
 	lb config -b $(TYPE) --build-with-chroot false # --chroot-filesystem none
 	# Remove logs for reproducibility; they contain timestamps
 	rm -rf binary/live/filesystem.git/logs
+	# Remove index for reproducibility; contains timestamps and
+	# non-deterministic inode numbers.
+	rm -rf binary/live/filesystem.git/index
 	$(SUDO) lb binary_linux-image
 	$(SUDO) lb binary_syslinux
 	# Copy the template bootloader config, so the config can be
