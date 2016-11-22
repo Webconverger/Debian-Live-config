@@ -52,6 +52,7 @@ binary: clean
 	else \
 		git clone --no-local --depth 1 --bare file://$(CURDIR)/chroot/.git binary/live/filesystem.git; \
 	fi
+	du -sh binary/live/filesystem.git/
 	git --git-dir=binary/live/filesystem.git remote set-url origin "$(REPO)"
 	git --git-dir=binary/live/filesystem.git tag initial-revision
 	# Make the repository look like a non-bare one. It will still
