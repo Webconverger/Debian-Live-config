@@ -25,7 +25,7 @@ do
 	esac
 
 	# Install build-dependencies
-	echo "deb-src http://httpredir.debian.org/debian ${BACKPORT_FROM} main" \
+	echo "deb-src http://deb.debian.org/debian ${BACKPORT_FROM} main" \
 		> /etc/apt/sources.list.d/webconverger.list
 	apt-get update --yes
 	apt-get build-dep --yes ${SRC}
