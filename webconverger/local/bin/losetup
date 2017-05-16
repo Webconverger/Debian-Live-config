@@ -1,0 +1,11 @@
+#!/bin/sh
+
+# Not all invocations accept --partscan. This is not a comprehensive
+# list, but sufficient for what live-build uses.
+# Workaround until this is fixed in live-build, see
+# https://bugs.debian.org/865586
+if [ "$1" != "-d" -a "$1" != "-f" ]; then
+	exec /sbin/losetup --partscan "$@"
+else
+	exec /sbin/losetup "$@"
+fi
