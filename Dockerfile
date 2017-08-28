@@ -10,6 +10,7 @@ ADD patches /root/Debian-Live-config/patches
 
 RUN /root/Debian-Live-config/patches/apply
 
+# Until https://bugs.debian.org/873513 is merged, work around this build failure
 RUN ln -s /usr/lib/ISOLINUX/ /usr/share/
 
 VOLUME /root/Debian-Live-config/webconverger/chroot

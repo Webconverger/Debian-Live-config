@@ -67,7 +67,16 @@ binary: clean
 	# non-deterministic inode numbers.
 	rm -rf binary/live/filesystem.git/index
 	$(SUDO) lb binary_linux-image
-	$(SUDO) lb binary_syslinux
+	$(SUDO) lb binary_syslinux \
+	  || (printf 1>&2 "  %s\n" "" \
+		"If live-build complains about /usr/share/ISOLINUX, or" \
+		"/usr/share/SYSLINUX, you are likely running a live-build" \
+		"version without http://bugs.debian.org/864629 applied." \
+		"Either upgrade to a version with that patch, or create a" \
+		"symlink /usr/share/ISOLINUX -> /usr/lib/ISOLINUX and/or" \
+		"/usr/share/SYSLINUX -> /usr/lib/SYSLINUX." "" \
+	      && false)
+
 	# Copy the template bootloader config, so the config can be
 	# regenerated on upgrades (but only on an hdd image, since an
 	# iso-hybrid image is not writable anyway).
