@@ -3,14 +3,17 @@ BRANCH := master
 
 # Check if live-build is new enough
 LB_VERSION:=$(shell lb --version)
-MIN_LB_VERSION:=4.0.0
-TOONEW_LB_VERSION:=5.0~
+# This version has the patches for reproducible builds and corrects the
+# syslinux mbr.bin path.
+MIN_LB_VERSION:=1:20161202
+#TOONEW_LB_VERSION:=5.0~
+
 ifneq ($(shell dpkg --compare-versions "$(LB_VERSION)" ge "$(MIN_LB_VERSION)"; echo $$?),0)
 $(error live-build is too old, needs at least version $(MIN_LB_VERSION) $(CMP))
 endif
-ifneq ($(shell dpkg --compare-versions "$(LB_VERSION)" lt "$(TOONEW_LB_VERSION)"; echo $$?),0)
-$(error live-build is too new, needs at less than version $(TOONEW_LB_VERSION) $(CMP))
-endif
+#ifneq ($(shell dpkg --compare-versions "$(LB_VERSION)" lt "$(TOONEW_LB_VERSION)"; echo $$?),0)
+#$(error live-build is too new, needs at less than version $(TOONEW_LB_VERSION) $(CMP))
+#endif
 
 VERSION=$(shell cd chroot; git describe --always)
 
