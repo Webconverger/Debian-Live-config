@@ -74,9 +74,14 @@ binary: clean
 	if [ "$(TYPE)" = hdd ]; then \
 		$(SUDO) cp config/bootloaders/syslinux/live.cfg.in binary/boot; \
 	fi
+
+	# "Clamp" the time to SOURCE_DATE_EPOCH when the file is more recent to keep
+	# the original times for files that have not been created or modified during
+	# the build process:
+	$(SUDO) find binary -newermt "@$(SOURCE_DATE_EPOCH)" -print0 | $(SUDO) xargs -0r touch --no-dereference --date="@$(SOURCE_DATE_EPOCH)"
+
 	# Build either a .iso or .img file, depending on the configured
 	# image type
-	$(SUDO) lb binary_reproducible
 	$(SUDO) lb binary_iso
 	$(SUDO) lb binary_hdd
 
