@@ -6,9 +6,6 @@ RUN apt-get install -y git live-build xorriso vim-tiny make isolinux python3-pip
 RUN pip3 install awscli
 
 ADD webconverger /root/Debian-Live-config/webconverger
-ADD patches /root/Debian-Live-config/patches
-
-RUN /root/Debian-Live-config/patches/apply
 
 # Until https://bugs.debian.org/873513 is merged, work around this build failure
 RUN ln -s /usr/lib/ISOLINUX/ /usr/share/
