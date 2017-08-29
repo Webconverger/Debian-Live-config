@@ -87,6 +87,14 @@ binary: clean
 		$(SUDO) cp config/bootloaders/syslinux/live.cfg.in binary/boot; \
 	fi
 
+	# Remove hardlinked copies of initrd and vmlinuz that are not
+	# really needed, but cause problems when generating a FAT image
+	# (that does not support hardlinks). This happens from
+	# live-build version 1:20161202, until https://bugs.debian.org/873640
+	# is merged.
+	$(SUDO) rm -f binary/live/initrd.img-*
+	$(SUDO) rm -f binary/live/vmlinuz-*
+
 	# "Clamp" the time to SOURCE_DATE_EPOCH when the file is more recent to keep
 	# the original times for files that have not been created or modified during
 	# the build process:
