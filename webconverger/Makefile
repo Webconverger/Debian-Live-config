@@ -37,7 +37,8 @@ build-vbox-hdd: build-hdd
 		UUID="--uuid $$(VBoxManage showhdinfo $(VDI) | awk '$$1 == "UUID:" {print $$2}')"; \
 		rm -f $(VDI); \
 	fi; \
-	VBoxManage convertfromraw live-image-i386 $(VDI) $$UUID
+	IMG="$(wildcard live-image-i386 live-image-i386.img)"; \
+	VBoxManage convertfromraw $$IMG $(VDI) $$UUID
 
 binary: clean
 	# Check that the chroot has no changes
