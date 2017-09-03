@@ -1,4 +1,4 @@
-FROM debian:jessie
+FROM debian:stretch
 MAINTAINER Kai Hendry <hendry@webconverger.com>
 
 RUN apt-get update || true
