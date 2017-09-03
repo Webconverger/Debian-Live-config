@@ -17,17 +17,11 @@ endif
 
 VERSION=$(shell cd chroot; git describe --always)
 
-export SOURCE_DATE_EPOCH ?= $(shell git log -1 --pretty=%ct)
-
 build: TYPE=iso-hybrid
 build: binary
 
 build-hdd: TYPE=hdd
 build-hdd: binary
-
-ifneq ($(shell id -u),0)
-SUDO=sudo env SOURCE_DATE_EPOCH=$(SOURCE_DATE_EPOCH)
-endif
 
 VDI=binary.vdi
 build-vbox-hdd: build-hdd
@@ -99,7 +93,7 @@ binary: clean
 	# "Clamp" the time to SOURCE_DATE_EPOCH when the file is more recent to keep
 	# the original times for files that have not been created or modified during
 	# the build process:
-	$(SUDO) find binary -newermt "@$(SOURCE_DATE_EPOCH)" -print0 | $(SUDO) xargs -0r touch --no-dereference --date="@$(SOURCE_DATE_EPOCH)"
+	$(SUDO) find binary -newermt "@$(shell git --git-dir=binary/live/filesystem.git log -1 --pretty=%ct)" -print0 | $(SUDO) xargs -0r touch --no-dereference --date="@$(shell git --git-dir=binary/live/filesystem.git log -1 --pretty=%ct)"
 
 	# Build either a .iso or .img file, depending on the configured
 	# image type
