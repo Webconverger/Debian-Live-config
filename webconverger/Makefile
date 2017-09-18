@@ -17,7 +17,7 @@ endif
 
 VERSION=$(shell cd chroot; git describe --always)
 
-export SOURCE_DATE_EPOCH ?= $(shell git log -1 --pretty=%ct)
+export SOURCE_DATE_EPOCH ?= $(shell git --git-dir=chroot/.git log -1 --pretty=%ct)
 
 build: TYPE=iso-hybrid
 build: binary
