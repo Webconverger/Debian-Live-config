@@ -1,3 +1,4 @@
+#!/bin/sh
 set -x
 desc=$(git --git-dir $WEBC_CHECKOUT/.git/ describe)
 docker run --name webc -v $WEBC_CHECKOUT:/root/Debian-Live-config/webconverger/chroot webc/isobuilder make
