@@ -6,7 +6,7 @@ docker rm webc || true
 if test -s /tmp/$desc.iso
 then
         dir=$(date --rfc-3339=date)/$desc
-        sha1=($(sha1sum /tmp/$desc.iso))
+        sha1=$(sha1sum /tmp/$desc.iso)
         mkdir -p $dir
         mv /tmp/$desc.iso $dir/$sha1.iso
         ln -sf $dir/$sha1.iso latest.iso
