@@ -112,4 +112,4 @@ binary: clean
 
 clean:
 	$(SUDO) lb clean --binary
-	rm -f webc*.iso webc*.img webc*.txt
+	rm -f webc*.iso webc*.img webc*.txt $(VDI)
