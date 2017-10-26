@@ -31,12 +31,16 @@ endif
 
 VDI=binary.vdi
 build-vbox-hdd: build-hdd
-	# If there's already a vdi file, try to keep the UUID the same,
-	# so you don't have to re-add the vdi file in Virtualbox.
-	if [ -f "$(VDI)" ]; then \
+	# Ask VBoxManage what UUID to use. If the VDI file is registered
+	# with VirtualBox, the UUID from its database is used
+	# (regardless of whether the VDI file exists and its current
+	# UUID). If not, the current UUID is used. This prevents
+	# problems with Virtualbox seeing a different UUID from what it
+	# expected.
+	if VBoxManage showhdinfo $(VDI) >/dev/null 2>/dev/null ; then \
 		UUID="--uuid $$(VBoxManage showhdinfo $(VDI) | awk '$$1 == "UUID:" {print $$2}')"; \
-		rm -f $(VDI); \
 	fi; \
+	rm -f $(VDI); \
 	IMG="$(wildcard live-image-i386 live-image-i386.img)"; \
 	VBoxManage convertfromraw $$IMG $(VDI) $$UUID
 
