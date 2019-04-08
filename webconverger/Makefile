@@ -68,6 +68,9 @@ binary: clean
 	# filesystem.git directory will be bindmounted as /.git, making
 	# the root filesystem its worktree
 	git --git-dir=binary/live/filesystem.git config --replace-all core.bare false
+
+	# Remove any existing config first, then create a new config
+	rm -f config/binary config/bootstrap config/build config/chroot config/common config/source
 	lb config -b $(TYPE) --build-with-chroot false # --chroot-filesystem none
 	# Remove logs for reproducibility; they contain timestamps
 	rm -rf binary/live/filesystem.git/logs
