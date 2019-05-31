@@ -1,0 +1,5 @@
+This is an empty directory, to suppress lb_binary_syslinux from
+installing files from its syslinux-common directory. We could have added
+meaningful files here, but then we would lose support for older
+live-build versions (that did not have syslinux-common and syslinux-efi
+support yet).

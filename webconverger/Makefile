@@ -17,20 +17,30 @@ endif
 
 VERSION=$(shell cd chroot; git describe --always)
 
+export SOURCE_DATE_EPOCH ?= $(shell git --git-dir=chroot/.git log -1 --pretty=%ct)
+
 build: TYPE=iso-hybrid
 build: binary
 
 build-hdd: TYPE=hdd
 build-hdd: binary
 
+ifneq ($(shell id -u),0)
+SUDO=sudo env SOURCE_DATE_EPOCH=$(SOURCE_DATE_EPOCH)
+endif
+
 VDI=binary.vdi
 build-vbox-hdd: build-hdd
-	# If there's already a vdi file, try to keep the UUID the same,
-	# so you don't have to re-add the vdi file in Virtualbox.
-	if [ -f "$(VDI)" ]; then \
+	# Ask VBoxManage what UUID to use. If the VDI file is registered
+	# with VirtualBox, the UUID from its database is used
+	# (regardless of whether the VDI file exists and its current
+	# UUID). If not, the current UUID is used. This prevents
+	# problems with Virtualbox seeing a different UUID from what it
+	# expected.
+	if VBoxManage showhdinfo $(VDI) >/dev/null 2>/dev/null ; then \
 		UUID="--uuid $$(VBoxManage showhdinfo $(VDI) | awk '$$1 == "UUID:" {print $$2}')"; \
-		rm -f $(VDI); \
 	fi; \
+	rm -f $(VDI); \
 	IMG="$(wildcard live-image-i386 live-image-i386.img)"; \
 	VBoxManage convertfromraw $$IMG $(VDI) $$UUID
 
@@ -58,6 +68,9 @@ binary: clean
 	# filesystem.git directory will be bindmounted as /.git, making
 	# the root filesystem its worktree
 	git --git-dir=binary/live/filesystem.git config --replace-all core.bare false
+
+	# Remove any existing config first, then create a new config
+	rm -f config/binary config/bootstrap config/build config/chroot config/common config/source
 	lb config -b $(TYPE) --build-with-chroot false # --chroot-filesystem none
 	# Remove logs for reproducibility; they contain timestamps
 	rm -rf binary/live/filesystem.git/logs
@@ -93,7 +106,7 @@ binary: clean
 	# "Clamp" the time to SOURCE_DATE_EPOCH when the file is more recent to keep
 	# the original times for files that have not been created or modified during
 	# the build process:
-	$(SUDO) find binary -newermt "@$(shell git --git-dir=binary/live/filesystem.git log -1 --pretty=%ct)" -print0 | $(SUDO) xargs -0r touch --no-dereference --date="@$(shell git --git-dir=binary/live/filesystem.git log -1 --pretty=%ct)"
+	$(SUDO) find binary -newermt "@$(SOURCE_DATE_EPOCH)" -print0 | $(SUDO) xargs -0r touch --no-dereference --date="@$(SOURCE_DATE_EPOCH)"
 
 	# Build either a .iso or .img file, depending on the configured
 	# image type
@@ -102,4 +115,4 @@ binary: clean
 
 clean:
 	$(SUDO) lb clean --binary
-	rm -f webc*.iso webc*.img webc*.txt
+	rm -f webc*.iso webc*.img webc*.txt $(VDI)
