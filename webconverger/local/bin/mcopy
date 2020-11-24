@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# Work around locking problem...
+echo "$0: Sleeping as a workaround"
+sleep 1
+exec /usr/bin/mcopy "$@"
+

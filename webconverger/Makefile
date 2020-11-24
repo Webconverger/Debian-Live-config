@@ -17,22 +17,41 @@ endif
 
 VERSION=$(shell cd chroot; git describe --always)
 
+export SOURCE_DATE_EPOCH ?= $(shell git --git-dir=chroot/.git log -1 --pretty=%ct)
+
 build: TYPE=iso-hybrid
 build: binary
 
 build-hdd: TYPE=hdd
 build-hdd: binary
 
+ifneq ($(shell id -u),0)
+SUDO=sudo env SOURCE_DATE_EPOCH=$(SOURCE_DATE_EPOCH)
+endif
+
 VDI=binary.vdi
 build-vbox-hdd: build-hdd
-	# If there's already a vdi file, try to keep the UUID the same,
-	# so you don't have to re-add the vdi file in Virtualbox.
-	if [ -f "$(VDI)" ]; then \
+	# Ask VBoxManage what UUID to use. If the VDI file is registered
+	# with VirtualBox, the UUID from its database is used
+	# (regardless of whether the VDI file exists and its current
+	# UUID). If not, the current UUID is used. This prevents
+	# problems with Virtualbox seeing a different UUID from what it
+	# expected.
+	if VBoxManage showhdinfo $(VDI) >/dev/null 2>/dev/null ; then \
 		UUID="--uuid $$(VBoxManage showhdinfo $(VDI) | awk '$$1 == "UUID:" {print $$2}')"; \
-		rm -f $(VDI); \
 	fi; \
+	rm -f $(VDI); \
 	IMG="$(wildcard live-image-i386 live-image-i386.img)"; \
 	VBoxManage convertfromraw $$IMG $(VDI) $$UUID
+
+QCOW2=live-image-i386.qcow2
+build-qemu-hdd: build-hdd
+	IMG="$(wildcard live-image-i386 live-image-i386.img)"; \
+	$(SUDO) qemu-img convert -f raw -O qcow2 $$IMG $(QCOW2)
+	# This enlarges the hd to allow testing the resize script and updates.
+	# This does not actually enlarge the file, that only happens when data
+	# is written to it.
+	$(SUDO) qemu-img resize $(QCOW2) 8G
 
 binary: clean
 	# Check that the chroot has no changes
@@ -75,6 +94,11 @@ binary: clean
 		"/usr/share/SYSLINUX -> /usr/lib/SYSLINUX." "" \
 	      && false)
 
+	# Install some info on the generation process into binary/.disk.
+	# This is needed because other commands assume this directory
+	# exists.
+	$(SUDO) lb binary_disk
+
 	# Copy the template bootloader config, so the config can be
 	# regenerated on upgrades (but only on an hdd image, since an
 	# iso-hybrid image is not writable anyway).
@@ -93,7 +117,7 @@ binary: clean
 	# "Clamp" the time to SOURCE_DATE_EPOCH when the file is more recent to keep
 	# the original times for files that have not been created or modified during
 	# the build process:
-	$(SUDO) find binary -newermt "@$(shell git --git-dir=binary/live/filesystem.git log -1 --pretty=%ct)" -print0 | $(SUDO) xargs -0r touch --no-dereference --date="@$(shell git --git-dir=binary/live/filesystem.git log -1 --pretty=%ct)"
+	$(SUDO) find binary -newermt "@$(SOURCE_DATE_EPOCH)" -print0 | $(SUDO) xargs -0r touch --no-dereference --date="@$(SOURCE_DATE_EPOCH)"
 
 	# Build either a .iso or .img file, depending on the configured
 	# image type
@@ -102,4 +126,4 @@ binary: clean
 
 clean:
 	$(SUDO) lb clean --binary
-	rm -f webc*.iso webc*.img webc*.txt
+	rm -f webc*.iso webc*.img webc*.txt $(VDI)
