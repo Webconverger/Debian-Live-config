@@ -85,6 +85,11 @@ binary: clean
 		"/usr/share/SYSLINUX -> /usr/lib/SYSLINUX." "" \
 	      && false)
 
+	# Install some info on the generation process into binary/.disk.
+	# This is needed because other commands assume this directory
+	# exists.
+	$(SUDO) lb binary_disk
+
 	# Copy the template bootloader config, so the config can be
 	# regenerated on upgrades (but only on an hdd image, since an
 	# iso-hybrid image is not writable anyway).
